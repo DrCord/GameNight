@@ -6,16 +6,11 @@ var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
 var bgg = require('bgg'); //https://www.npmjs.com/package/bgg
 
-var Gathering = require('./includes/Gathering.js');
-
-//var routes = require('./routes/index');
-//var users = require('./routes/users');
-
 var app = module.exports = express();
-// Extend array with find for an object literal value
-// From http://stackoverflow.com/a/11836196/1291935
-// Usage: var arrayFound = obj.items.objectFind({isRight:1});
 Array.prototype.objectFind = function(obj) {
+    // Extend array with find for an object literal value
+    // From http://stackoverflow.com/a/11836196/1291935
+    // Usage: var arrayFound = obj.items.objectFind({isRight:1});
     return this.filter(function(item) {
         for (var prop in obj)
             if (!(prop in item) || obj[prop] !== item[prop])
@@ -24,8 +19,7 @@ Array.prototype.objectFind = function(obj) {
     });
 };
 // Setup data objects for each part of application
-
-
+var Gathering = require('./includes/Gathering.js');
 var Database = require('./includes/Database.js');
 var WebServer = {
     init: function(){
@@ -115,22 +109,21 @@ var GameNight = {
     init: function(){
         Database.init();
         WebServer.init();
-
-        /* dummy test data */
+        Gathering.init();
+    },
+    test: function(){
+        /* test function to setup data */
         var testUser = Gathering.addBGG_User('drcord');
         var testUser2 = Gathering.addBGG_User('glittergamer');
 
-        //testUser.getUserCollection();
-        //Gathering.updateBGG_User(testUser.getUserData());
-        testUser.getUserData()
-            .then(
-                function(userObj){
-                    Gathering.updateBGG_User(userObj);
-                }
-            )
+        testUser.update()
+            .then(function(userObj){
+                Gathering.updateBGG_User(userObj);
+            })
         ;
     }
 };
 
 // Start application
 GameNight.init();
+GameNight.test();
