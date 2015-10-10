@@ -1,0 +1,54 @@
+extends layout
+block content
+    h1 #{title}
+    section#gathering
+        div#add-users
+            h2 Enter BGG username to add to Gathering
+            form(name="add-user")
+                input#add-user-input(
+                type="text"
+                name="add-user"
+                )
+                input#add-user-button(
+                type="button"
+                value="Add"
+                )
+        div#gathering-info
+            h2 Gathering
+            div#gathering-users
+                h3 Users
+                if Gathering.users.length
+                    ol
+                        each user, index in Gathering.users
+                            li
+                                ul
+                                    li BGG Username:
+                                        if user.username
+                                            span #{user.username}
+                                        else
+                                            span not set
+                                    li First Name:
+                                        if user.firstName
+                                            span #{user.firstName}
+                                        else
+                                            span not set
+                                    li Last Name:
+                                        if user.lastName
+                                            span #{user.lastName}
+                                        else
+                                            span not set
+                                    li Id:
+                                        if typeof user.id != "undefined"
+                                            span #{user.id}
+                                        else
+                                            span not set
+                else
+                    p No users in Gathering, add users above.
+            div#gathering-location
+                h3 Location
+                if typeof Gathering.location.name != "undefined"
+                    span #{Gathering.location.name}
+                else
+                    span No Gathering location set.
+    section#games
+    section#filters
