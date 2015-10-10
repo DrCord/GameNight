@@ -1,8 +1,6 @@
 var BGG_User = require('./BGG_User.js');
 
 var Gathering = Gathering || {};
-Gathering.users = Gathering.users || [];
-Gathering.location = Gathering.location || {};
 Gathering.addBGG_User = function(username){
     if(Gathering.users.indexOf(username) === -1){ // TODO: needs fixing - won't work as is numerically indexed array, need to look deeper
         var newUser = new BGG_User(username);
@@ -27,6 +25,10 @@ Gathering.updateBGG_User = function(userObj){
         }
     }
     return false;
+};
+Gathering.init = function(){
+    Gathering.users = Gathering.users || [];
+    Gathering.location = Gathering.location || {};
 };
 // Export Gathering
 module.exports = Gathering;
