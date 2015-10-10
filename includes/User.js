@@ -12,19 +12,6 @@ User.prototype.getUserData = function() {
 };
 User.prototype.update = function() {
     console.log('User.update() called');
-    var userFound = Gathering.users.objectFind({username: this.username});
-    if(userFound){
-        console.log('userFound');
-        console.log(userFound);
-        for(var i=0; i < Gathering.users.length; i++){
-            if(Gathering.users[i]['username'] == this.username){
-                Gathering.users[i] = this;
-                console.log('Update User - Gathering.users[' + i + ']');
-                console.log(Gathering.users[i]);
-                return true;
-            }
-        }
-    }
     return false;
 };
 
