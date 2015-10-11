@@ -49,38 +49,47 @@ var WebServer = {
         app.use(express.static(path.join(__dirname, 'node_modules/angular')));
         // Setup route for / for the index page
         app.get('/', function(req, res, next) {
-            res.render('index',
-                {
-                    title: 'GameNight',
-                    Gathering: Gathering
-                }
-            );
+            res.render('index', { Gathering: Gathering });
         });
         WebServer.setupApi();
         WebServer.create();
     },
     setupApi: function(){
         /** JSON API allows requests from front end to accomplish tasks */
+        app.get('/api/gathering', function(req, res){
+            console.log('/api/gathering backend route called');
+            return res.json({ Gathering: Gathering });
+        });
         app.get('/api/users', function(req, res){
             console.log('/api/users backend route called');
             return res.json({ users: Gathering.users });
         });
-        app.get('/api/add-user', function(req, res){
+        app.post('/api/add-user', function(req, res){
             console.log('/api/add-user backend route called');
-            if(typeof req.query.username != "undefined"){
-                console.log(req.query.username);
-                Gathering.addBGG_User(req.query.username);
+            if(typeof req.body.username != "undefined"){
+                console.log(req.body.username);
+                var user = Gathering.addBGG_User(req.body.username);
+                user.update()
+                    .then(function(userObj){
+                        Gathering.updateBGG_User(userObj);
+                    })
+                    .then(function(){
+                        return res.json({ Gathering: Gathering });
+                    })
+                ;
             }
-            return res.json({ users: Gathering.users });
+            else{
+                return res.json({ Gathering: Gathering });
+            }
         });
-        app.get('/api/delete-user', function(req, res){
+        app.post('/api/delete-user', function(req, res){
             console.log('/api/delete-user backend route called');
-            if(typeof req.query.username != "undefined"){
-                console.log(req.query.username);
+            if(typeof req.body.username != "undefined"){
+                console.log(req.body.username);
                 // Find and delete user with username from Gathering.users
-                Gathering.deleteBGG_User(req.query.username);
+                Gathering.deleteBGG_User(req.body.username);
+                return res.json({ users: Gathering.users });
             }
-            return res.json({ users: Gathering.users });
         });
     },
     create: function(){
@@ -120,9 +129,10 @@ var WebServer = {
 // Object for overall application
 var GameNight = {
     init: function(){
-        Database.init();
+        //Database.init();
         WebServer.init();
         Gathering.init();
+        //GameNight.test();
     },
     test: function(){ /** testing function to setup data */
         var testUser = Gathering.addBGG_User('drcord');
@@ -138,4 +148,3 @@ var GameNight = {
 };
 // Start application
 GameNight.init();
-//GameNight.test();

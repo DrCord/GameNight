@@ -2,8 +2,6 @@
 
 // Declare app level module which depends on filters, and services
 angular.module('gameNight', [
-    'gameNight.controllers',
+    'gameNight.controllers'
 ]).
-config(function (){
-
-});
+config(function(){ });

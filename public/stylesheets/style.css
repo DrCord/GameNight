@@ -1,17 +1,31 @@
 body {
   padding: 50px;
+  padding-top: 10px;
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
 }
 
 a {
   color: #00B7FF;
 }
+.title{
+    font-weight: bold;
+    padding-right: 5px;
+}
+#gathering-users ol ul{
+    list-style: none;
+    margin-bottom: 10px;
+    padding: 0;
+}
+#gathering-add-user h2{
+    font-size: 16px;
+}
 
-/* test styles */
-#search {
-    text-align: center;
-    width:500px;
-    height: 70px;
-    font-size:3.5em;
-    border-radius:8px;
+/*
+    From: http://stackoverflow.com/a/13276214/1291935
+  Allow angular.js to be loaded in body, hiding cloaked elements until
+  templates compile.  The !important is important given that there may be
+  other selectors that are more specific or come later and might alter display.
+ */
+[ng\:cloak], [ng-cloak], .ng-cloak {
+    display: none !important;
 }

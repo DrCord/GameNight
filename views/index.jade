@@ -1,56 +1,61 @@
 extends layout
 block content
-    h1 #{title}
-    h2 {{test}}
+    h1 GameNight
     section#gathering
-        div#add-users
-            h2 Enter BGG username to add to Gathering
-            form(name="add-user")
+        h2 Gathering
+        div#gathering-add-user
+            h2 Enter username to add to Gathering
+            form(name="add-user" ng-submit="addUser(addUserInputUsername)")
                 input#add-user-input(
-                type="text"
-                name="add-user"
+                    type="text"
+                    name="add-user"
+                    ng-model="addUserInputUsername"
+                    required
+                    ng-required
                 )
                 input#add-user-button(
-                type="button"
-                value="Add User"
-                class="btn btn-sm btn-success"
+                    type="button"
+                    value="Add User"
+                    class="btn btn-sm btn-success"
+                    ng-click="addUser(addUserInputUsername)"
                 )
-        div#gathering-info
-            h2 Gathering
+        div#gathering-info(ng-cloak ng-show="ready")
             div#gathering-users
                 h3 Users
-                if Gathering.users.length
-                    ol
-                        each user, index in Gathering.users
+                ol(ng-show="Gathering.users.length")
+                    li(ng-repeat="user in Gathering.users")
+                        ul.user
                             li
-                                ul
-                                    li BGG Username:
-                                        if user.username
-                                            span #{user.username}
-                                        else
-                                            span not set
-                                    li First Name:
-                                        if user.firstName
-                                            span #{user.firstName}
-                                        else
-                                            span not set
-                                    li Last Name:
-                                        if user.lastName
-                                            span #{user.lastName}
-                                        else
-                                            span not set
-                                    li Id:
-                                        if typeof user.id != "undefined"
-                                            span #{user.id}
-                                        else
-                                            span not set
-                else
-                    p No users in Gathering, add users above.
-            div#gathering-location
+                                span(class="title") Username:
+                                span(ng-show="user.username") {{user.username}}
+                                span(ng-show="!user.username") not set
+                            li
+                                span(class="title") First Name:
+                                span(ng-show="user.userData.firstname.value") {{user.userData.firstname.value}}
+                                span(ng-show="!user.userData.firstname.value") not set
+                            li
+                                span(class="title") Last Name:
+                                span(ng-show="user.userData.lastname.value") {{user.userData.lastname.value}}
+                                span(ng-show="!user.userData.lastname.value") not set
+                            li
+                                span(class="title") Id:
+                                span(ng-show="user.userData.id") {{user.userData.id}}
+                                span(ng-show="!user.userData.id") not set
+                        div.actions
+                            button.delete-user(
+                                ng-click="deleteUser(user)"
+                                class="btn btn-danger btn-xs"
+                            )
+                                i(class="fa fa-trash")
+                p(ng-show="Gathering.users.length == 0") No users in Gathering, add users above.
+            //div#gathering-location
                 h3 Location
                 if typeof Gathering.location.name != "undefined"
                     span #{Gathering.location.name}
                 else
                     span No Gathering location set.
     section#games
+        h2 Available Games
+        ol
+            li(ng-repeat="game in Gathering.games") {{game.name.$t}}
     section#filters
