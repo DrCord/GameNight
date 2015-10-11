@@ -1,12 +1,17 @@
 doctype html
-html
+html(ng-app="gameNight")
   head
     title= title
     link(rel='stylesheet', href='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css')
     link(rel='stylesheet', href='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap-theme.min.css')
     link(rel='stylesheet', href='/stylesheets/style.css')
-  body
+  body(ng-controller="AppCtrl")
     block content
-    script(src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.0.3/jquery.min.js")
-    script(src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js")
-    script(src="/javascripts/main.js")
+    // Angular and libraries
+    script(src='/angular.js')
+    // Angular application parts
+    script(src='/javascripts/angular/controllers.js')
+    script(src='/javascripts/angular/app.js')
+    // Custom JS
+    //script(src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.4/jquery.min.js")
+    //script(src="/javascripts/main.js")

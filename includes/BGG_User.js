@@ -24,6 +24,12 @@ BGG_User.prototype.getUserCollection = function() {
         }).then(function(){
             return thisUser;
         })
+        .catch(
+            function(){
+                console.log('BGG_User.getUserCollection() - catch!!')
+                return thisUser;
+            }
+        )
     ;
 };
 BGG_User.prototype.getUserData = function() {
@@ -35,6 +41,12 @@ BGG_User.prototype.getUserData = function() {
         }).then(function(){
             return thisUser;
         })
+        .catch(
+            function(){
+                console.log('BGG_User.getUserData() - catch!!')
+                return thisUser;
+            }
+        )
     ;
 };
 BGG_User.prototype.update = function() {
@@ -44,6 +56,12 @@ BGG_User.prototype.update = function() {
         .then(
             function(){
                 return thisUser.getUserCollection();
+            }
+        )
+        .catch(
+            function(){
+                console.log('BGG_User.update() - catch!!')
+                return thisUser;
             }
         )
     ;

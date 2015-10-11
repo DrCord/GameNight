@@ -4,7 +4,6 @@ var favicon = require('serve-favicon');
 var logger = require('morgan');
 var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
-var bgg = require('bgg'); //https://www.npmjs.com/package/bgg
 
 var app = module.exports = express();
 Array.prototype.objectFind = function(obj) {
@@ -18,23 +17,37 @@ Array.prototype.objectFind = function(obj) {
         return true;
     });
 };
+Array.prototype.clean = function(deleteValue) {
+    // Extend Array prototype to clean every "falsy" value:
+    // undefined, null, 0, false, NaN and ''
+    // From: http://stackoverflow.com/a/281335/1291935
+    for (var i = 0; i < this.length; i++) {
+        if (this[i] == deleteValue) {
+            this.splice(i, 1);
+            i--;
+        }
+    }
+    return this;
+};
 // Setup data objects for each part of application
 var Gathering = require('./includes/Gathering.js');
 var Database = require('./includes/Database.js');
 var WebServer = {
     init: function(){
-        // view engine setup
+        // view engine setup - Jade
         app.set('views', path.join(__dirname, 'views'));
         app.set('view engine', 'jade');
-
-        // uncomment after placing your favicon in /public
+        // uncomment next line after placing your favicon in /public
         //app.use(favicon(path.join(__dirname, 'public', 'favicon.ico')));
         app.use(logger('dev'));
         app.use(bodyParser.json());
         app.use(bodyParser.urlencoded({ extended: false }));
         app.use(cookieParser());
+        // Allow the 'public' folder to be served to the front-end
         app.use(express.static(path.join(__dirname, 'public')));
-
+        // Allow the 'node_modules/angular' folder to be served to the front-end
+        app.use(express.static(path.join(__dirname, 'node_modules/angular')));
+        // Setup route for / for the index page
         app.get('/', function(req, res, next) {
             res.render('index',
                 {
@@ -43,32 +56,32 @@ var WebServer = {
                 }
             );
         });
-        //app.use('/', routes);
-        //app.use('/users', users);
-
         WebServer.setupApi();
-
         WebServer.create();
     },
     setupApi: function(){
         /** JSON API allows requests from front end to accomplish tasks */
+        app.get('/api/users', function(req, res){
+            console.log('/api/users backend route called');
+            return res.json({ users: Gathering.users });
+        });
         app.get('/api/add-user', function(req, res){
             console.log('/api/add-user backend route called');
-            if(typeof req.body.username != "undefined"){
-                console.log(req.body.username);
+            if(typeof req.query.username != "undefined"){
+                console.log(req.query.username);
+                Gathering.addBGG_User(req.query.username);
             }
             return res.json({ users: Gathering.users });
         });
-        /** examples */
-        /*app.get('/api/tags/allowed/get', function(req, res){
-            return res.json({ allowedTags: Rfid.allowedTags });
-        });
-        app.post('/api/tags/allowed/add', function(req, res){
-            if(typeof req.body.tagObj != "undefined"){
-                Rfid.saveAllowedTag(req.body.tagObj);
+        app.get('/api/delete-user', function(req, res){
+            console.log('/api/delete-user backend route called');
+            if(typeof req.query.username != "undefined"){
+                console.log(req.query.username);
+                // Find and delete user with username from Gathering.users
+                Gathering.deleteBGG_User(req.query.username);
             }
-            return res.json({ allowedTags: Rfid.allowedTags });
-        });*/
+            return res.json({ users: Gathering.users });
+        });
     },
     create: function(){
         // catch 404 and forward to error handler
@@ -111,19 +124,18 @@ var GameNight = {
         WebServer.init();
         Gathering.init();
     },
-    test: function(){
-        /* test function to setup data */
+    test: function(){ /** testing function to setup data */
         var testUser = Gathering.addBGG_User('drcord');
         var testUser2 = Gathering.addBGG_User('glittergamer');
-
-        testUser.update()
+        var testUser3 = Gathering.addBGG_User('test897974444');
+        // Example/test usage
+        testUser3.update()
             .then(function(userObj){
                 Gathering.updateBGG_User(userObj);
             })
         ;
     }
 };
-
 // Start application
 GameNight.init();
-GameNight.test();
+//GameNight.test();

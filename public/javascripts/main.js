@@ -1,5 +1,6 @@
 $(function(){
     // Prevent enter from submitting the form and reloading the page
+    // Form is submitted via ajax to backend API instead
     $(window).keydown(function(event){
         if(event.keyCode == 13) {
             event.preventDefault();
@@ -23,10 +24,19 @@ $(function(){
         if(username != ''){
             var parameters = { username: username };
             $.get('/api/add-user', parameters, function(data) {
-                // TODO: display returned user(s) in page
-                //$('#results').html(data);
-                console.log('addUser function - front-end: data:');
-                console.log(data);
+                // Display returned user(s) in page
+                /*var results = data;
+                results.msg = '';
+                if(results['users'].length == 0){
+                    results.msg = 'No users in Gathering, add users above.';
+                }
+                if (results['users'] instanceof Array) {
+                    $gatheringUsers.html(dataTemplate({ gatheringUsers: results }));
+                } else {
+                    $gatheringUsers.html(results);
+                };*/
+                console.log('addUser function - front-end: results:');
+                console.log(results);
             });
         }
         else{

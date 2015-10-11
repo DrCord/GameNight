@@ -11,16 +11,50 @@ Gathering.addBGG_User = function(username){
 };
 Gathering.updateBGG_User = function(userObj){
     console.log('Gathering.updateBGG_User() called');
-    var userFound = Gathering.users.objectFind({username: userObj.username});
+    if(userFound = Gathering.findBGG_User(userObj)){
+        return userFound['userMatch'];
+    }
+    return false;
+};
+/**
+ *
+ * @param userObj
+ * @returns {*} numeric index (including 0) of deleted item or false if user not found
+ */
+Gathering.deleteBGG_User = function(userObj){
+    console.log('Gathering.deleteBGG_User() called');
+    if(userFound = Gathering.findBGG_User(userObj)){
+        delete Gathering.users[userFound['indexMatch']];
+        // Remove the now empty null placeholders from the users array
+        Gathering.users.clean(undefined);
+        return userFound['indexMatch'];
+    }
+    return false;
+};
+/**
+ * @param userObj - accepts either a user object or a username
+ * @returns {indexMatch: (int), userMatch: (object)}
+ */
+Gathering.findBGG_User = function(userObj){
+    console.log('Gathering.findBGG_User() called');
+    // Allow either a username or a user object
+    var username = userObj;
+    if(typeof userObj == "object"){
+        username = userObj.username;
+    }
+    var userFound = Gathering.users.objectFind({username: username});
     if(userFound && userFound.length){
         console.log('userFound');
         console.log(userFound);
         for(var i=0; i < Gathering.users.length; i++){
-            if(Gathering.users[i]['username'] == userObj.username){
-                Gathering.users[i] = userObj;
-                console.log('Update User - Gathering.users[' + i + ']');
+            if(Gathering.users[i]['username'] == username){
+                console.log('Find User - Gathering.users[' + i + ']');
                 console.log(Gathering.users[i]);
-                return true;
+                var output = {
+                    indexMatch: i,
+                    userMatch: Gathering.users[i]
+                };
+                return output;
             }
         }
     }
