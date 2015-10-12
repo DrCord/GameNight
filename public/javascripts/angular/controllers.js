@@ -49,7 +49,7 @@ angular.module('gameNight.controllers', []).
                     success(function( data ) {
                         console.log('AppCtrl.deleteUser function - front-end: data:');
                         console.log(data);
-                        $scope.Gathering.users = data.users;
+                        $scope.Gathering = data.Gathering;
                     })
                 ;
             }

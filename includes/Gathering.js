@@ -61,6 +61,11 @@ Gathering.deleteBGG_User = function(userObj){
         delete Gathering.users[userFound['indexMatch']];
         // Remove the now empty null placeholders from the users array
         Gathering.users.clean(undefined);
+        // Remove user's games from Gathering.games
+        Gathering.games = [];
+        for(var i =0; i < Gathering.users.length; i++){
+            Gathering.updateAvailableGames(Gathering.users[i]);
+        }
         return userFound['indexMatch'];
     }
     return false;

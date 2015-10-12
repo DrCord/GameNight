@@ -88,7 +88,7 @@ var WebServer = {
                 console.log(req.body.username);
                 // Find and delete user with username from Gathering.users
                 Gathering.deleteBGG_User(req.body.username);
-                return res.json({ users: Gathering.users });
+                return res.json({ Gathering: Gathering });
             }
         });
     },

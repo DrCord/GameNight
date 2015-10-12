@@ -5,7 +5,10 @@ block content
         h2 Gathering
         div#gathering-add-user
             h2 Enter username to add to Gathering
-            form(name="add-user" ng-submit="addUser(addUserInputUsername)")
+            form(
+                name="add-user"
+                ng-submit="addUser(addUserInputUsername)"
+            )
                 input#add-user-input(
                     type="text"
                     name="add-user"
@@ -26,27 +29,29 @@ block content
                     li(ng-repeat="user in Gathering.users")
                         ul.user
                             li
-                                span(class="title") Username:
-                                span(ng-show="user.username") {{user.username}}
+                                span(
+                                    class="username"
+                                    ng-show="user.username"
+                                ) {{user.username}}
                                 span(ng-show="!user.username") not set
-                            li
+                                span.actions
+                                    button.delete-user(
+                                        ng-click="deleteUser(user)"
+                                        class="btn btn-danger btn-xs"
+                                    )
+                                        i(class="fa fa-trash")
+                            //li
                                 span(class="title") First Name:
                                 span(ng-show="user.userData.firstname.value") {{user.userData.firstname.value}}
                                 span(ng-show="!user.userData.firstname.value") not set
-                            li
+                            //li
                                 span(class="title") Last Name:
                                 span(ng-show="user.userData.lastname.value") {{user.userData.lastname.value}}
                                 span(ng-show="!user.userData.lastname.value") not set
-                            li
+                            //li
                                 span(class="title") Id:
                                 span(ng-show="user.userData.id") {{user.userData.id}}
                                 span(ng-show="!user.userData.id") not set
-                        div.actions
-                            button.delete-user(
-                                ng-click="deleteUser(user)"
-                                class="btn btn-danger btn-xs"
-                            )
-                                i(class="fa fa-trash")
                 p(ng-show="Gathering.users.length == 0") No users in Gathering, add users above.
             //div#gathering-location
                 h3 Location
@@ -56,6 +61,10 @@ block content
                     span No Gathering location set.
     section#games
         h2 Available Games
-        ol
-            li(ng-repeat="game in Gathering.games") {{game.name.$t}}
+        ol(ng-show="Gathering.games.length" ng-cloak)
+            li(
+                ng-repeat="game in Gathering.games"
+                ng-bind-html="game.name.$t | html"
+            )
+        p(ng-show="Gathering.games.length == 0") No games available for Gathering, add more users above.
     section#filters
