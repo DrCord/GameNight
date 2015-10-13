@@ -9,31 +9,29 @@ block content
                 name="add-user"
                 ng-submit="addUser(addUserInputUsername)"
             )
-                input#add-user-input(
+                input#add-user-input.form-control(
                     type="text"
                     name="add-user"
                     ng-model="addUserInputUsername"
                     required
                     ng-required
+                    placeholder="enter username"
                 )
-                input#add-user-button(
+                button#add-user-button(
                     type="button"
-                    value="Add User"
                     class="btn btn-sm btn-success"
                     ng-click="addUser(addUserInputUsername)"
-                )
+                ) Add User
+                    i(class="fa fa-user-plus")
         div#gathering-info(ng-cloak ng-show="ready")
             div#gathering-users
                 h3 Users
                 ol(ng-show="Gathering.users.length")
                     li(ng-repeat="user in Gathering.users")
-                        ul.user
+                        ul.user(ng-class="{'bgg-user' : user.userData.id}")
                             li
-                                span(
-                                    class="username"
-                                    ng-show="user.username"
-                                ) {{user.username}}
-                                span(ng-show="!user.username") not set
+                                span(class="username") {{user.username}}
+                                    i(class="fa" ng-class="{'fa-user' : user.userData.id, 'fa-user-secret' : !user.userData.id}")
                                 span.actions
                                     button.delete-user(
                                         ng-click="deleteUser(user)"
@@ -59,12 +57,19 @@ block content
                     span #{Gathering.location.name}
                 else
                     span No Gathering location set.
+            div#gathering-legend
+                h3 Legend
+                ul
+                    li
+                        i(class="fa fa-user")
+                        span Users with a BGG account
+                    li
+                        i(class="fa fa-user-secret")
+                        span Users without no BGG account
     section#games
         h2 Available Games
         ol(ng-show="Gathering.games.length" ng-cloak)
-            li(
-                ng-repeat="game in Gathering.games"
-                ng-bind-html="game.name.$t | html"
-            )
+            //li(ng-repeat="game in Gathering.games" ng-bind-html="game.name.$t | html")
+            li(ng-repeat="game in Gathering.games") {{game.name.value}}
         p(ng-show="Gathering.games.length == 0") No games available for Gathering, add more users above.
     section#filters

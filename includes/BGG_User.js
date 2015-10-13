@@ -26,7 +26,7 @@ BGG_User.prototype.getUserCollection = function() {
         })
         .catch(
             function(){
-                console.log('BGG_User.getUserCollection() - catch!!')
+                console.log('BGG_User.getUserCollection() - catch!!');
                 return thisUser;
             }
         )

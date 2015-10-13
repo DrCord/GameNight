@@ -11,6 +11,10 @@ a {
     font-weight: bold;
     padding-right: 5px;
 }
+.form-control{
+    display: inline-block;
+    width: auto;
+}
 #gathering-users ol ul{
     list-style: none;
     margin-bottom: 10px;
@@ -19,7 +23,37 @@ a {
 #gathering-add-user h2{
     font-size: 16px;
 }
-
+#add-user-button{
+    margin-left: 10px;
+}
+#gathering-users .user{
+    font-size: 16px;
+}
+#gathering-users .user .username{
+    opacity: 0.7;
+}
+#gathering-users .user.bgg-user .username{
+    opacity: 1;
+}
+#gathering-users .user .username i{
+    padding-left: 7px;
+}
+#gathering-users .user .actions button{
+    font-size: 10px;
+}
+#gathering-users .user .actions i{
+    font-size: 11px;
+}
+#gathering-legend h3{
+    font-size: 16px;
+}
+#gathering-legend ul{
+    list-style: none;
+}
+#gathering-legend ul li i:after{
+    content: "-";
+    padding: 0 5px;
+}
 /*
     From: http://stackoverflow.com/a/13276214/1291935
   Allow angular.js to be loaded in body, hiding cloaked elements until

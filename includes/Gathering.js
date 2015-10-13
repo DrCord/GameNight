@@ -1,4 +1,6 @@
+var bgg = require('bgg'); //https://www.npmjs.com/package/bgg
 var BGG_User = require('./BGG_User.js');
+var Game = require('./Game.js');
 
 var Gathering = Gathering || {};
 Gathering.compare = {
@@ -40,16 +42,99 @@ Gathering.addBGG_User = function(username){
 Gathering.updateBGG_User = function(userObj){
     console.log('Gathering.updateBGG_User() called');
     if(userFound = Gathering.findBGG_User(userObj)){
-        Gathering.updateAvailableGames(userFound['userMatch']);
         return userFound['userMatch'];
     }
     return false;
 };
 Gathering.updateAvailableGames = function(userObj){
+    // TODO: loading icon while updating
     console.log('Gathering.updateAvailableGames() called');
-    Gathering.games = Gathering.games.concat(userObj.collection);
-    // Remove duplicates
+    // Reset games if no userObj supplied
+    if(typeof userObj == "undefined"){
+        // Remove all games from Gathering.games
+        Gathering.games = [];
+        // Refill games from existing users
+        for(var m=0; m < Gathering.users.length; m++){
+            for(var i=0; i < Gathering.users[m].collection.length; i++){
+                Gathering.games.push(new Game(Gathering.users[m].collection[i].objectid));
+            }
+        }
+    }
+    else{ // Add userObj games to pool of available games
+        for(var i=0; i < userObj.collection.length; i++){
+            Gathering.games.push(new Game(userObj.collection[i].objectid));
+        }
+    }
+    // Remove duplicate games
     Gathering.compare.unique(Gathering.games, Gathering.compare.games);
+    //if(Gathering.games.length){
+        // If needed assemble string for multiple 'thing' API request
+        var gameIdsString = 0; // Use 0 if no games
+        if(Gathering.games.length > 1){
+            var gameIds = [];
+            for(var i=0; i < Gathering.games.length; i++){
+                gameIds.push(Gathering.games[i].objectid);
+            }
+            gameIdsString = [gameIds.join()];
+        }
+        else if(Gathering.games.length == 1){ // Just use single game id
+            gameIdsString = Gathering.games[0].objectid;
+        }
+        // Return promise
+        return bgg('thing', {id: gameIdsString})
+            .then(function(results){
+                console.log('Gathering.updateAvailableGames() - results');
+                console.log(results);
+                if(typeof results['items'] != "undefined" && typeof results['items']['item'] != "undefined"){
+                    // API returns an array of objects or a single object (not in an array!)
+                    if(Array.isArray(results['items']['item'])){
+                        for(var i=0; i < results['items']['item'].length; i++){
+                            var gameObj = results['items']['item'][i];
+                            var gameFound = Gathering.findGame(gameObj);
+                            //console.log('gameFound');
+                            //console.log(gameFound);
+                            if(gameFound){
+                                for(var attrname in gameObj){
+                                    // Normalize name
+                                    if(attrname == 'name'){
+                                        Gathering.games[gameFound.indexMatch][attrname] = gameObj[attrname];
+                                        if(Array.isArray(Gathering.games[gameFound.indexMatch]['name'])){
+                                            Gathering.games[gameFound.indexMatch]['name'] = {};
+                                            Gathering.games[gameFound.indexMatch]['name']['value'] = gameObj['name'][0]['value'];
+                                        }
+                                        else{
+                                            Gathering.games[gameFound.indexMatch]['name'] = {};
+                                            Gathering.games[gameFound.indexMatch]['name']['value'] = gameObj['name']['value'];
+                                        }
+                                    }
+                                    else{
+                                        Gathering.games[gameFound.indexMatch][attrname] = gameObj[attrname];
+                                    }
+                                }
+                                console.log('Gathering.games[' + gameFound.indexMatch + ']');
+                                console.log(Gathering.games[gameFound.indexMatch]);
+                            }
+                        }
+                    }
+                    else{ // is Object from single result
+                        var gameObj = results['items']['item'];
+                        if(gameFound = Gathering.findGame(gameObj)){
+                            for(var attrname in gameObj){
+                                Gathering.games[gameFound.indexMatch][attrname] = gameObj[attrname];
+                            }
+                        }
+                    }
+                }
+            })
+            .then(function(){
+                return true;
+            })
+            .catch(function(error){
+                console.log('Gathering.updateAvailableGames() - catch!!');
+                console.log(error);
+            })
+        ;
+    //}
 };
 /**
  * @param userObj
@@ -61,11 +146,6 @@ Gathering.deleteBGG_User = function(userObj){
         delete Gathering.users[userFound['indexMatch']];
         // Remove the now empty null placeholders from the users array
         Gathering.users.clean(undefined);
-        // Remove user's games from Gathering.games
-        Gathering.games = [];
-        for(var i =0; i < Gathering.users.length; i++){
-            Gathering.updateAvailableGames(Gathering.users[i]);
-        }
         return userFound['indexMatch'];
     }
     return false;
@@ -83,15 +163,42 @@ Gathering.findBGG_User = function(userObj){
     }
     var userFound = Gathering.users.objectFind({username: username});
     if(userFound && userFound.length){
-        //console.log('userFound');
-        //console.log(userFound);
+        console.log('userFound');
+        console.log(userFound);
         for(var i=0; i < Gathering.users.length; i++){
             if(Gathering.users[i]['username'] == username){
-                //console.log('Find User - Gathering.users[' + i + ']');
-                //console.log(Gathering.users[i]);
+                console.log('Find User - Gathering.users[' + i + ']');
+                console.log(Gathering.users[i]);
                 var output = {
                     indexMatch: i,
                     userMatch: Gathering.users[i]
+                };
+                return output;
+            }
+        }
+    }
+    return false;
+};
+/**
+ * @param gameObj - accepts either a game object or a game id
+ * @returns {indexMatch: (int), gameMatch: (object)}
+ */
+Gathering.findGame = function(gameObj){
+    console.log('Gathering.findGame() called');
+    // Allow either a game object or a game id
+    var gameId = gameObj;
+    if(typeof gameObj == "object"){
+        gameId = gameObj.id;
+    }
+    var gameFound = Gathering.games.objectFind({objectid: gameId});
+    if(gameFound && gameFound.length){
+        for(var i=0; i < Gathering.games.length; i++){
+            if(Gathering.games[i]['objectid'] == gameId){
+                //console.log('Gathering.findGame() - Gathering.games[' + i + ']');
+                //console.log(Gathering.games[i]);
+                var output = {
+                    indexMatch: i,
+                    gameMatch: Gathering.games[i]
                 };
                 return output;
             }

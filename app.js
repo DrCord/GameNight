@@ -72,10 +72,13 @@ var WebServer = {
                 user.update()
                     .then(function(userObj){
                         Gathering.updateBGG_User(userObj);
+                        Gathering.updateAvailableGames(userObj)
+                            .then(function(){
+                                return res.json({ Gathering: Gathering });
+                            })
+                        ;
                     })
-                    .then(function(){
-                        return res.json({ Gathering: Gathering });
-                    })
+
                 ;
             }
             else{
@@ -88,7 +91,11 @@ var WebServer = {
                 console.log(req.body.username);
                 // Find and delete user with username from Gathering.users
                 Gathering.deleteBGG_User(req.body.username);
-                return res.json({ Gathering: Gathering });
+                Gathering.updateAvailableGames()
+                    .then(function(){
+                        return res.json({ Gathering: Gathering });
+                    })
+                ;
             }
         });
     },
