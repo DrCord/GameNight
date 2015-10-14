@@ -53,18 +53,6 @@ block content
                                             data-ng-disabled="loading"
                                         )
                                             i(class="fa fa-remove")
-                                //li
-                                    span(class="title") First Name:
-                                    span(data-ng-show="user.userData.firstname.value") {{user.userData.firstname.value}}
-                                    span(data-ng-show="!user.userData.firstname.value") not set
-                                //li
-                                    span(class="title") Last Name:
-                                    span(data-ng-show="user.userData.lastname.value") {{user.userData.lastname.value}}
-                                    span(data-ng-show="!user.userData.lastname.value") not set
-                                //li
-                                    span(class="title") Id:
-                                    span(data-ng-show="user.userData.id") {{user.userData.id}}
-                                    span(data-ng-show="!user.userData.id") not set
                     p(data-ng-show="Gathering.users.length == 0") No users in Gathering, add users above.
                 //div#gathering-location
                     h3 Location
