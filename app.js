@@ -47,6 +47,8 @@ var WebServer = {
         app.use(express.static(path.join(__dirname, 'public')));
         // Allow the 'node_modules/angular' folder to be served to the front-end
         app.use(express.static(path.join(__dirname, 'node_modules/angular')));
+        // Allow the 'node_modules/angular-animate' folder to be served to the front-end
+        app.use(express.static(path.join(__dirname, 'node_modules/angular-animate')));
         // Setup route for / for the index page
         app.get('/', function(req, res, next) {
             res.render('index', { Gathering: Gathering });
@@ -57,17 +59,17 @@ var WebServer = {
     setupApi: function(){
         /** JSON API allows requests from front end to accomplish tasks */
         app.get('/api/gathering', function(req, res){
-            console.log('/api/gathering backend route called');
+            //console.log('/api/gathering backend route called');
             return res.json({ Gathering: Gathering });
         });
         app.get('/api/users', function(req, res){
-            console.log('/api/users backend route called');
-            return res.json({ users: Gathering.users });
+            //console.log('/api/users backend route called');
+            return res.json({ Gathering: Gathering });
         });
         app.post('/api/add-user', function(req, res){
-            console.log('/api/add-user backend route called');
+            //console.log('/api/add-user backend route called');
             if(typeof req.body.username != "undefined"){
-                console.log(req.body.username);
+                //console.log(req.body.username);
                 var user = Gathering.addBGG_User(req.body.username);
                 user.update()
                     .then(function(userObj){
@@ -86,9 +88,9 @@ var WebServer = {
             }
         });
         app.post('/api/delete-user', function(req, res){
-            console.log('/api/delete-user backend route called');
+            //console.log('/api/delete-user backend route called');
             if(typeof req.body.username != "undefined"){
-                console.log(req.body.username);
+                //console.log(req.body.username);
                 // Find and delete user with username from Gathering.users
                 Gathering.deleteBGG_User(req.body.username);
                 Gathering.updateAvailableGames()

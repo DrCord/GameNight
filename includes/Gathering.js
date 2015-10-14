@@ -31,6 +31,7 @@ Gathering.compare = {
     }
 };
 Gathering.addBGG_User = function(username){
+    //console.log('Gathering.addBGG_User() called');
     var newUser = new BGG_User(username);
     Gathering.users.push(newUser);
     Gathering.compare.unique(Gathering.users, Gathering.compare.users);
@@ -40,15 +41,14 @@ Gathering.addBGG_User = function(username){
     return false;
 };
 Gathering.updateBGG_User = function(userObj){
-    console.log('Gathering.updateBGG_User() called');
+    //console.log('Gathering.updateBGG_User() called');
     if(userFound = Gathering.findBGG_User(userObj)){
         return userFound['userMatch'];
     }
     return false;
 };
 Gathering.updateAvailableGames = function(userObj){
-    // TODO: loading icon while updating
-    console.log('Gathering.updateAvailableGames() called');
+    //console.log('Gathering.updateAvailableGames() called');
     // Reset games if no userObj supplied
     if(typeof userObj == "undefined"){
         // Remove all games from Gathering.games
@@ -83,8 +83,8 @@ Gathering.updateAvailableGames = function(userObj){
         // Return promise
         return bgg('thing', {id: gameIdsString})
             .then(function(results){
-                console.log('Gathering.updateAvailableGames() - results');
-                console.log(results);
+                //console.log('Gathering.updateAvailableGames() - results');
+                //console.log(results);
                 if(typeof results['items'] != "undefined" && typeof results['items']['item'] != "undefined"){
                     // API returns an array of objects or a single object (not in an array!)
                     if(Array.isArray(results['items']['item'])){
@@ -111,8 +111,8 @@ Gathering.updateAvailableGames = function(userObj){
                                         Gathering.games[gameFound.indexMatch][attrname] = gameObj[attrname];
                                     }
                                 }
-                                console.log('Gathering.games[' + gameFound.indexMatch + ']');
-                                console.log(Gathering.games[gameFound.indexMatch]);
+                                //console.log('Gathering.games[' + gameFound.indexMatch + ']');
+                                //console.log(Gathering.games[gameFound.indexMatch]);
                             }
                         }
                     }
@@ -141,7 +141,7 @@ Gathering.updateAvailableGames = function(userObj){
  * @returns {*} numeric index (including 0) of deleted item or false if user not found
  */
 Gathering.deleteBGG_User = function(userObj){
-    console.log('Gathering.deleteBGG_User() called');
+    //console.log('Gathering.deleteBGG_User() called');
     if(userFound = Gathering.findBGG_User(userObj)){
         delete Gathering.users[userFound['indexMatch']];
         // Remove the now empty null placeholders from the users array
@@ -155,7 +155,7 @@ Gathering.deleteBGG_User = function(userObj){
  * @returns {indexMatch: (int), userMatch: (object)}
  */
 Gathering.findBGG_User = function(userObj){
-    console.log('Gathering.findBGG_User() called');
+    //console.log('Gathering.findBGG_User() called');
     // Allow either a username or a user object
     var username = userObj;
     if(typeof userObj == "object"){
@@ -163,12 +163,12 @@ Gathering.findBGG_User = function(userObj){
     }
     var userFound = Gathering.users.objectFind({username: username});
     if(userFound && userFound.length){
-        console.log('userFound');
-        console.log(userFound);
+        //console.log('userFound');
+        //console.log(userFound);
         for(var i=0; i < Gathering.users.length; i++){
             if(Gathering.users[i]['username'] == username){
-                console.log('Find User - Gathering.users[' + i + ']');
-                console.log(Gathering.users[i]);
+                //console.log('Find User - Gathering.users[' + i + ']');
+                //console.log(Gathering.users[i]);
                 var output = {
                     indexMatch: i,
                     userMatch: Gathering.users[i]
@@ -184,7 +184,7 @@ Gathering.findBGG_User = function(userObj){
  * @returns {indexMatch: (int), gameMatch: (object)}
  */
 Gathering.findGame = function(gameObj){
-    console.log('Gathering.findGame() called');
+    //console.log('Gathering.findGame() called');
     // Allow either a game object or a game id
     var gameId = gameObj;
     if(typeof gameObj == "object"){

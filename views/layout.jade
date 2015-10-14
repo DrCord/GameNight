@@ -7,13 +7,17 @@ html(ng-app="gameNight")
     link(rel='stylesheet', href='https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css')
     link(rel='stylesheet', href='/stylesheets/style.css')
   body(ng-controller="AppCtrl")
+    header(ng-class="{'loading': loading}")
+        h1 GameNight
     block content
+    section#loading.centered
+        p(class="text-center" ng-show="loading")
+            i(class="fa fa-spinner fa-spin")
     // Angular and libraries
     script(src='/angular.js')
+    script(src='/angular-animate.min.js')
+    script(src='/javascripts/ui-bootstrap/ui-bootstrap-tpls-0.14.2.min.js')
     // Angular application parts
     script(src='/javascripts/angular/controllers.js')
     script(src='/javascripts/angular/filters.js')
     script(src='/javascripts/angular/app.js')
-    // Custom JS - to remove - just remains as reminder
-    //script(src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.4/jquery.min.js")
-    //script(src="/javascripts/main.js")

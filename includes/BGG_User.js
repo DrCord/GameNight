@@ -11,11 +11,11 @@ var BGG_User = function(username){
 BGG_User.prototype = Object.create(User.prototype);
 // Modify functions from User constructor
 BGG_User.prototype.getUserCollection = function() {
-    console.log('BGG_User.getUserCollection() called');
+    //console.log('BGG_User.getUserCollection() called');
     var thisUser = this;
-    return bgg('collection', {username: thisUser.username})
+    return bgg('collection', {username: thisUser.username, own: 1})
         .then(function(results){
-            if(typeof results['items']['item'] != "undefined"){
+            if(typeof results != "undefined" && typeof results['items'] != "undefined" && typeof results['items']['item'] != "undefined"){
                 thisUser.collection = results['items']['item'];
             }
             else{
@@ -24,16 +24,15 @@ BGG_User.prototype.getUserCollection = function() {
         }).then(function(){
             return thisUser;
         })
-        .catch(
-            function(){
-                console.log('BGG_User.getUserCollection() - catch!!');
-                return thisUser;
-            }
-        )
+        .catch(function(error){
+            console.log('BGG_User.getUserCollection() - catch!!');
+            console.log(error);
+            return thisUser;
+        })
     ;
 };
 BGG_User.prototype.getUserData = function() {
-    console.log('BGG_User.getUserData() called');
+    //console.log('BGG_User.getUserData() called');
     var thisUser = this;
     return bgg('user', {name: thisUser.username})
         .then(function(results){
@@ -41,16 +40,15 @@ BGG_User.prototype.getUserData = function() {
         }).then(function(){
             return thisUser;
         })
-        .catch(
-            function(){
-                console.log('BGG_User.getUserData() - catch!!')
-                return thisUser;
-            }
-        )
+        .catch(function(error){
+            console.log('BGG_User.getUserData() - catch!!');
+            console.log(error);
+            return thisUser;
+        })
     ;
 };
 BGG_User.prototype.update = function() {
-    console.log('BGG_User.update() called');
+    //console.log('BGG_User.update() called');
     var thisUser = this;
     return thisUser.getUserData()
         .then(
@@ -58,12 +56,11 @@ BGG_User.prototype.update = function() {
                 return thisUser.getUserCollection();
             }
         )
-        .catch(
-            function(){
-                console.log('BGG_User.update() - catch!!')
-                return thisUser;
-            }
-        )
+        .catch(function(error){
+            console.log('BGG_User.update() - catch!!');
+            console.log(error);
+            return thisUser;
+        })
     ;
 };
 // Set BGG_User constructor to itself

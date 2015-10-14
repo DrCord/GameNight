@@ -1,75 +1,237 @@
 extends layout
 block content
-    h1 GameNight
-    section#gathering
-        h2 Gathering
-        div#gathering-add-user
-            h2 Enter username to add to Gathering
-            form(
-                name="add-user"
-                ng-submit="addUser(addUserInputUsername)"
-            )
-                input#add-user-input.form-control(
-                    type="text"
+    div#content.col-md-9(data-ng-class="{'loading': loading}")
+        section#gathering
+            h2 Gathering
+            div#gathering-add-user
+                h2 Enter username to add to Gathering
+                form(
                     name="add-user"
-                    ng-model="addUserInputUsername"
-                    required
-                    ng-required
-                    placeholder="enter username"
+                    data-ng-submit="addUser(addUserInputUsername)"
                 )
-                button#add-user-button(
-                    type="button"
-                    class="btn btn-sm btn-success"
-                    ng-click="addUser(addUserInputUsername)"
-                ) Add User
-                    i(class="fa fa-user-plus")
-        div#gathering-info(ng-cloak ng-show="ready")
-            div#gathering-users
-                h3 Users
-                ol(ng-show="Gathering.users.length")
-                    li(ng-repeat="user in Gathering.users")
-                        ul.user(ng-class="{'bgg-user' : user.userData.id}")
-                            li
-                                span(class="username") {{user.username}}
-                                    i(class="fa" ng-class="{'fa-user' : user.userData.id, 'fa-user-secret' : !user.userData.id}")
-                                span.actions
-                                    button.delete-user(
-                                        ng-click="deleteUser(user)"
-                                        class="btn btn-danger btn-xs"
+                    input#add-user-input.form-control(
+                        type="text"
+                        name="add-user"
+                        data-ng-model="addUserInputUsername"
+                        required
+                        data-ng-required
+                        placeholder="enter username"
+                    )
+                    button#add-user-button(
+                        type="button"
+                        class="btn btn-sm btn-success"
+                        data-ng-click="addUser(addUserInputUsername)"
+                        data-ng-disabled="loading"
+                    ) Add User
+                        i(class="fa fa-plus")
+            div#gathering-info(
+                ng-cloak
+                data-ng-show="ready"
+            )
+                div#gathering-users
+                    h3 Users
+                    ol(data-ng-if="Gathering.users.length")
+                        li(data-ng-repeat="user in Gathering.users")
+                            ul.user(data-ng-class="{'bgg-user' : user.userData.id}")
+                                li
+                                    a.username(
+                                        data-uib-tooltip-template="'userTooltipTemplate.html'"
+                                        data-tooltip-placement="right"
+                                        href="http://www.boardgamegeek.com/user/{{user.username}}"
+                                        target="_blank"
+                                        data-ng-show="user.userData.id"
+                                    ) {{user.username}}
+                                    span.username(data-ng-show="!user.userData.id") {{user.username}}
+                                    i(
+                                        class="fa"
+                                        data-ng-class="{'fa-user' : user.userData.id, 'fa-user-secret' : !user.userData.id}"
                                     )
-                                        i(class="fa fa-trash")
-                            //li
-                                span(class="title") First Name:
-                                span(ng-show="user.userData.firstname.value") {{user.userData.firstname.value}}
-                                span(ng-show="!user.userData.firstname.value") not set
-                            //li
-                                span(class="title") Last Name:
-                                span(ng-show="user.userData.lastname.value") {{user.userData.lastname.value}}
-                                span(ng-show="!user.userData.lastname.value") not set
-                            //li
-                                span(class="title") Id:
-                                span(ng-show="user.userData.id") {{user.userData.id}}
-                                span(ng-show="!user.userData.id") not set
-                p(ng-show="Gathering.users.length == 0") No users in Gathering, add users above.
-            //div#gathering-location
-                h3 Location
-                if typeof Gathering.location.name != "undefined"
-                    span #{Gathering.location.name}
-                else
-                    span No Gathering location set.
-            div#gathering-legend
-                h3 Legend
-                ul
-                    li
-                        i(class="fa fa-user")
-                        span Users with a BGG account
-                    li
-                        i(class="fa fa-user-secret")
-                        span Users without no BGG account
-    section#games
-        h2 Available Games
-        ol(ng-show="Gathering.games.length" ng-cloak)
-            //li(ng-repeat="game in Gathering.games" ng-bind-html="game.name.$t | html")
-            li(ng-repeat="game in Gathering.games") {{game.name.value}}
-        p(ng-show="Gathering.games.length == 0") No games available for Gathering, add more users above.
-    section#filters
+                                    span.actions
+                                        button.delete-user(
+                                            data-ng-click="deleteUser(user)"
+                                            class="btn btn-danger btn-xs"
+                                            data-ng-disabled="loading"
+                                        )
+                                            i(class="fa fa-remove")
+                                //li
+                                    span(class="title") First Name:
+                                    span(data-ng-show="user.userData.firstname.value") {{user.userData.firstname.value}}
+                                    span(data-ng-show="!user.userData.firstname.value") not set
+                                //li
+                                    span(class="title") Last Name:
+                                    span(data-ng-show="user.userData.lastname.value") {{user.userData.lastname.value}}
+                                    span(data-ng-show="!user.userData.lastname.value") not set
+                                //li
+                                    span(class="title") Id:
+                                    span(data-ng-show="user.userData.id") {{user.userData.id}}
+                                    span(data-ng-show="!user.userData.id") not set
+                    p(data-ng-show="Gathering.users.length == 0") No users in Gathering, add users above.
+                //div#gathering-location
+                    h3 Location
+                    if typeof Gathering.location.name != "undefined"
+                        span #{Gathering.location.name}
+                    else
+                        span No Gathering location set.
+        section#games
+            h2 Available Games
+            table#available-games.table.table-striped.table-bordered.table-hover.table-condensed(
+                data-ng-show="Gathering.games.length"
+                ng-cloak
+            )
+                tr
+                    th.counter
+                    th.name Name
+                tr(data-ng-repeat="game in Gathering.games | filter:search | filter:gameType:strict | playingTimeBetween:customFilters.playingTime.max:customFilters.playingTime.min | playersBetween:customFilters.players.max:customFilters.players.min | orderBy:sortField:sortReverse")
+                    td.counter {{$index+1}}
+                    td.name
+                        h4(
+                            data-ng-click="showDetails = !showDetails"
+                            title="Click for more information"
+                            data-uib-tooltip="{{gameTooltipText(showDetails)}}"
+                            data-tooltip-placement="right"
+                        ) {{game.name.value}}
+                        ul.details(data-ng-show="showDetails")
+                            li.image
+                                img.thumbnail(data-ng-src="{{game.thumbnail}}")
+                            li.type
+                                label Type
+                                span.value {{game.type}}
+                            li.players-min
+                                label Min Players
+                                span.value {{game.minplayers.value}}
+                            li.players-max
+                                label Max Players
+                                span.value {{game.maxplayers.value}}
+                            li.playTime
+                                label Play Time
+                                span.value {{game.playingtime.value}} Minutes
+                            li.bgg-link
+                                a(
+                                    href="{{game.url}}"
+                                    target="_blank"
+                                ) View on BoardGameGeek
+            p(data-ng-show="Gathering.games.length == 0") No games available for Gathering, add more users above.
+    div#sidebar.col-md-3(data-ng-class="{'loading': loading}")
+        section#filters
+            h3 Filters
+            div
+                label Name
+                input.form-control(
+                    data-ng-model="search.name.value"
+                )
+            div
+                label Type
+                select.form-control(
+                    data-ng-model="gameType"
+                    data-ng-change="searchChangeType(gameType)"
+                )
+                    option(
+                        value=""
+                        data-ng-selected
+                    ) All
+                    option(value="boardgame") Board game
+                    option(value="boardgameexpansion") Board game expansion
+            div
+                label Minimum Playing Time (in minutes)
+                input.form-control(
+                    type="number"
+                    data-ng-model="customFilters.playingTime.min"
+                    min="0"
+                    step="5"
+                )
+                label Maximum Playing Time (in minutes)
+                input.form-control(
+                    type="number"
+                    data-ng-model="customFilters.playingTime.max"
+                    min="0"
+                    step="5"
+                )
+            div
+                label Minimum Players
+                input.form-control(
+                    type="number"
+                    data-ng-model="customFilters.players.min"
+                    min="0"
+                )
+                label Maximum Players
+                input.form-control(
+                    type="number"
+                    data-ng-model="customFilters.players.max"
+                    min="0"
+                )
+        section#sort
+            h3 Sort Options
+            div
+                h4 Sort Field
+                div
+                    input(
+                        type="radio"
+                        name="sortField"
+                        data-ng-model="sortField"
+                        value="name.value"
+                    )
+                    label Name
+                div
+                    input(
+                        type="radio"
+                        name="sortField"
+                        data-ng-model="sortField"
+                        value="minplayers.value"
+                    )
+                    label Minimum Number of Players
+                div
+                    input(
+                        type="radio"
+                        name="sortField"
+                        data-ng-model="sortField"
+                        value="maxplayers.value"
+                    )
+                    label Maximum Number of Players
+                div
+                    input(
+                        type="radio"
+                        name="sortField"
+                        data-ng-model="sortField"
+                        value="playingtime.value"
+                    )
+                    label Playing Time
+            div
+                h4 Sort Order
+                div
+                    input(
+                        type="radio"
+                        name="sortReverse"
+                        value="0"
+                        data-ng-model="sortReverse"
+                        data-ng-click="sortReverse = false;"
+                    )
+                    label Ascending
+                div
+                    input(
+                        type="radio"
+                        name="sortReverse"
+                        value="1"
+                        data-ng-model="sortReverse"
+                        data-ng-click="sortReverse = true;"
+                    )
+                    label Descending
+        section#gathering-legend
+            h3 Legend
+            ul
+                li
+                    i(class="fa fa-user")
+                    span User with a BGG account
+                li
+                    i(class="fa fa-user-secret")
+                    span User with no BGG account
+    script(type="text/ng-template" id="userTooltipTemplate.html")
+        div.userTooltip
+            p Click username to view on BGG
+            h4 User Information
+            ul#user-info
+                li
+                    label First Name
+                    span {{user.userData.firstname.value}}
+                li
+                    label Last Name
+                    span {{user.userData.lastname.value}}

@@ -15,6 +15,20 @@ a {
     display: inline-block;
     width: auto;
 }
+.centered {
+    position: fixed;
+    top: 35%;
+    left: 50%;
+    margin-top: -35px;
+    margin-left: -30px;
+}
+body .loading{
+    opacity: 0.7 !important;
+}
+#loading p{
+    font-size: 60px;
+    margin: 0;
+}
 #gathering-users ol ul{
     list-style: none;
     margin-bottom: 10px;
@@ -44,8 +58,12 @@ a {
 #gathering-users .user .actions i{
     font-size: 11px;
 }
-#gathering-legend h3{
-    font-size: 16px;
+#sidebar section > *{
+    padding-left: 15px;
+}
+#sidebar section h3{
+    font-size: 18px;
+    padding-left: 0;
 }
 #gathering-legend ul{
     list-style: none;
@@ -54,12 +72,55 @@ a {
     content: "-";
     padding: 0 5px;
 }
-/*
-    From: http://stackoverflow.com/a/13276214/1291935
+#filters label{
+    display: block;
+}
+#available-games td.name h4{
+    cursor: pointer;
+    display: inline-block;
+    margin: 0;
+}
+#available-games td ul.details{
+    list-style: none;
+    margin-top: 10px;
+    padding: 0;
+}
+#available-games td ul.details label:after{
+    content: ":";
+    padding: 0 3px 0 0;
+}
+span.label{
+    color: #333;
+    font-size: 100%;
+}
+#available-games span.label{
+    padding-left: 0;
+}
+.userTooltip{
+    text-align: left;
+}
+.userTooltip h4{
+    font-size: 14px;
+}
+.userTooltip label:after{
+    content: ":";
+    padding: 0 3px 0 0;
+}
+.user .username{
+    font-size: 18px;
+}
+.user .actions{
+    padding-left: 5px;
+}
+#add-user-button i{
+    padding-left: 3px;
+}
+
+/* From: http://stackoverflow.com/a/13276214/1291935
   Allow angular.js to be loaded in body, hiding cloaked elements until
   templates compile.  The !important is important given that there may be
   other selectors that are more specific or come later and might alter display.
- */
+*/
 [ng\:cloak], [ng-cloak], .ng-cloak {
     display: none !important;
 }
