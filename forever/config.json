@@ -1,0 +1,5 @@
+//forever/config.json
+{
+	// config to start and keep up node js GameNight app
+	"script": "/var/www/html/GameNight/bin/www"
+}

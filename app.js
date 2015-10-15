@@ -5,7 +5,7 @@ var logger = require('morgan');
 var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
 
-var app = module.exports = express();
+var app = express();
 Array.prototype.objectFind = function(obj) {
     // Extend array with find for an object literal value
     // From http://stackoverflow.com/a/11836196/1291935
@@ -157,3 +157,5 @@ var GameNight = {
 };
 // Start application
 GameNight.init();
+
+module.exports = app;
