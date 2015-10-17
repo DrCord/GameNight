@@ -31,6 +31,7 @@ Array.prototype.clean = function(deleteValue) {
 };
 // Setup data objects for each part of application
 var Gathering = require('./includes/Gathering.js');
+var NodeMailer = require('./includes/NodeMailer.js');
 //var Database = require('./includes/Database.js');
 var WebServer = {
     init: function(){
