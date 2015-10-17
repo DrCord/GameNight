@@ -3,6 +3,7 @@ var BGG_User = require('./BGG_User.js');
 var Game = require('./Game.js');
 
 var Gathering = Gathering || {};
+Gathering.loading = false;
 Gathering.compare = {
     unique: function(a, compareFunc){
         /** From: http://stackoverflow.com/a/2219206/1291935

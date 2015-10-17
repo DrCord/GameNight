@@ -1,6 +1,6 @@
 extends layout
 block content
-    div#content.col-md-9(data-ng-class="{'loading': loading}")
+    div#content.col-md-9
         section#gathering
             h2 Gathering
             div#gathering-add-user
@@ -21,7 +21,7 @@ block content
                         type="button"
                         class="btn btn-sm btn-success"
                         data-ng-click="addUser(addUserInputUsername)"
-                        data-ng-disabled="loading"
+                        data-ng-disabled="Gathering.loading"
                     ) Add User
                         i(class="fa fa-plus")
             div#gathering-info(
@@ -50,7 +50,7 @@ block content
                                         button.delete-user(
                                             data-ng-click="deleteUser(user)"
                                             class="btn btn-danger btn-xs"
-                                            data-ng-disabled="loading"
+                                            data-ng-disabled="Gathering.loading"
                                         )
                                             i(class="fa fa-remove")
                     p(data-ng-show="Gathering.users.length == 0") No users in Gathering, add users above.
@@ -99,7 +99,7 @@ block content
                                     target="_blank"
                                 ) View on BoardGameGeek
             p(data-ng-show="Gathering.games.length == 0") No games available for Gathering, add more users above.
-    div#sidebar.col-md-3(data-ng-class="{'loading': loading}")
+    div#sidebar.col-md-3
         section#filters
             h3 Filters
             div

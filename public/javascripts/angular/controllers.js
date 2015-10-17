@@ -1,25 +1,25 @@
 'use strict';
 /** Controllers */
 angular.module('gameNight.controllers', []).
-    controller('AppCtrl', function ($scope, $http, $sce) {
+    controller('AppCtrl', function ($scope, $http, $resource, poller) {
         $scope.ready = false;
-        $scope.loading = false;
         $scope.Gathering = $scope.Gathering || {
             init: function(){
                 $scope.Gathering.users = $scope.Gathering.users || [];
                 $scope.Gathering.games = $scope.Gathering.games || [];
+                $scope.Gathering.loading = false;
             }
         };
 
         $scope.getGathering = function(){
-            $scope.loading = true;
+            $scope.Gathering.loading = true;
             return $http.get('/api/gathering').
                 success(function( data ) {
                     console.log('AppCtrl.getGathering function - front-end: data:');
                     console.log(data);
                     $scope.Gathering = data.Gathering;
                     $scope.initGameUrls();
-                    $scope.loading = false;
+                    $scope.Gathering.loading = false;
                     return $scope.Gathering;
                 })
             ;
@@ -37,7 +37,7 @@ angular.module('gameNight.controllers', []).
         $scope.addUser = function(username){
             // TODO(maybe): change to promise to allow then(), see getUsers()
             if(typeof username != "undefined" && username != ''){
-                $scope.loading = true;
+                $scope.Gathering.loading = true;
                 var parameters = { username: username };
                 $http.post('/api/add-user', parameters).
                     success(function( data ) {
@@ -45,7 +45,7 @@ angular.module('gameNight.controllers', []).
                         console.log(data);
                         $scope.Gathering = data.Gathering;
                         $scope.initGameUrls();
-                        $scope.loading = false;
+                        $scope.Gathering.loading = false;
                         $scope.addUserInputUsername = '';
                     })
                 ;
@@ -58,7 +58,7 @@ angular.module('gameNight.controllers', []).
         $scope.deleteUser = function(username){
             // TODO(maybe): change to promise to allow then(), see getUsers()
             if(typeof username != "undefined" && username != ''){
-                $scope.loading = true;
+                $scope.Gathering.loading = true;
                 var parameters = { username: username };
                 $http.post('/api/delete-user', parameters).
                     success(function( data ) {
@@ -66,7 +66,7 @@ angular.module('gameNight.controllers', []).
                         console.log(data);
                         $scope.Gathering = data.Gathering;
                         $scope.initGameUrls();
-                        $scope.loading = false;
+                        $scope.Gathering.loading = false;
                     })
                 ;
             }
@@ -118,6 +118,32 @@ angular.module('gameNight.controllers', []).
             }
             return text;
         };
+        $scope.dataPoller = function(){
+            // Define your resource object.
+            var logResource = $resource('/api/gathering');
+            // Get poller. This also starts/restarts poller.
+            var logPoller = poller.get(logResource, {
+                catchError: true
+            });
+            // Update view. Since a promise can only be resolved or rejected once but we want
+            // to keep track of all requests, poller service uses the notifyCallback. By default
+            // poller only gets notified of success responses.
+            logPoller.promise.then(null, null, function(data){$scope.dataPollerCallback(data)});
+        };
+        $scope.dataPollerCallback = function(result){
+            // If catchError is set to true, this notifyCallback can contain either
+            // a success or an error response.
+            if (result.$resolved) {
+                // Success handler ...
+                $scope.Gathering = result.Gathering;
+            } else {
+                // Error handler: (data, status, headers, config)
+                if (result.status === 503) {
+                    // Stop poller or provide visual feedback to the user etc
+                    poller.stopAll();
+                }
+            }
+        };
         $scope.init = function(){
             $scope.Gathering.init();
             $scope.initFilterValues();
@@ -127,7 +153,7 @@ angular.module('gameNight.controllers', []).
                     $scope.ready = true;
                 })
                 .then(function(){
-                    $scope.ready = true;
+                    $scope.dataPoller();
                 })
             ;
         };

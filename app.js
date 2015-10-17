@@ -31,7 +31,7 @@ Array.prototype.clean = function(deleteValue) {
 };
 // Setup data objects for each part of application
 var Gathering = require('./includes/Gathering.js');
-var Database = require('./includes/Database.js');
+//var Database = require('./includes/Database.js');
 var WebServer = {
     init: function(){
         // view engine setup - Jade
@@ -69,6 +69,7 @@ var WebServer = {
         app.post('/api/add-user', function(req, res){
             //console.log('/api/add-user backend route called');
             if(typeof req.body.username != "undefined"){
+                Gathering.loading = true;
                 //console.log(req.body.username);
                 var user = Gathering.addBGG_User(req.body.username);
                 user.update()
@@ -76,6 +77,7 @@ var WebServer = {
                         Gathering.updateBGG_User(userObj);
                         Gathering.updateAvailableGames(userObj)
                             .then(function(){
+                                Gathering.loading = false;
                                 return res.json({ Gathering: Gathering });
                             })
                         ;
@@ -90,11 +92,13 @@ var WebServer = {
         app.post('/api/delete-user', function(req, res){
             //console.log('/api/delete-user backend route called');
             if(typeof req.body.username != "undefined"){
+                Gathering.loading = true;
                 //console.log(req.body.username);
                 // Find and delete user with username from Gathering.users
                 Gathering.deleteBGG_User(req.body.username);
                 Gathering.updateAvailableGames()
                     .then(function(){
+                        Gathering.loading = false;
                         return res.json({ Gathering: Gathering });
                     })
                 ;

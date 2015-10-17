@@ -22,8 +22,10 @@ a {
     margin-top: -35px;
     margin-left: -30px;
 }
-body .loading{
-    opacity: 0.7 !important;
+body.loading header,
+body.loading #content,
+body.loading #sidebar{
+    opacity: 0.7;
 }
 #loading p{
     font-size: 60px;

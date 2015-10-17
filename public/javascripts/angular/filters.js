@@ -6,7 +6,16 @@ angular.module('gameNight.filters', [])
             if(typeof items != "undefined"){
                 items = items.filter(function(item){
                     // If item.playingtime.value is between(inclusive) the two boundaries return true
-                    return item.playingtime.value >= lowest && item.playingtime.value <= maximum;
+                    if(typeof item.playingtime != "undefined" &&
+                       typeof item.playingtime.value != "undefined" &&
+                       typeof item.playingtime != "undefined" &&
+                       typeof item.playingtime.value != "undefined"
+                    ){
+                        return item.playingtime.value >= lowest && item.playingtime.value <= maximum;
+                    }
+                    else{
+                        return false;
+                    }
                 });
                 return items;
             }
