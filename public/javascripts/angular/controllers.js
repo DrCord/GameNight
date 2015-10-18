@@ -135,7 +135,11 @@ angular.module('gameNight.controllers', []).
             // a success or an error response.
             if (result.$resolved) {
                 // Success handler ...
-                $scope.Gathering = result.Gathering;
+                var updated = $scope.dataUserUpdatedCheck(result);
+                // If not identical set data to new data, else do nothing
+                if(updated){
+                    $scope.Gathering = result.Gathering;
+                }
             } else {
                 // Error handler: (data, status, headers, config)
                 if (result.status === 503) {
@@ -143,6 +147,22 @@ angular.module('gameNight.controllers', []).
                     poller.stopAll();
                 }
             }
+        };
+        $scope.dataUserUpdatedCheck = function(result){
+            var updated = false;
+            // Check if same number of users
+            if($scope.Gathering.users.length == result.Gathering.users.length){
+                // Check if users are the same users, in the same order
+                for(var i=0; i< $scope.Gathering.users.length; i++){
+                    if($scope.Gathering.users[i]['username'] != result.Gathering.users[i]['username']){
+                        updated = true;
+                    }
+                }
+            }
+            else{
+                updated = true;
+            }
+            return updated;
         };
         $scope.init = function(){
             $scope.Gathering.init();

@@ -4,7 +4,11 @@ block content
         section#gathering
             h2 Gathering
             div#gathering-add-user
-                h2 Enter username to add to Gathering
+                h2(
+                    data-uib-tooltip="If a username is found on BGG it is used. If you intend to enter a user without a BGG account, make sure to use a string you know will be unique."
+                    data-tooltip-trigger="click"
+                ) Enter username to lookup account on Board Game Geek and add to Gathering.
+                    i.fa.fa-info-circle
                 form(
                     name="add-user"
                     data-ng-submit="addUser(addUserInputUsername)"
@@ -35,7 +39,7 @@ block content
                             ul.user(data-ng-class="{'bgg-user' : user.userData.id}")
                                 li
                                     a.username(
-                                        data-uib-tooltip-template="'userTooltipTemplate.html'"
+                                        data-uib-tooltip-template="'usernameTooltipTemplate.html'"
                                         data-tooltip-placement="right"
                                         href="http://www.boardgamegeek.com/user/{{user.username}}"
                                         target="_blank"
@@ -45,6 +49,7 @@ block content
                                     i(
                                         class="fa"
                                         data-ng-class="{'fa-user' : user.userData.id, 'fa-user-secret' : !user.userData.id}"
+                                        data-uib-tooltip-template="'userIconTooltipTemplate.html'"
                                     )
                                     span.actions
                                         button.delete-user(
@@ -69,35 +74,37 @@ block content
                 tr
                     th.counter
                     th.name Name
-                tr(data-ng-repeat="game in Gathering.games | filter:search | filter:gameType:strict | playingTimeBetween:customFilters.playingTime.max:customFilters.playingTime.min | playersBetween:customFilters.players.max:customFilters.players.min | orderBy:sortField:sortReverse")
+                tr(
+                    data-ng-repeat="game in Gathering.games | filter:search | filter:gameType:strict | playingTimeBetween:customFilters.playingTime.max:customFilters.playingTime.min | playersBetween:customFilters.players.max:customFilters.players.min | orderBy:sortField:sortReverse"
+                )
                     td.counter {{$index+1}}
-                    td.name
-                        h4(
-                            data-ng-click="showDetails = !showDetails"
-                            title="Click for more information"
-                            data-uib-tooltip="{{gameTooltipText(showDetails)}}"
-                            data-tooltip-placement="right"
-                        ) {{game.name.value}}
-                        ul.details(data-ng-show="showDetails")
-                            li.image
-                                img.thumbnail(data-ng-src="{{game.thumbnail}}")
-                            li.type
-                                label Type
-                                span.value {{game.type}}
-                            li.players-min
-                                label Min Players
-                                span.value {{game.minplayers.value}}
-                            li.players-max
-                                label Max Players
-                                span.value {{game.maxplayers.value}}
-                            li.playTime
-                                label Play Time
-                                span.value {{game.playingtime.value}} Minutes
-                            li.bgg-link
-                                a(
+                    td.name(
+                        title="{{gameTooltipText(showDetails)}}"                                                                                            data-uib-popover-template="'gameInfoPopoverTemplate.html'"
+                        data-ng-click="showDetails = !showDetails"
+                        popover-mode="single"
+                    )
+                        h4 {{game.name.value}}
+                        //div.gameInfo(ng-show="showDetails")
+                            ul.details
+                                li.image
+                                    img.thumbnail(data-ng-src="{{game.thumbnail}}")
+                                li.type
+                                    label Type
+                                    span.value {{game.type}}
+                                li.players-min
+                                    label Min Players
+                                    span.value {{game.minplayers.value}}
+                                li.players-max
+                                    label Max Players
+                                    span.value {{game.maxplayers.value}}
+                                li.playTime
+                                    label Play Time
+                                    span.value {{game.playingtime.value}} Minutes
+                                li.bgg-link
+                                    a(
                                     href="{{game.url}}"
                                     target="_blank"
-                                ) View on BoardGameGeek
+                                    ) View on BoardGameGeek
             p(data-ng-show="Gathering.games.length == 0") No games available for Gathering, add more users above.
     div#sidebar.col-md-3
         section#filters
@@ -212,7 +219,7 @@ block content
                 li
                     i(class="fa fa-user-secret")
                     span User with no BGG account
-    script(type="text/ng-template" id="userTooltipTemplate.html")
+    script(type="text/ng-template" id="usernameTooltipTemplate.html")
         div.userTooltip
             p Click username to view on BGG
             h4 User Information
@@ -223,3 +230,31 @@ block content
                 li
                     label Last Name
                     span {{user.userData.lastname.value}}
+    script(type="text/ng-template" id="userIconTooltipTemplate.html")
+        div.userIconTooltip
+                p(ng-if="user.userData.id") BGG User
+                p(ng-if="!user.userData.id") Non-BGG User
+    script(type="text/ng-template" id="gameInfoPopoverTemplate.html")
+        div.gameInfoTooltip
+            ul.details
+                li.image
+                    img.thumbnail(data-ng-src="{{game.thumbnail}}")
+                li.name
+                    h4 {{game.name.value}}
+                li.type
+                    label Type
+                    span.value {{game.type}}
+                li.players-min
+                    label Min Players
+                    span.value {{game.minplayers.value}}
+                li.players-max
+                    label Max Players
+                    span.value {{game.maxplayers.value}}
+                li.playTime
+                    label Play Time
+                    span.value {{game.playingtime.value}} Minutes
+                li.bgg-link
+                    a(
+                        href="{{game.url}}"
+                        target="_blank"
+                    ) View on BoardGameGeek

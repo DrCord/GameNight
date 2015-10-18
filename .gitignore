@@ -28,5 +28,5 @@ node_modules
 
 # Debug log from npm
 npm-debug.log
-#prevent NodeMailer from being further committed as it has credentials
+#prevent NodeMailer from being committed as it has credentials
 includes/NodeMailer.js
