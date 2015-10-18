@@ -135,7 +135,7 @@ angular.module('gameNight.controllers', []).
             // a success or an error response.
             if (result.$resolved) {
                 // Success handler ...
-                var updated = $scope.dataUserUpdatedCheck(result);
+                var updated = $scope.dataUpdatedCheck(result);
                 // If not identical set data to new data, else do nothing
                 if(updated){
                     $scope.Gathering = result.Gathering;
@@ -163,6 +163,20 @@ angular.module('gameNight.controllers', []).
                 updated = true;
             }
             return updated;
+        };
+        $scope.dataLoadingUpdatedCheck = function(result){
+            if($scope.Gathering.loading !== result.Gathering.loading){
+                return true;
+            }
+            return false;
+        };
+        $scope.dataUpdatedCheck = function(result){
+            var usersUpdated = $scope.dataUserUpdatedCheck(result);
+            var loadingUpdated = $scope.dataLoadingUpdatedCheck(result);
+            if(usersUpdated || loadingUpdated){
+                return true;
+            }
+            return false;
         };
         $scope.init = function(){
             $scope.Gathering.init();
