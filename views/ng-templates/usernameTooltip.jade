@@ -1,0 +1,11 @@
+script(type="text/ng-template" id="usernameTooltipTemplate.html")
+    div.userTooltip
+        p Click username to view on BGG
+        h4 User Information
+        ul#user-info
+            li
+                label First Name
+                span {{user.userData.firstname.value}}
+            li
+                label Last Name
+                span {{user.userData.lastname.value}}

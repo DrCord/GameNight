@@ -10,20 +10,24 @@ html(ng-app="gameNight")
     ng-controller="AppCtrl"
     ng-class="{'loading': Gathering.loading}"
   )
-    header()
+    header
         h1 GameNight
-    block content
-    section#loading.centered
-        p(class="text-center" ng-show="Gathering.loading")
-            i(class="fa fa-spinner fa-spin")
-    // Angular and libraries
-    script(src='/angular.js')
-    script(src='/angular-animate.min.js')
-    script(src='//ajax.googleapis.com/ajax/libs/angularjs/1.4.2/angular-resource.js')
-    script(src='/javascripts/angular-poller/angular-poller.min.js')
-    script(src='/javascripts/ui-bootstrap/ui-bootstrap-tpls-0.14.2.min.js')
-    // Angular application parts
-    script(src='/javascripts/angular/controllers.js')
-    script(src='/javascripts/angular/filters.js')
-    script(src='/javascripts/angular/app.js')
-    script(src='/javascripts/angular/popover_custom.js')
+    if !user
+        include ./login.jade
+    else
+      block content
+      include ./sidebar.jade
+      section#loading.centered
+          p(class="text-center" ng-show="Gathering.loading")
+              i(class="fa fa-spinner fa-spin")
+      // Angular and libraries
+      script(src='/angular.js')
+      script(src='/angular-animate.min.js')
+      script(src='//ajax.googleapis.com/ajax/libs/angularjs/1.4.2/angular-resource.js')
+      script(src='/javascripts/angular-poller/angular-poller.min.js')
+      script(src='/javascripts/ui-bootstrap/ui-bootstrap-tpls-0.14.2.min.js')
+      // Angular application parts
+      script(src='/javascripts/angular/controllers.js')
+      script(src='/javascripts/angular/filters.js')
+      script(src='/javascripts/angular/app.js')
+      script(src='/javascripts/angular/popover_custom.js')

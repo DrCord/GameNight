@@ -1,0 +1,2 @@
+{"_id":1,"username":"jack","password":"sha1$d7d3a113$1$12bd2b1d771268a603f09815d2178ce976ec5664","displayName":"Jack","emails":[{"value":"jack@example.com"}]}
+{"_id":2,"username":"jill","password":"sha1$8e61ce8a$1$d1cc39055956ac0dfc8ba5b0fbb74e9c728e116a","displayName":"Jill","emails":[{"value":"jill@example.com"}]}

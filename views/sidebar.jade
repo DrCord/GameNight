@@ -1,0 +1,122 @@
+div#sidebar.col-md-3
+    section#links
+        h3 Links
+        ul
+            li
+                a(href="/") Index
+            li
+                a(href="/user") User Profile
+            li
+                a(href="/logout") Logout
+    section#filters
+        h3 Filters
+        div
+            label Name
+            input.form-control(
+                data-ng-model="search.name.value"
+            )
+        div
+            label Type
+            select.form-control(
+                data-ng-model="gameType"
+                data-ng-change="searchChangeType(gameType)"
+            )
+                option(
+                    value=""
+                    data-ng-selected
+                ) All
+                option(value="boardgame") Board game
+                option(value="boardgameexpansion") Board game expansion
+        div
+            label Minimum Playing Time (in minutes)
+            input.form-control(
+                type="number"
+                data-ng-model="customFilters.playingTime.min"
+                min="0"
+                step="5"
+            )
+            label Maximum Playing Time (in minutes)
+            input.form-control(
+                type="number"
+                data-ng-model="customFilters.playingTime.max"
+                min="0"
+                step="5"
+            )
+        div
+            label Minimum Players
+            input.form-control(
+                type="number"
+                data-ng-model="customFilters.players.min"
+                min="0"
+            )
+            label Maximum Players
+            input.form-control(
+                type="number"
+                data-ng-model="customFilters.players.max"
+                min="0"
+            )
+    section#sort
+        h3 Sort Options
+        div
+            h4 Sort Field
+            div
+                input(
+                    type="radio"
+                    name="sortField"
+                    data-ng-model="sortField"
+                    value="name.value"
+                )
+                label Name
+            div
+                input(
+                    type="radio"
+                    name="sortField"
+                    data-ng-model="sortField"
+                    value="minplayers.value"
+                )
+                label Minimum Number of Players
+            div
+                input(
+                    type="radio"
+                    name="sortField"
+                    data-ng-model="sortField"
+                    value="maxplayers.value"
+                )
+                label Maximum Number of Players
+            div
+                input(
+                    type="radio"
+                    name="sortField"
+                    data-ng-model="sortField"
+                    value="playingtime.value"
+                )
+                label Playing Time
+        div
+            h4 Sort Order
+            div
+                input(
+                    type="radio"
+                    name="sortReverse"
+                    value="0"
+                    data-ng-model="sortReverse"
+                    data-ng-click="sortReverse = false;"
+                )
+                label Ascending
+            div
+                input(
+                    type="radio"
+                    name="sortReverse"
+                    value="1"
+                    data-ng-model="sortReverse"
+                    data-ng-click="sortReverse = true;"
+                )
+                label Descending
+    section#gathering-legend
+        h3 Legend
+        ul
+            li
+                i(class="fa fa-user")
+                span User with a BGG account
+            li
+                i(class="fa fa-user-secret")
+                span User with no BGG account

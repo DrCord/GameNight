@@ -1,0 +1,24 @@
+script(type="text/ng-template" id="gameInfoPopoverTemplate.html")
+    div.gameInfoTooltip
+        ul.details
+            li.image
+                img.thumbnail(data-ng-src="{{game.thumbnail}}")
+            li.name
+                h4 {{game.name.value}}
+            li.type
+                label Type
+                span.value {{game.type}}
+            li.players-min
+                label Min Players
+                span.value {{game.minplayers.value}}
+            li.players-max
+                label Max Players
+                span.value {{game.maxplayers.value}}
+            li.playTime
+                label Play Time
+                span.value {{game.playingtime.value}} Minutes
+            li.bgg-link
+                a(
+                href="{{game.url}}"
+                target="_blank"
+                ) View on BoardGameGeek

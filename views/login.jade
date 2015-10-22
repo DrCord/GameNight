@@ -1,0 +1,23 @@
+div#content.col-md-9
+    p Welcome! Please log in.
+    form(
+        action="/login"
+        method="post"
+    )
+        div
+            label Username:
+            input.form-control(
+                type="text"
+                name="username"
+            )
+        div
+            label Password:
+            input.form-control(
+                type="password"
+                name="password"
+            )
+        div
+            input.btn.btn-sm.btn-success(
+                type="submit"
+                value="Submit"
+            )

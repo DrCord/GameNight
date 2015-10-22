@@ -1,0 +1,4 @@
+script(type="text/ng-template" id="userIconTooltipTemplate.html")
+    div.userIconTooltip
+        p(ng-if="user.userData.id") BGG User
+        p(ng-if="!user.userData.id") Non-BGG User
