@@ -323,13 +323,14 @@ angular.module('gameNight.controllers', []).
             $scope.initSortValues();
             $scope.getData()
                 .then(function(){
-                    $scope.getUser();
-                })
-                .then(function(){
-                    $scope.ready = true;
-                })
-                .then(function(){
-                    $scope.setupPollers();
+                    $scope.getUser()
+                        .then(function(){
+                            $scope.setupPollers();
+                        })
+                        .then(function(){
+                            $scope.ready = true;
+                        })
+                    ;
                 })
             ;
         };
