@@ -47,7 +47,7 @@ users.load = function(datastore, cb){
 
 users.saveItem = function(userObj, datastore){
     datastore.update(
-        {name: userObj.username},
+        {username: userObj.username},
         userObj,
         {upsert: true},
         function (err, newDoc) {   // Callback is optional
