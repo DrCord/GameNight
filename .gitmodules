@@ -1,3 +1,4 @@
 [submodule "public/javascripts/angular-poller"]
 	path = public/javascripts/angular-poller
 	url = git@github.com:emmaguo/angular-poller.git
+	ignore = dirty
