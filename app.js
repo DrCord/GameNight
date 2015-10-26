@@ -1,4 +1,8 @@
 var express = require('express');
+var session = require('express-session');
+// TODO: switch sessions from using memoryStore to NedbStore
+//var NedbStore = require('connect-nedb-session')(session);
+var sessionStore = new session.MemoryStore;
 var path = require('path');
 var favicon = require('serve-favicon');
 // Logging (server requests/responses into the node console)
@@ -9,7 +13,6 @@ var bodyParser = require('body-parser');
 var passport = require('passport');
 var Strategy = require('passport-local').Strategy;
 var connectEnsureLogin = require('connect-ensure-login');
-var session = require('express-session');
 var flash = require('connect-flash');
 var passwordHash = require('password-hash');
 var DataConstructor = require('./includes/Data.js');
@@ -59,7 +62,7 @@ passport.deserializeUser(function(id, cb) {
 });
 
 var app = express();
-var sessionStore = new session.MemoryStore;
+
 Array.prototype.objectFind = function(obj) {
     // Extend array with find for an object literal value
     // From http://stackoverflow.com/a/11836196/1291935
@@ -108,21 +111,20 @@ var WebServer = {
         app.use(cookieParser());
         app.use(session({
             secret: 'keyboard cat',
-            store: sessionStore,
+            key: 'catsylvania secretness',
             resave: true,
             saveUninitialized: true,
-            cookie: { maxAge: 60000 }
+            cookie: { path: '/',
+                httpOnly: true,
+                maxAge: 365 * 24 * 3600 * 1000   // One year for example
+            },
+            store: sessionStore
+            //store: new NedbStore({filename: './node_modules/nedb/lib/persistence.js'})
+            //store: new NedbStore({filename: './db/sessions.db'})
         }));
         app.use(flash());
-        // Custom flash middleware -- from Ethan Brown's book, 'Web Development with Node & Express'
-        app.use(function(req, res, next){
-            // if there's a flash message in the session request, make it available in the response, then delete it
-            res.locals.sessionFlash = req.session.sessionFlash;
-            delete req.session.sessionFlash;
-            next();
-        });
-        // Initialize Passport and restore authentication state,
-        // if any, from any previous session.
+        /** Initialize Passport and restore authentication state,
+        * if any, from any previous session. */
         app.use(passport.initialize());
         app.use(passport.session());
     },
@@ -139,8 +141,8 @@ var WebServer = {
             res.render('index', {
                 Data: Data,
                 user: req.user[0],
-                expressFlash: req.flash('success'),
-                sessionFlash: res.locals.sessionFlash
+                //expressFlash: req.flash('success'),
+                //sessionFlash: res.locals.sessionFlash
             });
         });
 
@@ -153,10 +155,7 @@ var WebServer = {
 
         // Route that creates a flash message using custom middleware
         app.get('/session-flash', function( req, res ){
-            req.session.sessionFlash = {
-                type: 'success',
-                message: 'This is a flash message using custom middleware and express-session.'
-            };
+            WebServer.sessionFlashMessage(req, 'This is a flash message using custom middleware and express-session.');
             res.redirect('/');
         });
 
@@ -167,10 +166,7 @@ var WebServer = {
 
         app.get('/login/failure', function( req, res ){
             // Use req.session.sessionFlash as it is available to msg logged out user
-            req.session.sessionFlash = {
-                type: 'success',
-                message: 'Unable to login, please try again or consult the systems admin.'
-            };
+            WebServer.sessionFlashMessage(req, 'Unable to login, please try again or consult the systems admin.');
             res.redirect('/');
         });
 
@@ -202,8 +198,8 @@ var WebServer = {
             function(req, res){
                 res.render('user', {
                     user: req.user[0],
-                    expressFlash: req.flash('success'),
-                    sessionFlash: res.locals.sessionFlash
+                    //expressFlash: req.flash('success'),
+                    //sessionFlash: res.locals.sessionFlash
                 });
             });
 
@@ -213,8 +209,8 @@ var WebServer = {
                 res.render('gatherings', {
                     Data: Data,
                     user: req.user[0],
-                    expressFlash: req.flash('success'),
-                    sessionFlash: res.locals.sessionFlash
+                    //expressFlash: req.flash('success'),
+                    //sessionFlash: res.locals.sessionFlash
                 });
             });
 
@@ -232,8 +228,8 @@ var WebServer = {
                         Data: Data,
                         Gathering: gathering,
                         user: req.user[0],
-                        expressFlash: req.flash('success'),
-                        sessionFlash: res.locals.sessionFlash
+                        //expressFlash: req.flash('success'),
+                        //sessionFlash: res.locals.sessionFlash
                     });
                 }
                 // If no gatherings redirect to /gatherings to allow gathering creation
@@ -248,8 +244,8 @@ var WebServer = {
                     res.render('log', {
                         Data: Data,
                         user: req.user[0],
-                        expressFlash: req.flash('success'),
-                        sessionFlash: res.locals.sessionFlash
+                        //expressFlash: req.flash('success'),
+                        //sessionFlash: res.locals.sessionFlash
                     });
                 }
                 else{
@@ -275,6 +271,14 @@ var WebServer = {
         app.get('/api/loading/get', function(req, res){
             return res.json({ loading: Data.loading });
         });
+        app.get('/api/messages/get', function(req, res){
+            var sessionFlashMsg = req.session.sessionFlash;
+            delete req.session.sessionFlash;
+            return res.json({
+                expressFlash: req.flash('success'),
+                sessionFlash: sessionFlashMsg
+            });
+        });
         app.get('/api/user/get', function(req, res){
             // get active logged in user
             var user = {};
@@ -292,6 +296,7 @@ var WebServer = {
                 // TODO on gathering creation save to db
                 Data.gatherings.push(gathering);
                 Data.loading = false;
+                req.flash('success', 'Gathering ' + req.body.gName + ' created.');
                 return res.json({ gatherings: Data.gatherings });
             }
             else{
@@ -408,6 +413,12 @@ var WebServer = {
         });
         Log.log.info('WebServer', 'WebServer initialized', true);
 
+    },
+    sessionFlashMessage: function(req, msg){
+        req.session.sessionFlash = {
+            type: 'success',
+            message: msg
+        };
     }
 };
 // Object for overall application

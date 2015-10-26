@@ -182,13 +182,13 @@ angular.module('gameNight.controllers', []).
             }
             return text;
         };
-        $scope.dataPoller = function(resource, callback){
+        $scope.dataPoller = function(resource, callback, options){
+            options = options || {};
+            options.catchError = true;
             // Define your resource object.
             var logResource = $resource(resource);
             // Get poller. This also starts/restarts poller.
-            var logPoller = poller.get(logResource, {
-                catchError: true
-            });
+            var logPoller = poller.get(logResource, options);
             // Update view. Since a promise can only be resolved or rejected once but we want
             // to keep track of all requests, poller service uses the notifyCallback. By default
             // poller only gets notified of success responses.
@@ -256,7 +256,9 @@ angular.module('gameNight.controllers', []).
             // Checks if user has any administrative permissions
             for(var permissionType in $scope.adminPermissions){
                 for(var i=0; i< $scope.adminPermissions[permissionType].length; i++){
-                    if(typeof $scope.user != "undefined" && $scope.user.permissions[permissionType][$scope.adminPermissions[permissionType][i]]){
+                    if(typeof $scope.user != "undefined" &&
+                       typeof $scope.user.permissions[permissionType] != "undefined" &&
+                       $scope.user.permissions[permissionType][$scope.adminPermissions[permissionType][i]]){
                         return true;
                     }
                 }
@@ -274,7 +276,9 @@ angular.module('gameNight.controllers', []).
                             console.log($scope.user.permissions);
                         }
                         if(typeof $scope.user != "undefined" &&
+                           typeof $scope.user.permissions != "undefined" &&
                            typeof $scope.user.permissions[permissionType] != "undefined" &&
+                           typeof $scope.user.permissions[permissionType][permissions[permissionType][i]] != "undefined" &&
                            $scope.user.permissions[permissionType][permissions[permissionType][i]]
                         ){
                             output[permissionType][permissions[permissionType][i]] = true;
@@ -290,6 +294,7 @@ angular.module('gameNight.controllers', []).
         $scope.setupPollers = function(){
             $scope.gatheringsPoller();
             $scope.loadingPoller();
+            $scope.messagesPoller();
             var permissions = {
                 logs: [
                     'view',
@@ -297,8 +302,6 @@ angular.module('gameNight.controllers', []).
                 ]
             };
             var userLogPermissions = $scope.hasPermissions(permissions);
-            console.log('userLogPermissions');
-            console.log(userLogPermissions);
             if(userLogPermissions.logs.view || userLogPermissions.logs.reset){
                 $scope.logsPoller();
             }
@@ -317,6 +320,19 @@ angular.module('gameNight.controllers', []).
             return $scope.dataPoller('/api/loading/get', function(result){
                 $scope.Data.loading = result.loading;
             });
+        };
+        $scope.messagesPoller = function(){
+            var options = {
+                delay: 6000
+            };
+            return $scope.dataPoller(
+                '/api/messages/get',
+                function(result){
+                    $scope.expressFlash = result.expressFlash;
+                    $scope.sessionFlash = result.sessionFlash;
+                },
+                options
+            );
         };
         $scope.init = function(){
             $scope.Data.init();

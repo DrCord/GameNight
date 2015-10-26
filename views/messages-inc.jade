@@ -1,10 +1,7 @@
-section#messages
-    //div.test(data-ng-if="isAdmin()" ng-cloak)
-        p <a href="/express-flash">Click here</a> for a flash message using the express-flash module.
-        p <a href="/session-flash">Click here</a> for a flash message using custom middleware
-        p Refresh to clear the flash message.
-    if typeof expressFlash != "undefined" && expressFlash.length > 0
-        p #{expressFlash}
-    if sessionFlash && sessionFlash.message
-        div(class=sessionFlash.type)
-            p #{ sessionFlash.message }
+section#messages(ng-cloak)
+    p(data-ng-show="expressFlash && expressFlash.length > 0") {{expressFlash[0]}}
+    div(
+        data-ng-class="sessionFlash.type"
+        data-ng-show="sessionFlash && sessionFlash.message"
+    )
+        p {{ sessionFlash.message }}
