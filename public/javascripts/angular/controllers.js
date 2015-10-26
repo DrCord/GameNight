@@ -274,7 +274,8 @@ angular.module('gameNight.controllers', []).
                             console.log($scope.user.permissions);
                         }
                         if(typeof $scope.user != "undefined" &&
-                            $scope.user.permissions[permissionType][permissions[permissionType][i]]
+                           typeof $scope.user.permissions[permissionType] != "undefined" &&
+                           $scope.user.permissions[permissionType][permissions[permissionType][i]]
                         ){
                             output[permissionType][permissions[permissionType][i]] = true;
                         }
