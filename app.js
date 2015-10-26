@@ -88,6 +88,7 @@ var Gathering = require('./includes/Gathering.js');
 // TODO: enable NodeMailer when needed, already tested and working with Mailgun account
 //var NodeMailer = require('./includes/NodeMailer.js');
 var WebServer = {
+    logPageActive: 0,
     init: function(){
         WebServer.setupMiddleware();
         WebServer.serveDirectories();
@@ -187,7 +188,10 @@ var WebServer = {
         app.get('/logout',
             function(req, res){
                 var msg = 'User ' + req.user[0]['username'] + ' logged out';
-                req.flash('success', msg);
+                req.session.sessionFlash = {
+                    type: 'success',
+                    message: msg
+                };
                 Log.log.info('User', msg, true);
                 req.logout();
                 res.redirect('/');
@@ -240,6 +244,7 @@ var WebServer = {
             connectEnsureLogin.ensureLoggedIn(),
             function(req, res){
                 if(req.user[0]['permissions']['logs']['view']){
+                    WebServer.logPageActive++;
                     res.render('log', {
                         Data: Data,
                         user: req.user[0],
@@ -269,9 +274,6 @@ var WebServer = {
         });
         app.get('/api/loading/get', function(req, res){
             return res.json({ loading: Data.loading });
-        });
-        app.get('/api/messages/get', function(req, res){
-            return res.json({ messages: req.flash('info') });
         });
         app.get('/api/user/get', function(req, res){
             // get active logged in user

@@ -263,10 +263,44 @@ angular.module('gameNight.controllers', []).
             }
             return false;
         };
+        $scope.hasPermissions = function(permissions){
+            var output = {};
+            for(var permissionType in $scope.adminPermissions){
+                if(typeof permissions[permissionType] != "undefined"){
+                    output[permissionType] = {};
+                    for(var i=0; i< permissions[permissionType].length; i++){
+                        if(typeof $scope.user != "undefined"){
+                            console.log('$scope.user.permissions');
+                            console.log($scope.user.permissions);
+                        }
+                        if(typeof $scope.user != "undefined" &&
+                            $scope.user.permissions[permissionType][permissions[permissionType][i]]
+                        ){
+                            output[permissionType][permissions[permissionType][i]] = true;
+                        }
+                        else{
+                            output[permissionType][permissions[permissionType][i]] = false;
+                        }
+                    }
+                }
+            }
+            return output;
+        };
         $scope.setupPollers = function(){
             $scope.gatheringsPoller();
             $scope.loadingPoller();
-            //$scope.messagesPoller();
+            var permissions = {
+                logs: [
+                    'view',
+                    'reset'
+                ]
+            };
+            var userLogPermissions = $scope.hasPermissions(permissions);
+            console.log('userLogPermissions');
+            console.log(userLogPermissions);
+            if(userLogPermissions.logs.view || userLogPermissions.logs.reset){
+                $scope.logsPoller();
+            }
         };
         $scope.logsPoller = function(){
             return $scope.dataPoller('/api/log/load', function(result){
@@ -281,11 +315,6 @@ angular.module('gameNight.controllers', []).
         $scope.loadingPoller = function(){
             return $scope.dataPoller('/api/loading/get', function(result){
                 $scope.Data.loading = result.loading;
-            });
-        };
-        $scope.messagesPoller = function(){
-            return $scope.dataPoller('/api/messages/get', function(result){
-                $scope.messages = result.messages;
             });
         };
         $scope.init = function(){
