@@ -30,3 +30,5 @@ node_modules
 npm-debug.log
 #prevent NodeMailer from being committed as it has credentials
 includes/NodeMailer.js
+# databases
+db/*
