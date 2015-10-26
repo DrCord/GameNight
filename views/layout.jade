@@ -1,33 +1,33 @@
 doctype html
 html(ng-app="gameNight")
-  head
-    title GameNight
-    link(rel='stylesheet', href='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css')
-    link(rel='stylesheet', href='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap-theme.min.css')
-    link(rel='stylesheet', href='https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css')
-    link(rel='stylesheet', href='/stylesheets/style.css')
-  body(
-    ng-controller="AppCtrl"
-    ng-class="{'loading': Gathering.loading}"
-  )
-    header
-        h1 GameNight
-    if !user
-        include ./login.jade
-    else
-      block content
-      include ./sidebar.jade
-      section#loading.centered
-          p(class="text-center" ng-show="Gathering.loading")
-              i(class="fa fa-spinner fa-spin")
-      // Angular and libraries
-      script(src='/angular.js')
-      script(src='/angular-animate.min.js')
-      script(src='//ajax.googleapis.com/ajax/libs/angularjs/1.4.2/angular-resource.js')
-      script(src='/javascripts/angular-poller/angular-poller.min.js')
-      script(src='/javascripts/ui-bootstrap/ui-bootstrap-tpls-0.14.2.min.js')
-      // Angular application parts
-      script(src='/javascripts/angular/controllers.js')
-      script(src='/javascripts/angular/filters.js')
-      script(src='/javascripts/angular/app.js')
-      script(src='/javascripts/angular/popover_custom.js')
+    head
+        title GameNight
+        link(rel='stylesheet', href='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css')
+        link(rel='stylesheet', href='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap-theme.min.css')
+        link(rel='stylesheet', href='https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css')
+        link(rel='stylesheet', href='/stylesheets/style.css')
+    body(
+        ng-controller="AppCtrl"
+        ng-class="{'loading': Data.loading}"
+    )
+        header
+            h1 GameNight
+        if !user
+            include ./login.jade
+        else
+            block content
+            include ./sidebar.jade
+            section#loading.centered
+                p(class="text-center" ng-show="Data.loading")
+                    i(class="fa fa-spinner fa-spin")
+        // Angular and libraries
+        script(src='/angular.js')
+        script(src='/angular-animate.min.js')
+        script(src='//ajax.googleapis.com/ajax/libs/angularjs/1.4.2/angular-resource.js')
+        script(src='/javascripts/angular-poller/angular-poller.min.js')
+        script(src='/javascripts/ui-bootstrap/ui-bootstrap-tpls-0.14.2.min.js')
+        // Angular application parts
+        script(src='/javascripts/angular/controllers.js')
+        script(src='/javascripts/angular/filters.js')
+        script(src='/javascripts/angular/app.js')
+        script(src='/javascripts/angular/popover_custom.js')

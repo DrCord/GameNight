@@ -5,32 +5,32 @@ block content
             h2 Gathering
             div#gathering-add-user
                 h2(
-                data-uib-tooltip="If a username is found on BGG it is used. If you intend to enter a user without a BGG account, make sure to use a string you know will be unique."
-                data-tooltip-trigger="click"
+                    data-uib-tooltip="If a username is found on BGG it is used. If you intend to enter a user without a BGG account, make sure to use a string you know will be unique."
+                    data-tooltip-trigger="click"
                 ) Enter username to lookup account on Board Game Geek and add to Gathering.
                     i.fa.fa-info-circle
                 form(
-                name="add-user"
-                data-ng-submit="addUser(addUserInputUsername)"
+                    name="add-user"
+                    data-ng-submit="addUser(addUserInputUsername)"
                 )
                     input#add-user-input.form-control(
-                    type="text"
-                    name="add-user"
-                    data-ng-model="addUserInputUsername"
-                    required
-                    data-ng-required
-                    placeholder="enter username"
+                        type="text"
+                        name="add-user"
+                        data-ng-model="addUserInputUsername"
+                        required
+                        data-ng-required
+                        placeholder="enter username"
                     )
                     button#add-user-button(
-                    type="button"
-                    class="btn btn-sm btn-success"
-                    data-ng-click="addUser(addUserInputUsername)"
-                    data-ng-disabled="Gathering.loading"
+                        type="button"
+                        class="btn btn-sm btn-success"
+                        data-ng-click="addUser(addUserInputUsername)"
+                        data-ng-disabled="Gathering.loading"
                     ) Add User
                         i(class="fa fa-plus")
             div#gathering-info(
-            ng-cloak
-            data-ng-show="ready"
+                ng-cloak
+                data-ng-show="ready"
             )
                 div#gathering-users
                     h3 Users
@@ -39,23 +39,23 @@ block content
                             ul.user(data-ng-class="{'bgg-user' : user.userData.id}")
                                 li
                                     a.username(
-                                    data-uib-tooltip-template="'usernameTooltipTemplate.html'"
-                                    data-tooltip-placement="right"
-                                    href="http://www.boardgamegeek.com/user/{{user.username}}"
-                                    target="_blank"
-                                    data-ng-show="user.userData.id"
+                                        data-uib-tooltip-template="'usernameTooltipTemplate.html'"
+                                        data-tooltip-placement="right"
+                                        href="http://www.boardgamegeek.com/user/{{user.username}}"
+                                        target="_blank"
+                                        data-ng-show="user.userData.id"
                                     ) {{user.username}}
                                     span.username(data-ng-show="!user.userData.id") {{user.username}}
                                     i(
-                                    class="fa"
-                                    data-ng-class="{'fa-user' : user.userData.id, 'fa-user-secret' : !user.userData.id}"
-                                    data-uib-tooltip-template="'userIconTooltipTemplate.html'"
+                                        class="fa"
+                                        data-ng-class="{'fa-user' : user.userData.id, 'fa-user-secret' : !user.userData.id}"
+                                        data-uib-tooltip-template="'userIconTooltipTemplate.html'"
                                     )
                                     span.actions
                                         button.delete-user(
-                                        data-ng-click="deleteUser(user)"
-                                        class="btn btn-danger btn-xs"
-                                        data-ng-disabled="Gathering.loading"
+                                            data-ng-click="deleteUser(user)"
+                                            class="btn btn-danger btn-xs"
+                                            data-ng-disabled="Gathering.loading"
                                         )
                                             i(class="fa fa-remove")
                     p(data-ng-show="Gathering.users.length == 0") No users in Gathering, add users above.
@@ -68,20 +68,20 @@ block content
         section#games
             h2 Available Games
             table#available-games.table.table-striped.table-bordered.table-hover.table-condensed(
-            data-ng-show="Gathering.games.length"
-            ng-cloak
+                data-ng-show="Gathering.games.length"
+                ng-cloak
             )
                 tr
                     th.counter
                     th.name Name
                 tr(
-                data-ng-repeat="game in Gathering.games | filter:search | filter:gameType:strict | playingTimeBetween:customFilters.playingTime.max:customFilters.playingTime.min | playersBetween:customFilters.players.max:customFilters.players.min | orderBy:sortField:sortReverse"
+                    data-ng-repeat="game in Gathering.games | filter:search | filter:gameType:strict | playingTimeBetween:customFilters.playingTime.max:customFilters.playingTime.min | playersBetween:customFilters.players.max:customFilters.players.min | orderBy:sortField:sortReverse"
                 )
                     td.counter {{$index+1}}
                     td.name(
-                    title="{{gameTooltipText(showDetails)}}"                                                                                            data-uib-popover-template="'gameInfoPopoverTemplate.html'"
-                    data-ng-click="showDetails = !showDetails"
-                    popover-mode="single"
+                        title="{{gameTooltipText(showDetails)}}"                                                                                            data-uib-popover-template="'gameInfoPopoverTemplate.html'"
+                        data-ng-click="showDetails = !showDetails"
+                        popover-mode="single"
                     )
                         h4 {{game.name.value}}
                         //div.gameInfo(ng-show="showDetails")

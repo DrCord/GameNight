@@ -1,0 +1,22 @@
+div(data-ng-show="Data.gatherings.length")
+    h3 Existing Gatherings
+    ul(ng-cloak)
+        li(data-ng-repeat="gathering in Data.gatherings")
+            a(href="/gathering/{{gathering.gName}}") {{gathering.gName}}
+div(data-ng-hide="Data.gatherings.length")
+    p No Gatherings Found
+form(
+    name="addGatheringForm"
+    data-ng-submit="addGathering(addGatheringDisplayName)"
+)
+    input.form-control(
+        type="text"
+        data-ng-model="addGatheringDisplayName"
+        placeholder="unique gathering name"
+    )
+    input.btn.btn-sm.btn-success(
+        type="button"
+        value="Create a Gathering"
+        data-ng-click="addGathering(addGatheringDisplayName)"
+        data-ng-disabled="Data.loading"
+    )

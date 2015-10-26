@@ -1,0 +1,33 @@
+extends layout
+block content
+    div#content.col-md-9
+        section#logs
+            h2 Log
+        button.btn.btn-sm.btn-danger(
+            data-ng-click="resetLog()"
+            data-uib-tooltip="Remove all log messages"
+            data-tooltip-placement="right"
+        ) Reset
+        table.table.table-striped.table-bordered.table-condensed
+            tr
+                th.message Message
+                th.level Level
+                th.category Category
+                th.timestamp Time
+            tr(
+                data-ng-repeat="logItem in Data.logs | orderBy: 'timestamp' | reverse"
+                ng-cloak
+            )
+                td.message {{logItem.message}}
+                td.level {{logItem.level}}
+                td.category {{logItem.category}}
+                td.timestamp {{logItem.timestamp | date: 'medium'}}
+        p(
+            data-ng-show="!Data.logs.length"
+            ng-cloak
+        ) Log is empty
+        button.btn.btn-sm.btn-danger(
+            data-ng-click="resetLog()"
+            data-uib-tooltip="Remove all log messages"
+            data-tooltip-placement="right"
+        ) Reset

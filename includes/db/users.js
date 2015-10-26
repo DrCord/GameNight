@@ -34,8 +34,8 @@ users.findByUsername = function(username, datastore, cb) {
 
 users.load = function(datastore, cb){
     datastore.find({}, function (err, docs) {
-        console.log('load: docs = ');
-        console.log(docs);
+        //console.log('users.load: docs = ');
+        //console.log(docs);
         if(typeof docs[0] != "undefined"){
             return cb(null, docs);
         }
@@ -65,17 +65,32 @@ users.test = {
     },
     createUsers: function(datastore) {
         var hashedPassword = users.test.passwordHash.generate('secret');
-        var userObj = new users.test.User('jack', 1, hashedPassword, null, [{value: 'jack@example.com'}]);
+        var permissions = {
+            logs: {
+                view: true,
+                reset: true
+            },
+            users: {
+                view: true,
+                edit: true,
+                delete: true
+            },
+            gatherings: {
+                edit: true,
+                delete: true
+            }
+        };
+        var userObj = new users.test.User('drcord', hashedPassword, null, [{value: 'cord42@gmail.com'}], permissions);
         users.saveItem(userObj, datastore);
 
         var hashedPassword2 = users.test.passwordHash.generate('birthday');
-        var userObj2 = new users.test.User('jill', 2, hashedPassword2, null, [{value: 'jill@example.com'}]);
+        var userObj2 = new users.test.User('glittergamer', hashedPassword2, null, [{value: 'jill@example.com'}]);
         users.saveItem(userObj2, datastore);
     },
     findUsers: function(datastore){
         datastore.find({}, function (err, docs) {
-            console.log('Database.test findUsers: docs');
-            console.log(docs);
+            //console.log('Database.test findUsers: docs');
+            //console.log(docs);
             if(typeof docs[0] != "undefined"){
                 return docs;
             }

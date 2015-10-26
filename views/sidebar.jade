@@ -3,11 +3,18 @@ div#sidebar.col-md-3
         h3 Links
         ul
             li
-                a(href="/") Index
+                a(href="/") Home
             li
                 a(href="/user") User Profile
             li
+                a(href="/gatherings") Gatherings
+            li
                 a(href="/logout") Logout
+    section#admin-links(ng-if="isAdmin()")
+        h3 Admin Links
+        ul
+            li
+                a(href="/logs") Logs
     section#filters
         h3 Filters
         div

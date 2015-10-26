@@ -8,10 +8,16 @@ var bodyParser = require('body-parser');
 // For authentication
 var passport = require('passport');
 var Strategy = require('passport-local').Strategy;
+var connectEnsureLogin = require('connect-ensure-login');
+var session = require('express-session');
+var flash = require('connect-flash');
 var passwordHash = require('password-hash');
+var DataConstructor = require('./includes/Data.js');
+var Data = new DataConstructor();
 var Database = require('./includes/Database.js');
+var Gathering = require('./includes/Gathering.js');
+var User = require('./includes/User.js');
 var Log = require('./includes/Log.js');
-var Data = require('./includes/Data.js');
 
 /** Configure the local strategy for use by Passport.
 *
@@ -22,9 +28,12 @@ var Data = require('./includes/Data.js');
 */
 passport.use(new Strategy(
     function(username, password, cb) {
-        Database.users.findByUsername(username, Database.users.datastore, function(err, user) {
+        Database.users.findByUsername(username, Database.users.datastore, function(err, user){
+            // If error is 'Username **** does not exist' return cb without error, but not successful with user
+            if (err && err.message.match(/Username .*? does not exist/)) { return cb(null, false); }
             if (err) { return cb(err); }
             if (!user) { return cb(null, false); }
+            // Check if input password matches user password from db
             if (!passwordHash.verify(password, user.password)) { return cb(null, false); }
             return cb(null, user);
         });
@@ -50,6 +59,7 @@ passport.deserializeUser(function(id, cb) {
 });
 
 var app = express();
+var sessionStore = new session.MemoryStore;
 Array.prototype.objectFind = function(obj) {
     // Extend array with find for an object literal value
     // From http://stackoverflow.com/a/11836196/1291935
@@ -83,7 +93,7 @@ var WebServer = {
         WebServer.serveDirectories();
         WebServer.defineRoutes();
         WebServer.setupApi();
-        WebServer.create();
+        WebServer.errorHandling();
     },
     setupMiddleware: function(){
         // view engine setup - Jade
@@ -95,7 +105,21 @@ var WebServer = {
         app.use(bodyParser.json());
         app.use(bodyParser.urlencoded({ extended: true }));
         app.use(cookieParser());
-        app.use(require('express-session')({ secret: 'keyboard cat', resave: false, saveUninitialized: false }));
+        app.use(session({
+            secret: 'keyboard cat',
+            store: sessionStore,
+            resave: true,
+            saveUninitialized: true,
+            cookie: { maxAge: 60000 }
+        }));
+        app.use(flash());
+        // Custom flash middleware -- from Ethan Brown's book, 'Web Development with Node & Express'
+        app.use(function(req, res, next){
+            // if there's a flash message in the session request, make it available in the response, then delete it
+            res.locals.sessionFlash = req.session.sessionFlash;
+            delete req.session.sessionFlash;
+            next();
+        });
         // Initialize Passport and restore authentication state,
         // if any, from any previous session.
         app.use(passport.initialize());
@@ -110,65 +134,186 @@ var WebServer = {
         app.use(express.static(path.join(__dirname, 'node_modules/angular-animate')));
     },
     defineRoutes: function(){
-        app.get('/',
-            function(req, res) {
-                res.render('index', {
-                    // TODO: change data structure for Gathering to Data (Gathering will be at Data.gatherings[i])
-                    Gathering: Gathering,
-                    user: req.user,
-                    Data: Data
-                });
+        app.get('/', function(req, res){
+            res.render('index', {
+                Data: Data,
+                user: req.user[0],
+                expressFlash: req.flash('success'),
+                sessionFlash: res.locals.sessionFlash
             });
+        });
+
+        // TODO remove these test flash message creation routes when sure unneeded
+        // Route that creates a flash message using the express-flash module
+        app.get('/express-flash', function( req, res ){
+            req.flash('success', 'This is a flash message using the express-flash module.');
+            res.redirect('/');
+        });
+
+        // Route that creates a flash message using custom middleware
+        app.get('/session-flash', function( req, res ){
+            req.session.sessionFlash = {
+                type: 'success',
+                message: 'This is a flash message using custom middleware and express-session.'
+            };
+            res.redirect('/');
+        });
 
         app.get('/login',
             function(req, res){
                 res.redirect('/');
             });
 
+        app.get('/login/failure', function( req, res ){
+            // Use req.session.sessionFlash as it is available to msg logged out user
+            req.session.sessionFlash = {
+                type: 'success',
+                message: 'Unable to login, please try again or consult the systems admin.'
+            };
+            res.redirect('/');
+        });
+
         app.post('/login',
-            passport.authenticate('local', { failureRedirect: '/login' }),
-            function(req, res) {
-                res.redirect('/');
+            passport.authenticate('local', {
+                successRedirect: '/',
+                failureRedirect: '/login/failure',
+                failureFlash: 'Login Failure!',
+                successFlash: 'Welcome: successful login!'
+            }),
+            function(req, res){
+                Log.log.info('User', 'User ' + req.user[0]['username'] + ' logged in', true);
             });
 
         app.get('/logout',
             function(req, res){
+                var msg = 'User ' + req.user[0]['username'] + ' logged out';
+                req.flash('success', msg);
+                Log.log.info('User', msg, true);
                 req.logout();
                 res.redirect('/');
             });
 
         app.get('/user',
-            require('connect-ensure-login').ensureLoggedIn(),
+            connectEnsureLogin.ensureLoggedIn(),
             function(req, res){
-                res.render('user', { user: req.user[0] });
+                res.render('user', {
+                    user: req.user[0],
+                    expressFlash: req.flash('success'),
+                    sessionFlash: res.locals.sessionFlash
+                });
             });
-        // TODO: add route for user by user id, /user/:id
 
         app.get('/gatherings',
-            require('connect-ensure-login').ensureLoggedIn(),
+            connectEnsureLogin.ensureLoggedIn(),
             function(req, res){
-                res.render('gatherings', { Data: Data });
+                res.render('gatherings', {
+                    Data: Data,
+                    user: req.user[0],
+                    expressFlash: req.flash('success'),
+                    sessionFlash: res.locals.sessionFlash
+                });
             });
 
-        // TODO: add /gathering id, e.g. /gathering/:id
-        app.get('/gathering',
-            require('connect-ensure-login').ensureLoggedIn(),
+        app.get('/gathering/:gName',
+            connectEnsureLogin.ensureLoggedIn(),
             function(req, res){
-                res.render('gathering', { Data: Data });
+                if(typeof Data.gatherings[req.params.gName] != "undefined"){
+                    var gathering = Data.gatherings[req.params.gid];
+                }
+                else if(typeof Data.gatherings[0] != "undefined"){
+                    var gathering = Data.gatherings[0];
+                }
+                if(typeof gathering != "undefined"){
+                    res.render('gathering', {
+                        Data: Data,
+                        Gathering: gathering,
+                        user: req.user[0],
+                        expressFlash: req.flash('success'),
+                        sessionFlash: res.locals.sessionFlash
+                    });
+                }
+                // If no gatherings redirect to /gatherings to allow gathering creation
+                res.redirect('/gatherings');
+            });
+
+        app.get('/logs',
+            connectEnsureLogin.ensureLoggedIn(),
+            function(req, res){
+                if(req.user[0]['permissions']['logs']['view']){
+                    res.render('log', {
+                        Data: Data,
+                        user: req.user[0],
+                        expressFlash: req.flash('success'),
+                        sessionFlash: res.locals.sessionFlash
+                    });
+                }
+                else{
+                    // TODO message regarding permissions and redirection
+                    res.redirect('/');
+                }
             });
     },
     setupApi: function(){
         /** JSON API allows requests from front end to accomplish tasks */
-        app.get('/api/gathering', function(req, res){
-            //console.log('/api/gathering backend route called');
-            return res.json({ Gathering: Gathering });
+        app.get('/api/data/get', function(req, res){
+            return res.json({ Data: Data });
         });
-        app.get('/api/users', function(req, res){
-            //console.log('/api/users backend route called');
-            return res.json({ Gathering: Gathering });
+        app.get('/api/users/get', function(req, res){
+            return res.json({ users: Data.users });
         });
-        app.post('/api/add-user', function(req, res){
-            //console.log('/api/add-user backend route called');
+        app.get('/api/gatherings/get', function(req, res){
+            return res.json({ gatherings: Data.gatherings });
+        });
+        app.get('/api/games/get', function(req, res){
+            return res.json({ games: Data.games });
+        });
+        app.get('/api/loading/get', function(req, res){
+            return res.json({ loading: Data.loading });
+        });
+        app.get('/api/messages/get', function(req, res){
+            return res.json({ messages: req.flash('info') });
+        });
+        app.get('/api/user/get', function(req, res){
+            // get active logged in user
+            var user = {};
+            if(typeof req.user != "undefined"){
+                user = req.user[0];
+            }
+            return res.json({ user: user });
+        });
+        app.post('/api/gathering/add', function(req, res){
+            console.log('/api/gathering/add backend route called');
+            if(typeof req.body.gName != "undefined"){
+                Data.loading = true;
+                console.log(req.body);
+                var gathering = new Gathering(req.body.gName, req.body.creator);
+                // TODO on gathering creation save to db
+                Data.gatherings.push(gathering);
+                Data.loading = false;
+                return res.json({ gatherings: Data.gatherings });
+            }
+            else{
+                return res.json({ gatherings: Data.gatherings });
+            }
+        });
+        app.post('/api/user/add', function(req, res){
+            console.log('/api/user/add backend route called');
+            if(typeof req.body.username != "undefined" && typeof req.body.password != "undefined"){
+                Data.loading = true;
+                //console.log(req.body);
+                var user = new User(req.body.gName, req.body.creator);
+                // TODO on user creation save to db
+                Data.users.push(user);
+                Data.loading = false;
+                return res.json({ Data: Data });
+            }
+            else{
+                return res.json({ Data: Data });
+            }
+        });
+        // TODO finish updating to work with specific gathering
+        app.post('/api/gathering/:gName/user/add', function(req, res){
+            //console.log('/api/user/add backend route called');
             if(typeof req.body.username != "undefined"){
                 Gathering.loading = true;
                 //console.log(req.body.username);
@@ -179,7 +324,7 @@ var WebServer = {
                         Gathering.updateAvailableGames(userObj)
                             .then(function(){
                                 Gathering.loading = false;
-                                return res.json({ Gathering: Gathering });
+                                return res.json({ Data: Data });
                             })
                         ;
                     })
@@ -189,8 +334,9 @@ var WebServer = {
                 return res.json({ Gathering: Gathering });
             }
         });
-        app.post('/api/delete-user', function(req, res){
-            //console.log('/api/delete-user backend route called');
+        // TODO finish updating to work with specific gathering
+        app.post('/api/gathering/:gName/user/delete', function(req, res){
+            //console.log('/api/user/delete backend route called');
             if(typeof req.body.username != "undefined"){
                 Gathering.loading = true;
                 //console.log(req.body.username);
@@ -199,22 +345,45 @@ var WebServer = {
                 Gathering.updateAvailableGames()
                     .then(function(){
                         Gathering.loading = false;
-                        return res.json({ Gathering: Gathering });
+                        return res.json({ Data: Data });
                     })
                 ;
             }
         });
+        // log
+        app.get('/api/log/get', function(req, res){
+            return res.json({ log: Data.logs });
+        });
+        app.get('/api/log/load', function(req, res){
+            // /load queries the db for new log items as opposed to /get just getting the current items
+            Log.load(Data);
+            return res.json({ log: Data.logs });
+        });
+        app.get('/api/log/reset', function(req, res){
+            Log.reset(Data);
+            return res.json({ log: Data.logs });
+        });
     },
-    create: function(){
-        // catch 404 and forward to error handler
-        app.use(function(req, res, next) {
-            var err = new Error('Not Found');
-            err.status = 404;
-            next(err);
+    errorHandling: function(){
+        // Send 404's to 404 page
+        // from http://stackoverflow.com/a/9802006/1291935
+        app.use(function(req, res, next){
+            res.status(404);
+            // respond with html page
+            if (req.accepts('html')) {
+                res.render('404', { url: req.url });
+                return;
+            }
+            // respond with json
+            if (req.accepts('json')) {
+                res.send({ error: 'Not found' });
+                return;
+            }
+            // default to plain-text. send()
+            res.type('txt').send('Not found');
         });
 
-        // error handlers
-
+        /** error handlers */
         // development error handler
         // will print stacktrace
         if (app.get('env') === 'development') {
@@ -226,7 +395,6 @@ var WebServer = {
                 });
             });
         }
-
         // production error handler
         // no stacktraces leaked to user
         app.use(function(err, req, res, next) {
@@ -236,20 +404,22 @@ var WebServer = {
                 error: {}
             });
         });
-        console.log('WebServer initialized');
+        Log.log.info('WebServer', 'WebServer initialized', true);
+
     }
 };
 // Object for overall application
 var GameNight = {
     init: function(){
-        Database.init();
-        Log.init();
+        Database.init(Data);
+        Log.init(Data);
         WebServer.init();
-        Gathering.init();
+        Log.log.info('GameNight', 'GameNight initialized', true);
+
         //GameNight.test();
     },
     test: function(){ /** testing function to setup data */
-        var testUser = Gathering.addBGG_User('drcord');
+        /*var testUser = Gathering.addBGG_User('drcord');
         var testUser2 = Gathering.addBGG_User('glittergamer');
         var testUser3 = Gathering.addBGG_User('test897974444');
         // Example/test usage
@@ -257,7 +427,10 @@ var GameNight = {
             .then(function(userObj){
                 Gathering.updateBGG_User(userObj);
             })
-        ;
+        ;*/
+        Data.gatherings.push(new Gathering('testGathering1', 'drcord'));
+        console.log('GameNight.test() - Data');
+        console.log(Data);
     }
 };
 // Start application

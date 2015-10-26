@@ -124,6 +124,10 @@ span.label{
 #add-user-button i{
     padding-left: 3px;
 }
+#debug{
+    position: absolute;
+    top: 400px;
+}
 
 /* From: http://stackoverflow.com/a/13276214/1291935
   Allow angular.js to be loaded in body, hiding cloaked elements until

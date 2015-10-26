@@ -1,151 +1,468 @@
-{"type":"log","level":"info","category":"Log","message":"Log initialized and log items loaded","timestamp":1445529492499,"_id":"0ols8jyit0xzUHcy"}
-{"type":"log","level":"info","category":"Log","message":"Log initialized and log items loaded","timestamp":1445545439971,"_id":"1BrrFdypyz55jXeX"}
-{"type":"log","level":"info","category":"users","message":"users.save - jack saved.","timestamp":1445549704148,"_id":"1IxlVgldXRKNMTzY"}
-{"type":"log","level":"info","category":"Log","message":"Log initialized and log items loaded","timestamp":1445531567845,"_id":"1Lh1bjCTrvgC6739"}
-{"type":"log","level":"info","category":"users","message":"users.save - jill saved.","timestamp":1445545604439,"_id":"1V341N3FpFwp85b5"}
-{"type":"log","level":"info","category":"Log","message":"Log initialized and log items loaded","timestamp":1445545539652,"_id":"1oxNBVako9Bu1Lqq"}
-{"type":"log","level":"info","category":"users","message":"users.save - jack saved.","timestamp":1445548294348,"_id":"244xrvdDpFOdqA9v"}
-{"type":"log","level":"info","category":"Log","message":"Log initialized and log items loaded","timestamp":1445550115474,"_id":"27Pro0gO4BMmZXok"}
-{"type":"log","level":"info","category":"users","message":"users.save - jill saved.","timestamp":1445548294456,"_id":"27etE6AnrvNEaFLh"}
-{"type":"log","level":"info","category":"users","message":"users.save - undefined saved.","timestamp":1445543847055,"_id":"2Pvz7fqCnZXWh6Fk"}
-{"type":"log","level":"info","category":"users","message":"users.save - undefined saved.","timestamp":1445544975767,"_id":"2eYPDGayAl52IE89"}
-{"type":"log","level":"info","category":"Log","message":"Log initialized and log items loaded","timestamp":1445549021797,"_id":"2iHfSn3t9Wz1JCtV"}
-{"type":"log","level":"info","category":"users","message":"users.save - jill saved.","timestamp":1445548324687,"_id":"3Jl9n4cCoreQW5xZ"}
-{"type":"log","level":"info","category":"Log","message":"Log initialized and log items loaded","timestamp":1445554960438,"_id":"3iAIuf4Je2BfGDuM"}
-{"type":"log","level":"info","category":"Log","message":"Log initialized and log items loaded","timestamp":1445547549734,"_id":"4eKdmt5YKhNzjRvk"}
-{"type":"log","level":"info","category":"users","message":"users.save - jack saved.","timestamp":1445549831074,"_id":"4xFhOcOYhJQT7bJK"}
-{"type":"log","level":"info","category":"Log","message":"Log initialized and log items loaded","timestamp":1445543760004,"_id":"54jjwHdJwCDSWl7a"}
-{"type":"log","level":"info","category":"Log","message":"Log initialized and log items loaded","timestamp":1445543800632,"_id":"58JVHUsIscT2yNMq"}
-{"type":"log","level":"info","category":"Log","message":"Log initialized and log items loaded","timestamp":1445544939047,"_id":"5cKn8D5DPD28uKcF"}
-{"type":"log","level":"info","category":"Log","message":"Log initialized and log items loaded","timestamp":1445531725026,"_id":"7BEDLth9f1pKewA8"}
-{"type":"log","level":"info","category":"users","message":"users.save - jack saved.","timestamp":1445552059314,"_id":"7G7JvcJPnKOlqunb"}
-{"type":"log","level":"info","category":"users","message":"users.save - undefined saved.","timestamp":1445544554581,"_id":"8KC6G3RU22WqzjZ0"}
-{"type":"log","level":"info","category":"users","message":"users.save - undefined saved.","timestamp":1445544736447,"_id":"8PiPkc5NNiQN5qhx"}
-{"type":"log","level":"info","category":"users","message":"users.save - jill saved.","timestamp":1445546541825,"_id":"8XzDYo1Rip5eKCZv"}
-{"type":"log","level":"info","category":"users","message":"users.save - jack saved.","timestamp":1445553585912,"_id":"9jWwVaxuSF4rojSr"}
-{"type":"log","level":"info","category":"users","message":"users.save - jill saved.","timestamp":1445545540542,"_id":"BSiPv7UvBORtZeXb"}
-{"type":"log","level":"info","category":"users","message":"users.save - jack saved.","timestamp":1445546633659,"_id":"BnYQvtJuPVux5FV9"}
-{"type":"log","level":"info","category":"users","message":"users.save - jack saved.","timestamp":1445549991752,"_id":"BsQo9XcuA8KEZaGm"}
-{"type":"log","level":"info","category":"users","message":"users.save - jill saved.","timestamp":1445555334055,"_id":"C8wKnBEbO2EO1TFa"}
-{"type":"log","level":"info","category":"Log","message":"Log initialized and log items loaded","timestamp":1445555333243,"_id":"DELKeAxT74qqWWpq"}
-{"type":"log","level":"info","category":"users","message":"users.save - jack saved.","timestamp":1445550116240,"_id":"DUIifoCj4SNuvS1j"}
-{"type":"log","level":"info","category":"users","message":"users.save - jill saved.","timestamp":1445555138162,"_id":"DYJa7IftzOgUnvgw"}
-{"type":"log","level":"info","category":"Log","message":"Log initialized and log items loaded","timestamp":1445549830305,"_id":"EDETVMWT3YsxDXUF"}
-{"type":"log","level":"info","category":"Log","message":"Log initialized and log items loaded","timestamp":1445546541019,"_id":"EiBv2ikhdIz5kxhu"}
-{"type":"log","level":"info","category":"Log","message":"Log initialized and log items loaded","timestamp":1445544735710,"_id":"F6wGgDOlux26vF1N"}
-{"type":"log","level":"info","category":"Log","message":"Log initialized and log items loaded","timestamp":1445543846209,"_id":"F7oeyRRqy6wdNJ2d"}
-{"type":"log","level":"info","category":"users","message":"users.save - jill saved.","timestamp":1445548572981,"_id":"FXP8vcdlTODqOKb8"}
-{"type":"log","level":"info","category":"users","message":"users.save - jill saved.","timestamp":1445545627775,"_id":"GirouEe852VRGUTW"}
-{"type":"log","level":"info","category":"users","message":"users.save - jack saved.","timestamp":1445554593136,"_id":"GpwRMIILdAvErgCf"}
-{"type":"log","level":"info","category":"users","message":"users.save - jill saved.","timestamp":1445549141630,"_id":"HLVLsVda5XNzYOcY"}
-{"type":"log","level":"info","category":"users","message":"users.save - jill saved.","timestamp":1445555251819,"_id":"I3kr3nyl1MmkUhrw"}
-{"type":"log","level":"info","category":"users","message":"users.save - jack saved.","timestamp":1445549022561,"_id":"IEGO2L9Vrf5vb9jd"}
-{"type":"log","level":"info","category":"users","message":"users.save - jack saved.","timestamp":1445545204587,"_id":"IjcnG987aH26QDL2"}
-{"type":"log","level":"info","category":"users","message":"users.save - jill saved.","timestamp":1445546564318,"_id":"IpT2KRiaGrGCeCEm"}
-{"type":"log","level":"info","category":"users","message":"users.save - jack saved.","timestamp":1445545377542,"_id":"JhKgWJOWzUpBLdqX"}
-{"type":"log","level":"info","category":"Log","message":"Log initialized and log items loaded","timestamp":1445531824298,"_id":"KrBtD6nAfWZ60qb6"}
-{"type":"log","level":"info","category":"Log","message":"Log initialized and log items loaded","timestamp":1445546563571,"_id":"L1vRGYEhfjN7EGM8"}
-{"type":"log","level":"info","category":"users","message":"users.save - jack saved.","timestamp":1445554961417,"_id":"LAWjlufY5JWcPXPS"}
-{"type":"log","level":"info","category":"Log","message":"Log initialized and log items loaded","timestamp":1445552058320,"_id":"LGDtcZMLz8cY62So"}
-{"type":"log","level":"info","category":"users","message":"users.save - jill saved.","timestamp":1445545098912,"_id":"Lk9v4WWcZrstSkzb"}
-{"type":"log","level":"info","category":"Log","message":"Log initialized and log items loaded","timestamp":1445548060354,"_id":"LlPwOPbuW10jVk6d"}
-{"type":"log","level":"info","category":"users","message":"users.save - jack saved.","timestamp":1445545526111,"_id":"Nub9U6PmSBjt5xpA"}
-{"type":"log","level":"info","category":"Log","message":"Log initialized and log items loaded","timestamp":1445543684527,"_id":"OlDDWhXAwAkQFb6B"}
-{"type":"log","level":"info","category":"users","message":"users.save - jack saved.","timestamp":1445546564297,"_id":"OykIhmmUpZ3oYEPR"}
-{"type":"log","level":"info","category":"users","message":"users.save - jack saved.","timestamp":1445545627764,"_id":"PNgHR5oUmkOP9lbE"}
-{"type":"log","level":"info","category":"Log","message":"Log initialized and log items loaded","timestamp":1445532639683,"_id":"PdRAZiT3ZlfldhSi"}
-{"type":"log","level":"info","category":"Log","message":"Log initialized and log items loaded","timestamp":1445545627034,"_id":"Pw9I4sGkfa8nRsTL"}
-{"type":"log","level":"info","category":"users","message":"users.save - jill saved.","timestamp":1445548419686,"_id":"QDhNE83bMOh9T3R8"}
-{"type":"log","level":"info","category":"users","message":"users.save - jill saved.","timestamp":1445550116249,"_id":"QdhHDdTswCFun1Mm"}
-{"type":"log","level":"info","category":"users","message":"users.save - jack saved.","timestamp":1445555251801,"_id":"QhnH2SqsgWSRWMCg"}
-{"type":"log","level":"info","category":"Log","message":"Log initialized and log items loaded","timestamp":1445550641570,"_id":"QuWxesN6q58L2XLI"}
-{"type":"log","level":"info","category":"Log","message":"Log initialized and log items loaded","timestamp":1445531634753,"_id":"RKGlS2ZVxUzixsff"}
-{"type":"log","level":"info","category":"users","message":"users.save - jill saved.","timestamp":1445547550505,"_id":"SAjG3IFasiyO0PFK"}
-{"type":"log","level":"info","category":"users","message":"users.save - jack saved.","timestamp":1445545540381,"_id":"SaEVuvwtTMo76Bc2"}
-{"type":"log","level":"info","category":"Log","message":"Log initialized and log items loaded","timestamp":1445529762909,"_id":"Sgje2rnrKcgnsWiZ"}
-{"type":"log","level":"info","category":"Log","message":"Log initialized and log items loaded","timestamp":1445544553860,"_id":"TYvn7Q8dK01h5auP"}
-{"type":"log","level":"info","category":"users","message":"users.save - jill saved.","timestamp":1445553665265,"_id":"UHw4VuFZY9pgcEMN"}
-{"type":"log","level":"info","category":"Log","message":"Log initialized and log items loaded","timestamp":1445548418910,"_id":"UOf11eUdg1KV0pDn"}
-{"type":"log","level":"info","category":"Log","message":"Log initialized and log items loaded","timestamp":1445555137362,"_id":"Uh3O43mZzEB56FNL"}
-{"type":"log","level":"info","category":"users","message":"users.save - jill saved.","timestamp":1445554535457,"_id":"VJ9iZLVMHBkvL3ha"}
-{"type":"log","level":"info","category":"users","message":"users.save - jack saved.","timestamp":1445545323910,"_id":"VvDyFFehztiYR3S8"}
-{"type":"log","level":"info","category":"Log","message":"Log initialized and log items loaded","timestamp":1445554592377,"_id":"W47YVb8jQTFJzB6B"}
-{"type":"log","level":"info","category":"users","message":"users.save - jack saved.","timestamp":1445548572945,"_id":"WdCvuYeJpQfLmUKv"}
-{"type":"log","level":"info","category":"Log","message":"Log initialized and log items loaded","timestamp":1445554458020,"_id":"X6KFF6TLcNpdqrOA"}
-{"type":"log","level":"info","category":"users","message":"users.save - jill saved.","timestamp":1445545526120,"_id":"XKTMj6l9MjPY9yj9"}
-{"type":"log","level":"info","category":"users","message":"users.save - jill saved.","timestamp":1445554879143,"_id":"Xc2y05kULhS8WHgZ"}
-{"type":"log","level":"info","category":"Log","message":"Log initialized and log items loaded","timestamp":1445545203866,"_id":"XgLKCNiz3o0nIYFH"}
-{"type":"log","level":"info","category":"Log","message":"Log initialized and log items loaded","timestamp":1445555416244,"_id":"XrnTGECSvmRwkcZJ"}
-{"type":"log","level":"info","category":"users","message":"users.save - jack saved.","timestamp":1445555334038,"_id":"Y6ajEYbAlIH7hvSr"}
-{"type":"log","level":"info","category":"users","message":"users.save - undefined saved.","timestamp":1445544736428,"_id":"YkPzOTTZ6jE0AqBq"}
-{"type":"log","level":"info","category":"users","message":"users.save - jack saved.","timestamp":1445548419654,"_id":"YoxGDK60JFOM8Pie"}
-{"type":"log","level":"info","category":"users","message":"users.save - jack saved.","timestamp":1445546541806,"_id":"YvfVISRwRL0rdfjY"}
-{"type":"log","level":"info","category":"users","message":"users.save - jack saved.","timestamp":1445549141613,"_id":"Z9yRrJA33Raa7XbS"}
-{"type":"log","level":"info","category":"users","message":"users.save - jack saved.","timestamp":1445554535441,"_id":"ZABdMv4xwv1vA4ag"}
-{"type":"log","level":"info","category":"Log","message":"Log initialized and log items loaded","timestamp":1445548572208,"_id":"ZJWKgm653cEhlMEG"}
-{"type":"log","level":"info","category":"users","message":"users.save - jill saved.","timestamp":1445549022683,"_id":"Zo7TOp7nvSBWWVbi"}
-{"type":"log","level":"info","category":"users","message":"users.save - jill saved.","timestamp":1445554593152,"_id":"ZrveRArQKYjIEWAs"}
-{"type":"log","level":"info","category":"Log","message":"Log initialized and log items loaded","timestamp":1445545478846,"_id":"ZutiFkCFVKzxQ3d1"}
-{"type":"log","level":"info","category":"users","message":"users.save - jill saved.","timestamp":1445549831086,"_id":"aMhaJQNArZrHm5Dh"}
-{"type":"log","level":"info","category":"Log","message":"Log initialized and log items loaded","timestamp":1445531776098,"_id":"acJN9X52slLzYoug"}
-{"type":"log","level":"info","category":"users","message":"users.save - jill saved.","timestamp":1445549704158,"_id":"aeqwd1R5uaQnnelg"}
-{"type":"log","level":"info","category":"Log","message":"Log initialized and log items loaded","timestamp":1445544975031,"_id":"bqmKjElnBAwNcnuu"}
-{"type":"log","level":"info","category":"Log","message":"Log initialized and log items loaded","timestamp":1445545525385,"_id":"bv3rHGyeQ6tm4IIR"}
-{"type":"log","level":"info","category":"users","message":"users.save - jack saved.","timestamp":1445545604430,"_id":"cLYjJom09NuEYtIF"}
-{"type":"log","level":"info","category":"Log","message":"Log initialized and log items loaded","timestamp":1445532026885,"_id":"cfOtB7tzdH2Oeq4c"}
-{"type":"log","level":"info","category":"users","message":"users.save - jill saved.","timestamp":1445549991768,"_id":"dt3AZVDk0TjyxH6K"}
-{"type":"log","level":"info","category":"users","message":"users.save - jill saved.","timestamp":1445545377572,"_id":"ensL8Tsj922EoouU"}
-{"type":"log","level":"info","category":"users","message":"users.save - jill saved.","timestamp":1445548382065,"_id":"erFZCoR7oLVGppP2"}
-{"type":"log","level":"info","category":"Log","message":"Log initialized and log items loaded","timestamp":1445554534665,"_id":"esAltsIyrRNfJhxZ"}
-{"type":"log","level":"info","category":"users","message":"users.save - jack saved.","timestamp":1445548061119,"_id":"f8fsVhtqzIXg22LJ"}
-{"type":"log","level":"info","category":"users","message":"users.save - jill saved.","timestamp":1445545323927,"_id":"g5bLwouNOjUy0MpV"}
-{"type":"log","level":"info","category":"users","message":"users.save - jack saved.","timestamp":1445545479574,"_id":"gvJ5ynER6pDgfwia"}
-{"type":"log","level":"info","category":"users","message":"users.save - jill saved.","timestamp":1445553585929,"_id":"hP7uOzq3S1GkYEX5"}
-{"type":"log","level":"info","category":"users","message":"users.save - undefined saved.","timestamp":1445543685281,"_id":"hcEcEeyth4LwUrfZ"}
-{"type":"log","level":"info","category":"users","message":"users.save - jack saved.","timestamp":1445555138145,"_id":"jJmMRvtss15ICZhb"}
-{"type":"log","level":"info","category":"users","message":"users.save - jack saved.","timestamp":1445555417261,"_id":"jKiBeMHYS8jxNDZw"}
-{"type":"log","level":"info","category":"Log","message":"Log initialized and log items loaded","timestamp":1445545323180,"_id":"jvUmwFoZI5pgBQ1R"}
-{"type":"log","level":"info","category":"Log","message":"Log initialized and log items loaded","timestamp":1445531471719,"_id":"k6RlSuxA3O62bOfH"}
-{"type":"log","level":"info","category":"users","message":"users.save - jack saved.","timestamp":1445545440709,"_id":"k6kUrmtZ9NWVZnr7"}
-{"type":"log","level":"info","category":"users","message":"users.save - jack saved.","timestamp":1445547550489,"_id":"luHIkCM5yL9ea7lU"}
-{"type":"log","level":"info","category":"users","message":"users.save - jill saved.","timestamp":1445555417280,"_id":"m2NazNbUugCvK888"}
-{"type":"log","level":"info","category":"Log","message":"Log initialized and log items loaded","timestamp":1445554878350,"_id":"mBQxrGp9aSGoWw0a"}
-{"type":"log","level":"info","category":"users","message":"users.save - jack saved.","timestamp":1445554879101,"_id":"mHnOtU9JLWl7j9JD"}
-{"type":"log","level":"info","category":"users","message":"users.save - jill saved.","timestamp":1445548061139,"_id":"mS1l9EIAdD0YaXP5"}
-{"type":"log","level":"info","category":"Log","message":"Log initialized and log items loaded","timestamp":1445549140645,"_id":"nEpkyrYBcLsbhT6j"}
-{"type":"log","level":"info","category":"users","message":"users.save - jill saved.","timestamp":1445545204596,"_id":"nN1fR2emxCGI1LqR"}
-{"type":"log","level":"info","category":"users","message":"users.save - jill saved.","timestamp":1445546633676,"_id":"nnDpIct9GYegSr0S"}
-{"type":"log","level":"info","category":"users","message":"users.save - jack saved.","timestamp":1445548382050,"_id":"o9s0CsRar8lCGYWb"}
-{"type":"log","level":"info","category":"Log","message":"Log initialized and log items loaded","timestamp":1445549990986,"_id":"oRfFeuBoTG7iaNjN"}
-{"type":"log","level":"info","category":"Log","message":"Log initialized and log items loaded","timestamp":1445548323908,"_id":"opUmGiOLy3yCVqdc"}
-{"type":"log","level":"info","category":"Log","message":"Log initialized and log items loaded","timestamp":1445553664489,"_id":"pS5qoqLIaDJERD3i"}
-{"type":"log","level":"info","category":"Log","message":"Log initialized and log items loaded","timestamp":1445545376822,"_id":"pfzGj5wS2TcjbI3C"}
-{"type":"log","level":"info","category":"Log","message":"Log initialized and log items loaded","timestamp":1445548381295,"_id":"pyUKFKmxbWdrCGIA"}
-{"type":"log","level":"info","category":"Log","message":"Log initialized and log items loaded","timestamp":1445555251002,"_id":"qCye4026vtO0z8nI"}
-{"type":"log","level":"info","category":"Log","message":"Log initialized and log items loaded","timestamp":1445545098090,"_id":"qf2RTIVmGb6ohBAK"}
-{"type":"log","level":"info","category":"users","message":"users.save - jill saved.","timestamp":1445550642562,"_id":"qfvG45MuziMsOEbB"}
-{"type":"log","level":"info","category":"users","message":"users.save - jack saved.","timestamp":1445545098785,"_id":"r8ayiViSoailcLpB"}
-{"type":"log","level":"info","category":"users","message":"users.save - jack saved.","timestamp":1445554458792,"_id":"rcb20cU8QSlHCr1C"}
-{"type":"log","level":"info","category":"users","message":"users.save - jill saved.","timestamp":1445545479591,"_id":"rh5LQjwm4v9ByImK"}
-{"type":"log","level":"info","category":"Log","message":"Log initialized and log items loaded","timestamp":1445545603669,"_id":"rhaGFuxtrbzxdmS7"}
-{"type":"log","level":"info","category":"users","message":"users.save - undefined saved.","timestamp":1445544554562,"_id":"rnufmT6yA5KXJsDL"}
-{"type":"log","level":"info","category":"users","message":"users.save - jack saved.","timestamp":1445550642539,"_id":"roh2dBg5f8H4M8vo"}
-{"type":"log","level":"info","category":"Log","message":"Log initialized and log items loaded","timestamp":1445532428317,"_id":"sC6V9Om4crEqAv2C"}
-{"type":"log","level":"info","category":"users","message":"users.save - undefined saved.","timestamp":1445544975754,"_id":"sk4uF7Ftpmq5HwFP"}
-{"type":"log","level":"info","category":"users","message":"users.save - jill saved.","timestamp":1445554458809,"_id":"tAmEpQwSS8Feq1gj"}
-{"type":"log","level":"info","category":"users","message":"users.save - jill saved.","timestamp":1445545440718,"_id":"uKh9xS5iEOiZuRqq"}
-{"type":"log","level":"info","category":"users","message":"users.save - jack saved.","timestamp":1445548324640,"_id":"uaynOJL0Ncl6Ts1e"}
-{"type":"log","level":"info","category":"users","message":"users.save - jill saved.","timestamp":1445554961457,"_id":"vQSOmfbD4dv5PV9w"}
-{"type":"log","level":"info","category":"Log","message":"Log initialized and log items loaded","timestamp":1445549703415,"_id":"vbnFktLxNvnAEbV2"}
-{"type":"log","level":"info","category":"Log","message":"Log initialized and log items loaded","timestamp":1445548293461,"_id":"x0xwMIJXUn6FDhsy"}
-{"type":"log","level":"info","category":"users","message":"users.save - undefined saved.","timestamp":1445544939774,"_id":"x2jgsBDbL3NLjEkZ"}
-{"type":"log","level":"info","category":"Log","message":"Log initialized and log items loaded","timestamp":1445553585149,"_id":"xKRupDZ2uZlaZRUa"}
-{"type":"log","level":"info","category":"users","message":"users.save - undefined saved.","timestamp":1445544939754,"_id":"xfQdExWFHA40pMUt"}
-{"type":"log","level":"info","category":"Log","message":"Log initialized and log items loaded","timestamp":1445396114093,"_id":"xgMccWcHv7oYD3pm"}
-{"type":"log","level":"info","category":"users","message":"users.save - jill saved.","timestamp":1445552059330,"_id":"xoxp0Cos0yXlosWj"}
-{"type":"log","level":"info","category":"users","message":"users.save - jack saved.","timestamp":1445553665248,"_id":"xtQ2u1Ji7QvMWmaS"}
-{"type":"log","level":"info","category":"Log","message":"Log initialized and log items loaded","timestamp":1445543624570,"_id":"yoKVwie3FqnoH8wH"}
-{"type":"log","level":"info","category":"Log","message":"Log initialized and log items loaded","timestamp":1445546632913,"_id":"yuT45F7Hhdb7sY5q"}
-{"type":"log","level":"info","category":"Log","message":"Log initialized and log items loaded","timestamp":1445555473367,"_id":"w3qAZWGdgWOESFLf"}
-{"type":"log","level":"info","category":"users","message":"users.save - jack saved.","timestamp":1445555474388,"_id":"FI03Z3a1BD3THnYR"}
-{"type":"log","level":"info","category":"users","message":"users.save - jill saved.","timestamp":1445555474405,"_id":"3RoWy1K6ZJeujPYJ"}
+{"type":"log","level":"info","category":"User","message":"User drcord logged out","timestamp":1445826608377,"_id":"04Ijrg69bsmseH8W"}
+{"type":"log","level":"info","category":"GameNight","message":"GameNight initialized","timestamp":1445827669507,"_id":"0CvLcaU6zmPi7VaY"}
+{"type":"log","level":"info","category":"GameNight","message":"GameNight initialized","timestamp":1445821070388,"_id":"0DYfAsLP2wxfkK8z"}
+{"type":"log","level":"info","category":"GameNight","message":"GameNight initialized","timestamp":1445821237436,"_id":"0NY8H1aHNsWodwuL"}
+{"type":"log","level":"info","category":"GameNight","message":"GameNight initialized","timestamp":1445827239885,"_id":"0WDTbujOG4WhtBPS"}
+{"type":"log","level":"info","category":"WebServer","message":"WebServer initialized","timestamp":1445810527763,"_id":"0cjrAZb5TI4UKztG"}
+{"type":"log","level":"info","category":"Log","message":"Log initialized and log items loaded","timestamp":1445818030814,"_id":"1EvQeZFPYxXpWLo6"}
+{"type":"log","level":"info","category":"Log","message":"Log initialized and log items loaded","timestamp":1445812897484,"_id":"1S97JnoC12U9c7uz"}
+{"type":"log","level":"info","category":"GameNight","message":"GameNight initialized","timestamp":1445824787179,"_id":"1hDAYRMRhmXUKPyE"}
+{"type":"log","level":"info","category":"Log","message":"Log initialized and log items loaded","timestamp":1445825157932,"_id":"1ldwVvXBQatUAZZ8"}
+{"type":"log","level":"info","category":"WebServer","message":"WebServer initialized","timestamp":1445825158279,"_id":"1lqoNFSKFKAN5yKG"}
+{"type":"log","level":"info","category":"users","message":"users.save - drcord saved.","timestamp":1445816184506,"_id":"1nhFiuZybtC9ww2l"}
+{"type":"log","level":"info","category":"Log","message":"Log initialized and log items loaded","timestamp":1445827933580,"_id":"1qOQhSE6GACtNAnI"}
+{"type":"log","level":"info","category":"users","message":"users.save - drcord saved.","timestamp":1445813269576,"_id":"26DfnQjCi8S6FcTy"}
+{"type":"log","level":"info","category":"WebServer","message":"WebServer initialized","timestamp":1445826349548,"_id":"2Nbuo6aLmNCXGfXz"}
+{"type":"log","level":"info","category":"users","message":"users.save - glittergamer saved.","timestamp":1445815566772,"_id":"2O7J8dCEBzM2amCO"}
+{"type":"log","level":"info","category":"users","message":"users.save - drcord saved.","timestamp":1445820992783,"_id":"2XOY1TRI2w9GsmGj"}
+{"type":"log","level":"info","category":"users","message":"users.save - glittergamer saved.","timestamp":1445816723223,"_id":"2tQLhIBUeMkvO0kL"}
+{"type":"log","level":"info","category":"WebServer","message":"WebServer initialized","timestamp":1445816232168,"_id":"368r8QEVWjlZDrYN"}
+{"type":"log","level":"info","category":"users","message":"users.save - drcord saved.","timestamp":1445828053874,"_id":"38B4zDOt7KZT4RZK"}
+{"type":"log","level":"info","category":"WebServer","message":"WebServer initialized","timestamp":1445823386369,"_id":"3HtAXErJWfmEmKnc"}
+{"type":"log","level":"info","category":"users","message":"users.save - glittergamer saved.","timestamp":1445810528336,"_id":"3I1PKVWrJU1NskzK"}
+{"type":"log","level":"info","category":"GameNight","message":"GameNight initialized","timestamp":1445827548638,"_id":"3Ja0QFkUZT8EMV9j"}
+{"type":"log","level":"info","category":"users","message":"users.save - drcord saved.","timestamp":1445826821666,"_id":"3NnjzX2Y6DWcW1Ih"}
+{"type":"log","level":"info","category":"GameNight","message":"GameNight initialized","timestamp":1445818466455,"_id":"3OK3CQrPPGf9khMe"}
+{"type":"log","level":"info","category":"Log","message":"Log initialized and log items loaded","timestamp":1445826589766,"_id":"3b3WRFc6mvCR73iK"}
+{"type":"log","level":"info","category":"users","message":"users.save - drcord saved.","timestamp":1445823350292,"_id":"3klTzkWv9b2lHZ5D"}
+{"type":"log","level":"info","category":"WebServer","message":"WebServer initialized","timestamp":1445820884135,"_id":"3wPTWUYd9xUBZKUC"}
+{"type":"log","level":"info","category":"users","message":"users.save - drcord saved.","timestamp":1445810905694,"_id":"44X6CbIObOfUrh8v"}
+{"type":"log","level":"info","category":"users","message":"users.save - drcord saved.","timestamp":1445826041465,"_id":"4GrkqsoKRTRJt0zj"}
+{"type":"log","level":"info","category":"WebServer","message":"WebServer initialized","timestamp":1445826590096,"_id":"4QUoBfFBnyDq9iD0"}
+{"type":"log","level":"info","category":"Log","message":"Log initialized and log items loaded","timestamp":1445827239535,"_id":"4TW8QT4v39yH59Lz"}
+{"type":"log","level":"info","category":"users","message":"users.save - drcord saved.","timestamp":1445811193993,"_id":"53CUHwjkcIncDpiv"}
+{"type":"log","level":"info","category":"Log","message":"Log initialized and log items loaded","timestamp":1445823027397,"_id":"58brADaXnRS25iDj"}
+{"type":"log","level":"info","category":"users","message":"users.save - drcord saved.","timestamp":1445827670118,"_id":"5DazkvMjHytz3ifH"}
+{"type":"log","level":"info","category":"Log","message":"Log initialized and log items loaded","timestamp":1445817809527,"_id":"5FDPEJIFXmsg1H0J"}
+{"type":"log","level":"info","category":"WebServer","message":"WebServer initialized","timestamp":1445815103904,"_id":"5Off9GFzUOF6iM3t"}
+{"type":"log","level":"info","category":"GameNight","message":"GameNight initialized","timestamp":1445823349510,"_id":"5hi7B93O4o6vj5Of"}
+{"type":"log","level":"info","category":"GameNight","message":"GameNight initialized","timestamp":1445827933920,"_id":"5wo9vkRubRozI7Qp"}
+{"type":"log","level":"info","category":"Log","message":"Log initialized and log items loaded","timestamp":1445813268783,"_id":"5xo8qa7tCcIsdzv8"}
+{"type":"log","level":"info","category":"users","message":"users.save - glittergamer saved.","timestamp":1445820884673,"_id":"62FRrnYkt5ZU46pz"}
+{"type":"log","level":"info","category":"users","message":"users.save - glittergamer saved.","timestamp":1445823028288,"_id":"6AYWFutvbNbUWtdq"}
+{"type":"log","level":"info","category":"users","message":"users.save - glittergamer saved.","timestamp":1445820992805,"_id":"6Es1ImPBAIoQWNCE"}
+{"type":"log","level":"info","category":"users","message":"users.save - glittergamer saved.","timestamp":1445814565762,"_id":"6RdvtCFs4D4DKMwv"}
+{"type":"log","level":"info","category":"users","message":"users.save - glittergamer saved.","timestamp":1445820020097,"_id":"6XqI9Nq2AbUA4L50"}
+{"type":"log","level":"info","category":"GameNight","message":"GameNight initialized","timestamp":1445813269275,"_id":"6gHubbwuPGGPdhPm"}
+{"type":"log","level":"info","category":"users","message":"users.save - drcord saved.","timestamp":1445815566739,"_id":"6oZYbpmD7Kp4h7z8"}
+{"type":"log","level":"info","category":"users","message":"users.save - drcord saved.","timestamp":1445820020082,"_id":"6xMOwsSsFqPcrn3v"}
+{"type":"log","level":"info","category":"Log","message":"Log initialized and log items loaded","timestamp":1445813423503,"_id":"75wkStQ7yV2WczDR"}
+{"type":"log","level":"info","category":"users","message":"users.save - drcord saved.","timestamp":1445813424440,"_id":"77AGjFPvX10Jzcvg"}
+{"type":"log","level":"info","category":"WebServer","message":"WebServer initialized","timestamp":1445817715265,"_id":"7CW1FOeY0OBgd4A1"}
+{"type":"log","level":"info","category":"users","message":"users.save - glittergamer saved.","timestamp":1445827934535,"_id":"7NVr4RHW8rPJLdl7"}
+{"type":"log","level":"info","category":"Log","message":"Log initialized and log items loaded","timestamp":1445820991651,"_id":"7pbJULKquMi5ZLo1"}
+{"type":"log","level":"info","category":"GameNight","message":"GameNight initialized","timestamp":1445818072979,"_id":"7qAxQgsTROYZKOhr"}
+{"type":"log","level":"info","category":"WebServer","message":"WebServer initialized","timestamp":1445823349503,"_id":"8IZjiepVHqDoZXC1"}
+{"type":"log","level":"info","category":"WebServer","message":"WebServer initialized","timestamp":1445816184023,"_id":"8YubMMlsPzfsxNkd"}
+{"type":"log","level":"info","category":"users","message":"users.save - drcord saved.","timestamp":1445825827400,"_id":"8czSkfI6y0acr3Dn"}
+{"type":"log","level":"info","category":"GameNight","message":"GameNight initialized","timestamp":1445815722994,"_id":"8wMAfnPWhjKxdl7T"}
+{"type":"log","level":"info","category":"Log","message":"Log initialized and log items loaded","timestamp":1445816722445,"_id":"96qD4yRCZLoQknxC"}
+{"type":"log","level":"info","category":"users","message":"users.save - drcord saved.","timestamp":1445825909937,"_id":"9AWoKY2GgYbIYM8c"}
+{"type":"log","level":"info","category":"Log","message":"Log initialized and log items loaded","timestamp":1445824786823,"_id":"9DnAr8RUH2kMRqdJ"}
+{"type":"log","level":"info","category":"users","message":"users.save - drcord saved.","timestamp":1445827240488,"_id":"9F4FpqzJw9Ar2qhc"}
+{"type":"log","level":"info","category":"GameNight","message":"GameNight initialized","timestamp":1445822980450,"_id":"9I9oPcxgrd4CKMq0"}
+{"type":"log","level":"info","category":"users","message":"users.save - drcord saved.","timestamp":1445820785302,"_id":"9TD3PeBvmwrJCnml"}
+{"type":"log","level":"info","category":"users","message":"users.save - glittergamer saved.","timestamp":1445825079328,"_id":"9eYWT78YvftBz3c4"}
+{"type":"log","level":"info","category":"WebServer","message":"WebServer initialized","timestamp":1445828309949,"_id":"9shOK5rKIyzRHntW"}
+{"type":"log","level":"info","category":"GameNight","message":"GameNight initialized","timestamp":1445827768666,"_id":"9tZXImrLXLL3zxLO"}
+{"type":"log","level":"info","category":"WebServer","message":"WebServer initialized","timestamp":1445810691997,"_id":"A12kwySSWI7rxGHl"}
+{"type":"log","level":"info","category":"users","message":"users.save - glittergamer saved.","timestamp":1445818466914,"_id":"ACCc1NZr23BV5uge"}
+{"type":"log","level":"info","category":"users","message":"users.save - glittergamer saved.","timestamp":1445825827415,"_id":"AGTGZyTTOyr1vYGu"}
+{"type":"log","level":"info","category":"Log","message":"Log initialized and log items loaded","timestamp":1445825908730,"_id":"AbPUVAjkudvxtrvP"}
+{"type":"log","level":"info","category":"users","message":"users.save - drcord saved.","timestamp":1445814265894,"_id":"AkOtXOoCubQK1Naa"}
+{"type":"log","level":"info","category":"GameNight","message":"GameNight initialized","timestamp":1445828400741,"_id":"AnJej6O6ViaMxbL2"}
+{"type":"log","level":"info","category":"GameNight","message":"GameNight initialized","timestamp":1445812897984,"_id":"AsKKeTL1sPY1jWTU"}
+{"type":"log","level":"info","category":"users","message":"users.save - glittergamer saved.","timestamp":1445823922732,"_id":"Atnvs4Xzp5Tbm4Vr"}
+{"type":"log","level":"info","category":"WebServer","message":"WebServer initialized","timestamp":1445817761604,"_id":"B3aCw7GtV7SsULFX"}
+{"type":"log","level":"info","category":"WebServer","message":"WebServer initialized","timestamp":1445825709486,"_id":"B8CtmWn85aUKaiWr"}
+{"type":"log","level":"info","category":"GameNight","message":"GameNight initialized","timestamp":1445828120740,"_id":"BC6SU7xz9v2ezBOL"}
+{"type":"log","level":"info","category":"WebServer","message":"WebServer initialized","timestamp":1445818696081,"_id":"BHT25rurYLPnU9sI"}
+{"type":"log","level":"info","category":"Log","message":"Log initialized and log items loaded","timestamp":1445814335115,"_id":"BYno2hho5Y6c7iDs"}
+{"type":"log","level":"info","category":"users","message":"users.save - glittergamer saved.","timestamp":1445815924402,"_id":"C23YFKr1eoaRPiGa"}
+{"type":"log","level":"info","category":"Log","message":"Log initialized and log items loaded","timestamp":1445818360553,"_id":"C6uZrVF3AaEi22Kk"}
+{"type":"log","level":"info","category":"users","message":"users.save - drcord saved.","timestamp":1445820825190,"_id":"CP7vxDhOTNtHdOrd"}
+{"type":"log","level":"info","category":"Log","message":"Log initialized and log items loaded","timestamp":1445819013548,"_id":"D2TI85pa0NYvwauo"}
+{"type":"log","level":"info","category":"users","message":"users.save - glittergamer saved.","timestamp":1445816128513,"_id":"DAmrPYaOntMXnGrn"}
+{"type":"log","level":"info","category":"users","message":"users.save - glittergamer saved.","timestamp":1445818140057,"_id":"DHTHgLndWtbZZBsY"}
+{"type":"log","level":"info","category":"WebServer","message":"WebServer initialized","timestamp":1445828269290,"_id":"DUdKNluU4pCdCBmZ"}
+{"type":"log","level":"info","category":"users","message":"users.save - drcord saved.","timestamp":1445815924386,"_id":"DcqLhKLipNbmAKh6"}
+{"type":"log","level":"info","category":"users","message":"users.save - glittergamer saved.","timestamp":1445820785317,"_id":"DjxfuUr2PCZcHElJ"}
+{"type":"log","level":"info","category":"WebServer","message":"WebServer initialized","timestamp":1445813269268,"_id":"DzSU2b6mgqgmbvIb"}
+{"type":"log","level":"info","category":"GameNight","message":"GameNight initialized","timestamp":1445825667478,"_id":"E6ibYmIgY2Pihpxz"}
+{"type":"log","level":"info","category":"GameNight","message":"GameNight initialized","timestamp":1445818696089,"_id":"EAxsBtSroMtV2JNl"}
+{"type":"log","level":"info","category":"Log","message":"Log initialized and log items loaded","timestamp":1445828400412,"_id":"EKFIpf2qZDwoyocG"}
+{"type":"log","level":"info","category":"Log","message":"Log initialized and log items loaded","timestamp":1445827669171,"_id":"EPCPlIXzFQVz0mHO"}
+{"type":"log","level":"info","category":"WebServer","message":"WebServer initialized","timestamp":1445814565369,"_id":"EYP1qoRqkxeAYzkE"}
+{"type":"log","level":"info","category":"Log","message":"Log initialized and log items loaded","timestamp":1445817714921,"_id":"EeB4kkKsJzb07SWM"}
+{"type":"log","level":"info","category":"users","message":"users.save - drcord saved.","timestamp":1445819863777,"_id":"Et6YIASy81NgCcRw"}
+{"type":"log","level":"info","category":"GameNight","message":"GameNight initialized","timestamp":1445825078467,"_id":"EuGlnSSd2R9fsgeg"}
+{"type":"log","level":"info","category":"users","message":"users.save - drcord saved.","timestamp":1445815404808,"_id":"Eyq4UKObtGZEi6H1"}
+{"type":"log","level":"info","category":"users","message":"users.save - glittergamer saved.","timestamp":1445810692305,"_id":"FDGU68i3RqPSNJ1R"}
+{"type":"log","level":"info","category":"WebServer","message":"WebServer initialized","timestamp":1445827768659,"_id":"FG6ruaIsTUEcUoNM"}
+{"type":"log","level":"info","category":"GameNight","message":"GameNight initialized","timestamp":1445826279852,"_id":"FJyFRSSS6OliV8mm"}
+{"type":"log","level":"info","category":"GameNight","message":"GameNight initialized","timestamp":1445813706594,"_id":"FRFIf3SkLZFNpWaR"}
+{"type":"log","level":"info","category":"users","message":"users.save - drcord saved.","timestamp":1445813706907,"_id":"FVniu9IsMaLWMJKE"}
+{"type":"log","level":"info","category":"WebServer","message":"WebServer initialized","timestamp":1445825078460,"_id":"FmKUPSZIgeyTanJV"}
+{"type":"log","level":"info","category":"users","message":"users.save - drcord saved.","timestamp":1445818410472,"_id":"FquaOjXMJVrk1uc2"}
+{"type":"log","level":"info","category":"users","message":"users.save - glittergamer saved.","timestamp":1445813429917,"_id":"FudP3LEw6b6jugh6"}
+{"type":"log","level":"info","category":"GameNight","message":"GameNight initialized","timestamp":1445815262124,"_id":"GNjIulYv3zsHytj8"}
+{"type":"log","level":"info","category":"users","message":"users.save - drcord saved.","timestamp":1445820486767,"_id":"GoCEvtzjPDjaa4Az"}
+{"type":"log","level":"info","category":"GameNight","message":"GameNight initialized","timestamp":1445820019613,"_id":"GwIOeOO2uyY1vNY0"}
+{"type":"log","level":"info","category":"WebServer","message":"WebServer initialized","timestamp":1445821237429,"_id":"Gzgl3aoiFaq5jls3"}
+{"type":"log","level":"info","category":"WebServer","message":"WebServer initialized","timestamp":1445817478773,"_id":"H8VYfCtbS8ZDCUXa"}
+{"type":"log","level":"info","category":"Log","message":"Log initialized and log items loaded","timestamp":1445826820714,"_id":"HEixmb4B5DuM9QdF"}
+{"type":"log","level":"info","category":"users","message":"users.save - drcord saved.","timestamp":1445821237966,"_id":"Hf8anHm0Fbrj7Fsa"}
+{"type":"log","level":"info","category":"users","message":"users.save - glittergamer saved.","timestamp":1445826821687,"_id":"I131ReRFji1dpUbQ"}
+{"type":"log","level":"info","category":"users","message":"users.save - drcord saved.","timestamp":1445815723390,"_id":"I8eq37OfEQokSdIa"}
+{"type":"log","level":"info","category":"users","message":"users.save - glittergamer saved.","timestamp":1445817715700,"_id":"IAqorxBeL6YMTPmh"}
+{"type":"log","level":"info","category":"Log","message":"Log initialized and log items loaded","timestamp":1445818072624,"_id":"IFvHmJy3LdtxgXfm"}
+{"type":"log","level":"info","category":"GameNight","message":"GameNight initialized","timestamp":1445810394072,"_id":"IGpCGIoGKG1XTOb7"}
+{"type":"log","level":"info","category":"users","message":"users.save - glittergamer saved.","timestamp":1445818368435,"_id":"IMqYCCrazUkBMrQF"}
+{"type":"log","level":"info","category":"Log","message":"Log initialized and log items loaded","timestamp":1445821237106,"_id":"IUiYmRRraFgGesR3"}
+{"type":"log","level":"info","category":"users","message":"users.save - drcord saved.","timestamp":1445815939918,"_id":"IVgmXveNosZloi63"}
+{"type":"log","level":"info","category":"users","message":"users.save - glittergamer saved.","timestamp":1445814335995,"_id":"IXQrO4Ituhx3WlM6"}
+{"type":"log","level":"info","category":"users","message":"users.save - glittergamer saved.","timestamp":1445826286268,"_id":"IcB0kSlD2yyhhIPG"}
+{"type":"log","level":"info","category":"users","message":"users.save - drcord saved.","timestamp":1445816128496,"_id":"IitwXc38u2L1XIIk"}
+{"type":"log","level":"info","category":"users","message":"users.save - glittergamer saved.","timestamp":1445815262508,"_id":"IpkMFcvIvWDPHQow"}
+{"type":"log","level":"info","category":"Log","message":"Log initialized and log items loaded","timestamp":1445820427631,"_id":"J18RdOlUODZrxw4l"}
+{"type":"log","level":"info","category":"GameNight","message":"GameNight initialized","timestamp":1445820486172,"_id":"J6X5vsILUo2sLc4X"}
+{"type":"log","level":"info","category":"GameNight","message":"GameNight initialized","timestamp":1445813423996,"_id":"J7z98qkF6L12gxZx"}
+{"type":"log","level":"info","category":"users","message":"users.save - glittergamer saved.","timestamp":1445821070938,"_id":"J8K3nNkWxGJNnLdF"}
+{"type":"log","level":"info","category":"GameNight","message":"GameNight initialized","timestamp":1445828053075,"_id":"JYGMu1F1lU1rTCQt"}
+{"type":"log","level":"info","category":"users","message":"users.save - glittergamer saved.","timestamp":1445813706923,"_id":"JYajcPiNrnssQcjQ"}
+{"type":"log","level":"info","category":"Log","message":"Log initialized and log items loaded","timestamp":1445815403935,"_id":"Ja6ng8McdHQB6wVw"}
+{"type":"log","level":"info","category":"users","message":"users.save - drcord saved.","timestamp":1445828269906,"_id":"Je2Z5iqG7x4noYh8"}
+{"type":"log","level":"info","category":"users","message":"users.save - glittergamer saved.","timestamp":1445812898298,"_id":"Jj8aZYwF0NiEHDFe"}
+{"type":"log","level":"info","category":"users","message":"users.save - drcord saved.","timestamp":1445816232574,"_id":"JzRjj58bsdwDZcpk"}
+{"type":"log","level":"info","category":"Log","message":"Log initialized and log items loaded","timestamp":1445815722494,"_id":"K1j0ukPXuK0hWXji"}
+{"type":"log","level":"info","category":"Log","message":"Log initialized and log items loaded","timestamp":1445810691504,"_id":"K5yaYw1wObdNHyxv"}
+{"type":"log","level":"info","category":"users","message":"users.save - drcord saved.","timestamp":1445825079307,"_id":"KHTKOzN3kiTp4JJw"}
+{"type":"log","level":"info","category":"GameNight","message":"GameNight initialized","timestamp":1445816127806,"_id":"KIovx5nCVOX5uwOm"}
+{"type":"log","level":"info","category":"WebServer","message":"WebServer initialized","timestamp":1445813706586,"_id":"KPZJBw8IwxNYok1X"}
+{"type":"log","level":"info","category":"Log","message":"Log initialized and log items loaded","timestamp":1445813817294,"_id":"KVzZ6DKn0IA2C3Y6"}
+{"type":"log","level":"info","category":"users","message":"users.save - drcord saved.","timestamp":1445828316479,"_id":"Kmd7CnIkAUm5fnoF"}
+{"type":"log","level":"info","category":"GameNight","message":"GameNight initialized","timestamp":1445813560791,"_id":"KmjOIUGYt1Oi8zVx"}
+{"type":"log","level":"info","category":"WebServer","message":"WebServer initialized","timestamp":1445815262117,"_id":"KxaJz755TtVjsgq1"}
+{"type":"log","level":"info","category":"WebServer","message":"WebServer initialized","timestamp":1445824787169,"_id":"L4qTQJ7yWh9cTLTK"}
+{"type":"log","level":"info","category":"GameNight","message":"GameNight initialized","timestamp":1445815566369,"_id":"LX4hfBS1voHds9ae"}
+{"type":"log","level":"info","category":"WebServer","message":"WebServer initialized","timestamp":1445828400734,"_id":"LZiy44jh8wL8M0ot"}
+{"type":"log","level":"info","category":"WebServer","message":"WebServer initialized","timestamp":1445824399579,"_id":"LkuvKf9rtbgH00MT"}
+{"type":"log","level":"info","category":"Log","message":"Log initialized and log items loaded","timestamp":1445823983414,"_id":"LsG7sZLFv6uoTntu"}
+{"type":"log","level":"info","category":"users","message":"users.save - glittergamer saved.","timestamp":1445820386300,"_id":"LukhgcKG5dF1eoss"}
+{"type":"log","level":"info","category":"WebServer","message":"WebServer initialized","timestamp":1445814265400,"_id":"M7jIwhTmHzSJvqwN"}
+{"type":"log","level":"info","category":"users","message":"users.save - glittergamer saved.","timestamp":1445821022378,"_id":"MATrcVcU6iK12PNl"}
+{"type":"log","level":"info","category":"GameNight","message":"GameNight initialized","timestamp":1445811193697,"_id":"MGKR4Wr9QBMQAxg1"}
+{"type":"log","level":"info","category":"GameNight","message":"GameNight initialized","timestamp":1445820214961,"_id":"MHGoQEy3yvliCZqt"}
+{"type":"log","level":"info","category":"users","message":"users.save - glittergamer saved.","timestamp":1445828401377,"_id":"MJfShRRzuCADbIKN"}
+{"type":"log","level":"info","category":"GameNight","message":"GameNight initialized","timestamp":1445827169879,"_id":"MOXdFeSmMnAyvIBI"}
+{"type":"log","level":"info","category":"users","message":"users.save - drcord saved.","timestamp":1445827769265,"_id":"MTQ1DTvwFK0zR678"}
+{"type":"log","level":"info","category":"GameNight","message":"GameNight initialized","timestamp":1445815103911,"_id":"MYsSHxl1mtkcLWNp"}
+{"type":"log","level":"info","category":"users","message":"users.save - drcord saved.","timestamp":1445821022365,"_id":"MsTzuoY4GtUJo3I2"}
+{"type":"log","level":"info","category":"WebServer","message":"WebServer initialized","timestamp":1445828120733,"_id":"MsZg0S8oZTAei261"}
+{"type":"log","level":"info","category":"users","message":"users.save - drcord saved.","timestamp":1445823387199,"_id":"N11yTQl0YZOlnAr1"}
+{"type":"log","level":"info","category":"GameNight","message":"GameNight initialized","timestamp":1445810753947,"_id":"N66q0Ssbv6vBCGsX"}
+{"type":"log","level":"info","category":"users","message":"users.save - glittergamer saved.","timestamp":1445827614152,"_id":"N7fHS0YaLap2u8Ci"}
+{"type":"log","level":"info","category":"WebServer","message":"WebServer initialized","timestamp":1445818298428,"_id":"NG7WAX6aTUji3rY2"}
+{"type":"log","level":"info","category":"WebServer","message":"WebServer initialized","timestamp":1445827239875,"_id":"NWUfrYQ4IwBYLkwU"}
+{"type":"log","level":"info","category":"WebServer","message":"WebServer initialized","timestamp":1445815722987,"_id":"O3nLpgY3OBiDCEmz"}
+{"type":"log","level":"info","category":"GameNight","message":"GameNight initialized","timestamp":1445820824647,"_id":"O9KbdGkjOxddCmI7"}
+{"type":"log","level":"info","category":"users","message":"users.save - drcord saved.","timestamp":1445820215715,"_id":"OBurILLGua1Y32ub"}
+{"type":"log","level":"info","category":"Log","message":"Log initialized and log items loaded","timestamp":1445817904796,"_id":"OJRZMhAN0HwKU5VR"}
+{"type":"log","level":"info","category":"users","message":"users.save - glittergamer saved.","timestamp":1445826355854,"_id":"OKaR2VfCqmJUIOc2"}
+{"type":"log","level":"info","category":"users","message":"users.save - drcord saved.","timestamp":1445818466898,"_id":"OMcwY09fd8Y9Qamc"}
+{"type":"log","level":"info","category":"users","message":"users.save - glittergamer saved.","timestamp":1445827670137,"_id":"OdrT44uflEIr7R6E"}
+{"type":"log","level":"info","category":"Log","message":"Log initialized and log items loaded","timestamp":1445818139252,"_id":"OsQuJkqDApCSyfnf"}
+{"type":"log","level":"info","category":"users","message":"users.save - drcord saved.","timestamp":1445828491081,"_id":"OwwAtX91m1zaVlcn"}
+{"type":"log","level":"info","category":"WebServer","message":"WebServer initialized","timestamp":1445818410026,"_id":"P5z6kAoZwyGbgLHF"}
+{"type":"log","level":"info","category":"WebServer","message":"WebServer initialized","timestamp":1445820019606,"_id":"P6e7Mj7dqmWr4VhR"}
+{"type":"log","level":"info","category":"users","message":"users.save - drcord saved.","timestamp":1445815104273,"_id":"PLoH43qanX9Kanpe"}
+{"type":"log","level":"info","category":"users","message":"users.save - glittergamer saved.","timestamp":1445815723408,"_id":"PSFdOwvxLzqEYyte"}
+{"type":"log","level":"info","category":"Log","message":"Log initialized and log items loaded","timestamp":1445820319183,"_id":"PYVmhDjIbuvhVNdM"}
+{"type":"log","level":"info","category":"GameNight","message":"GameNight initialized","timestamp":1445818031166,"_id":"PaH1pqvutSN8m156"}
+{"type":"log","level":"info","category":"WebServer","message":"WebServer initialized","timestamp":1445823027731,"_id":"PkWEY6ZDzqXWuoWt"}
+{"type":"log","level":"info","category":"Log","message":"Log initialized and log items loaded","timestamp":1445810527273,"_id":"Q6GG7n1j1wxGnSUg"}
+{"type":"log","level":"info","category":"User","message":"User logged out","timestamp":1445827572385,"_id":"Q7z6LglIOWFZXZnq"}
+{"type":"log","level":"info","category":"WebServer","message":"WebServer initialized","timestamp":1445824856088,"_id":"QJYpsisTq4D4eQvF"}
+{"type":"log","level":"info","category":"users","message":"users.save - drcord saved.","timestamp":1445814335972,"_id":"QMMYe7ytEtWKmcFA"}
+{"type":"log","level":"info","category":"users","message":"users.save - drcord saved.","timestamp":1445817479202,"_id":"QOv5Hlztr1PICFbA"}
+{"type":"log","level":"info","category":"Log","message":"Log initialized and log items loaded","timestamp":1445825709153,"_id":"QVlNk0FnbD2RYoOM"}
+{"type":"log","level":"info","category":"Log","message":"Log initialized and log items loaded","timestamp":1445827169545,"_id":"QcBRydq4Z0QfN4As"}
+{"type":"log","level":"info","category":"GameNight","message":"GameNight initialized","timestamp":1445828269297,"_id":"Qe2tB6ffjEz2tmmg"}
+{"type":"log","level":"info","category":"Log","message":"Log initialized and log items loaded","timestamp":1445828120410,"_id":"QqyZkzZsFoIrg3Nk"}
+{"type":"log","level":"info","category":"WebServer","message":"WebServer initialized","timestamp":1445816722791,"_id":"R4u3C324lDZUBzsZ"}
+{"type":"log","level":"info","category":"WebServer","message":"WebServer initialized","timestamp":1445825909059,"_id":"RC1aZFeiZVMHw55J"}
+{"type":"log","level":"info","category":"users","message":"users.save - drcord saved.","timestamp":1445825158859,"_id":"RLeIX1z6cbegRiRq"}
+{"type":"log","level":"info","category":"users","message":"users.save - glittergamer saved.","timestamp":1445819863791,"_id":"RN2BkMeBz57WP2iN"}
+{"type":"log","level":"info","category":"users","message":"users.save - drcord saved.","timestamp":1445826442015,"_id":"ROSEBA1t5tT1Tm1M"}
+{"type":"log","level":"info","category":"WebServer","message":"WebServer initialized","timestamp":1445820824641,"_id":"RSjhpK6VVwA3JFRA"}
+{"type":"log","level":"info","category":"users","message":"users.save - glittergamer saved.","timestamp":1445827170484,"_id":"RUVCapyLw9DCLbGf"}
+{"type":"log","level":"info","category":"Log","message":"Log initialized and log items loaded","timestamp":1445814564876,"_id":"RXjT9XvcMWeGkVyb"}
+{"type":"log","level":"info","category":"users","message":"users.save - glittergamer saved.","timestamp":1445814869497,"_id":"Rat5uNdXBgnI8DH9"}
+{"type":"log","level":"info","category":"users","message":"users.save - drcord saved.","timestamp":1445810394361,"_id":"RribN0BDi3T9TAq8"}
+{"type":"log","level":"info","category":"users","message":"users.save - drcord saved.","timestamp":1445813818120,"_id":"S1NtCARiqCtXU90T"}
+{"type":"log","level":"info","category":"WebServer","message":"WebServer initialized","timestamp":1445814868831,"_id":"S7HRSgYa081eSCvz"}
+{"type":"log","level":"info","category":"users","message":"users.save - glittergamer saved.","timestamp":1445825158874,"_id":"Sf7D12Wxai9mFUMh"}
+{"type":"log","level":"info","category":"Log","message":"Log initialized and log items loaded","timestamp":1445825667126,"_id":"T8WlTysfCqOYHlx8"}
+{"type":"log","level":"info","category":"users","message":"users.save - glittergamer saved.","timestamp":1445822981252,"_id":"THlVbHAwztGRfsng"}
+{"type":"log","level":"info","category":"users","message":"users.save - drcord saved.","timestamp":1445824856644,"_id":"TLSJGIFCH0cIxxHA"}
+{"type":"log","level":"info","category":"GameNight","message":"GameNight initialized","timestamp":1445817905148,"_id":"TUvNiKALdO5hoQsc"}
+{"type":"log","level":"info","category":"Log","message":"Log initialized and log items loaded","timestamp":1445821099335,"_id":"TanzVuD03hLpxIZP"}
+{"type":"log","level":"info","category":"WebServer","message":"WebServer initialized","timestamp":1445813560782,"_id":"Tx3A2tAQ59SIBHKj"}
+{"type":"log","level":"info","category":"GameNight","message":"GameNight initialized","timestamp":1445825826595,"_id":"U4DmtPTb5cyf9KuF"}
+{"type":"log","level":"info","category":"WebServer","message":"WebServer initialized","timestamp":1445819863308,"_id":"U4d1bcc9ayfEUBP8"}
+{"type":"log","level":"info","category":"Log","message":"Log initialized and log items loaded","timestamp":1445811193196,"_id":"U6faEA0faDBnA6tJ"}
+{"type":"log","level":"info","category":"GameNight","message":"GameNight initialized","timestamp":1445826441439,"_id":"UES6gjL9GSQvzXw4"}
+{"type":"log","level":"info","category":"users","message":"users.save - drcord saved.","timestamp":1445827934520,"_id":"UEYzIw4oA74dBdLS"}
+{"type":"log","level":"info","category":"users","message":"users.save - glittergamer saved.","timestamp":1445828316559,"_id":"UM4JrczLToYatEA8"}
+{"type":"log","level":"info","category":"GameNight","message":"GameNight initialized","timestamp":1445814114030,"_id":"UMq3qAB44wjn0Sx9"}
+{"type":"log","level":"info","category":"GameNight","message":"GameNight initialized","timestamp":1445816232175,"_id":"UXgEOF7z4wbR7t0i"}
+{"type":"log","level":"info","category":"GameNight","message":"GameNight initialized","timestamp":1445820427970,"_id":"UbYqhNT1eZWxIdpJ"}
+{"type":"log","level":"info","category":"WebServer","message":"WebServer initialized","timestamp":1445815404429,"_id":"UbukCkHxxGLjSOY3"}
+{"type":"log","level":"info","category":"Log","message":"Log initialized and log items loaded","timestamp":1445814264916,"_id":"UgmDHaa0hB23mSMs"}
+{"type":"log","level":"info","category":"users","message":"users.save - drcord saved.","timestamp":1445818073717,"_id":"UjpRDKTTQTuAiXET"}
+{"type":"log","level":"info","category":"users","message":"users.save - drcord saved.","timestamp":1445820320029,"_id":"V1kqInj2ACFGnlQI"}
+{"type":"log","level":"info","category":"Log","message":"Log initialized and log items loaded","timestamp":1445820824314,"_id":"V1lkhOqU7jw5Qhhr"}
+{"type":"log","level":"info","category":"WebServer","message":"WebServer initialized","timestamp":1445818360902,"_id":"VIB5Rf0pYZahDNsS"}
+{"type":"log","level":"info","category":"GameNight","message":"GameNight initialized","timestamp":1445823922146,"_id":"VLup6WKdytJdwGMu"}
+{"type":"log","level":"info","category":"users","message":"users.save - glittergamer saved.","timestamp":1445825710061,"_id":"VVzU67abg2oYqt0F"}
+{"type":"log","level":"info","category":"Log","message":"Log initialized and log items loaded","timestamp":1445823386040,"_id":"Vjb1IMxuJdiOSIf1"}
+{"type":"log","level":"info","category":"users","message":"users.save - glittergamer saved.","timestamp":1445817810316,"_id":"VkgzTbsasISadOat"}
+{"type":"log","level":"info","category":"WebServer","message":"WebServer initialized","timestamp":1445814114021,"_id":"VmRCocbzHDqUyxqF"}
+{"type":"log","level":"info","category":"Log","message":"Log initialized and log items loaded","timestamp":1445818695734,"_id":"VmsjVKf2i2tN8h6X"}
+{"type":"log","level":"info","category":"users","message":"users.save - glittergamer saved.","timestamp":1445823387217,"_id":"Vo89SZZ5IwRgQshn"}
+{"type":"log","level":"info","category":"Log","message":"Log initialized and log items loaded","timestamp":1445825826251,"_id":"W3zq3FSpX2dSClcA"}
+{"type":"log","level":"info","category":"Log","message":"Log initialized and log items loaded","timestamp":1445820883806,"_id":"WPaNsbkNWiNEZvrS"}
+{"type":"log","level":"info","category":"Log","message":"Log initialized and log items loaded","timestamp":1445824855754,"_id":"WlrrR1JgksTPiOft"}
+{"type":"log","level":"info","category":"users","message":"users.save - glittergamer saved.","timestamp":1445824787764,"_id":"WrT6byjOAPNz1r5k"}
+{"type":"log","level":"info","category":"users","message":"users.save - drcord saved.","timestamp":1445817762025,"_id":"XBoWeDcbNAry9OY0"}
+{"type":"log","level":"info","category":"WebServer","message":"WebServer initialized","timestamp":1445827548632,"_id":"XCODh38pWFSZnbig"}
+{"type":"log","level":"info","category":"GameNight","message":"GameNight initialized","timestamp":1445820385524,"_id":"XNJ0WEAVUbLPnkPs"}
+{"type":"log","level":"info","category":"GameNight","message":"GameNight initialized","timestamp":1445826821056,"_id":"XPiS6Mc5IN2quvqZ"}
+{"type":"log","level":"info","category":"users","message":"users.save - drcord saved.","timestamp":1445820884656,"_id":"XRxJgsOA0DO7ciax"}
+{"type":"log","level":"info","category":"Log","message":"Log initialized and log items loaded","timestamp":1445828309626,"_id":"XYLlNqEmb6qFCVWz"}
+{"type":"log","level":"info","category":"GameNight","message":"GameNight initialized","timestamp":1445823027737,"_id":"XbbzSnogXaW51nle"}
+{"type":"log","level":"info","category":"Log","message":"Log initialized and log items loaded","timestamp":1445815939172,"_id":"XfIGrXVpmEqRaELV"}
+{"type":"log","level":"info","category":"Log","message":"Log initialized and log items loaded","timestamp":1445820214616,"_id":"XriAJbgtxksFMySO"}
+{"type":"log","level":"info","category":"users","message":"users.save - drcord saved.","timestamp":1445826590687,"_id":"XtpdMonRs25X0bS3"}
+{"type":"log","level":"info","category":"users","message":"users.save - drcord saved.","timestamp":1445823984294,"_id":"XuxIH0vHn8NhdvRP"}
+{"type":"log","level":"info","category":"WebServer","message":"WebServer initialized","timestamp":1445817905142,"_id":"XvppVKE65xOzVlkF"}
+{"type":"log","level":"info","category":"GameNight","message":"GameNight initialized","timestamp":1445820991980,"_id":"Y0PPQkWananJIp0s"}
+{"type":"log","level":"info","category":"GameNight","message":"GameNight initialized","timestamp":1445814868839,"_id":"Y2dPyBw87V7We7cj"}
+{"type":"log","level":"info","category":"users","message":"users.save - drcord saved.","timestamp":1445813561095,"_id":"YAGcgYxqQj6hxLDy"}
+{"type":"log","level":"info","category":"Log","message":"Log initialized and log items loaded","timestamp":1445814113529,"_id":"YJfTy0uvQpbyvPQY"}
+{"type":"log","level":"info","category":"WebServer","message":"WebServer initialized","timestamp":1445821021816,"_id":"YVxVmfx5iDe3vEnQ"}
+{"type":"log","level":"info","category":"Log","message":"Log initialized and log items loaded","timestamp":1445828268959,"_id":"YkDIK47lK0sGiR2U"}
+{"type":"log","level":"info","category":"users","message":"users.save - glittergamer saved.","timestamp":1445828491099,"_id":"YxAkjZmoFKAvynyn"}
+{"type":"log","level":"info","category":"users","message":"users.save - glittergamer saved.","timestamp":1445828121373,"_id":"Z73MiUHsvcbGSUV4"}
+{"type":"log","level":"info","category":"GameNight","message":"GameNight initialized","timestamp":1445827613531,"_id":"Z9bfaZvvG4HbMxiT"}
+{"type":"log","level":"info","category":"Log","message":"Log initialized and log items loaded","timestamp":1445820385177,"_id":"ZDbMciPXCORKgSmM"}
+{"type":"log","level":"info","category":"Log","message":"Log initialized and log items loaded","timestamp":1445828490060,"_id":"ZIuZV6xr1yYvSIt6"}
+{"type":"log","level":"info","category":"users","message":"users.save - drcord saved.","timestamp":1445820386285,"_id":"ZV7Qkza2JApWSHHU"}
+{"type":"log","level":"info","category":"WebServer","message":"WebServer initialized","timestamp":1445813817786,"_id":"ZVivZCnzcEupDWAH"}
+{"type":"log","level":"info","category":"Log","message":"Log initialized and log items loaded","timestamp":1445823921813,"_id":"ZWRHNHW5hFnvYrSF"}
+{"type":"log","level":"info","category":"GameNight","message":"GameNight initialized","timestamp":1445810692007,"_id":"ZeCuvXc92LTFIKaj"}
+{"type":"log","level":"info","category":"GameNight","message":"GameNight initialized","timestamp":1445823386375,"_id":"Zk5Nie6pTA3EC8yj"}
+{"type":"log","level":"info","category":"GameNight","message":"GameNight initialized","timestamp":1445816184034,"_id":"Zn2GjqSAPHzo8Mma"}
+{"type":"log","level":"info","category":"WebServer","message":"WebServer initialized","timestamp":1445827613524,"_id":"a6XKJfCXqWjUCvxG"}
+{"type":"log","level":"info","category":"users","message":"users.save - drcord saved.","timestamp":1445827549533,"_id":"aimR3JNLTDlWS71h"}
+{"type":"log","level":"info","category":"Log","message":"Log initialized and log items loaded","timestamp":1445813706100,"_id":"arGYMWZuQY7WxZjp"}
+{"type":"log","level":"info","category":"GameNight","message":"GameNight initialized","timestamp":1445810905403,"_id":"avuLvrqGWjSBFbDE"}
+{"type":"log","level":"info","category":"WebServer","message":"WebServer initialized","timestamp":1445814335610,"_id":"b2xAuITvynB8hjpS"}
+{"type":"log","level":"info","category":"Log","message":"Log initialized and log items loaded","timestamp":1445824399252,"_id":"b9yDInsUVctSrkBu"}
+{"type":"log","level":"info","category":"users","message":"users.save - drcord saved.","timestamp":1445821070920,"_id":"bJKBhXPWPUt0Zxbh"}
+{"type":"log","level":"info","category":"users","message":"users.save - glittergamer saved.","timestamp":1445820486784,"_id":"biaJXhzJXoAPzICH"}
+{"type":"log","level":"info","category":"WebServer","message":"WebServer initialized","timestamp":1445815939515,"_id":"c1asf1tE68shYDsG"}
+{"type":"log","level":"info","category":"Log","message":"Log initialized and log items loaded","timestamp":1445814868337,"_id":"c2j4uB8osYSQ6a0y"}
+{"type":"log","level":"info","category":"GameNight","message":"GameNight initialized","timestamp":1445817715272,"_id":"cefLUk5qHhcUs3vW"}
+{"type":"log","level":"info","category":"users","message":"users.save - glittergamer saved.","timestamp":1445823984309,"_id":"chNGnIf7jU0HTSNp"}
+{"type":"log","level":"info","category":"users","message":"users.save - glittergamer saved.","timestamp":1445813561113,"_id":"cykl4WtSxOrXwZZY"}
+{"type":"log","level":"info","category":"Log","message":"Log initialized and log items loaded","timestamp":1445813560295,"_id":"d3RR2Bb5PELp4ENo"}
+{"type":"log","level":"info","category":"Log","message":"Log initialized and log items loaded","timestamp":1445815261625,"_id":"d3VuU8dong12FfJU"}
+{"type":"log","level":"info","category":"users","message":"users.save - drcord saved.","timestamp":1445817905735,"_id":"dMc3fLVyUdHBOakp"}
+{"type":"log","level":"info","category":"WebServer","message":"WebServer initialized","timestamp":1445820991973,"_id":"dO6R6NRrdjZgomkK"}
+{"type":"log","level":"info","category":"GameNight","message":"GameNight initialized","timestamp":1445818298434,"_id":"dZCIqvFuPaXhOOqf"}
+{"type":"log","level":"info","category":"users","message":"users.save - drcord saved.","timestamp":1445826350306,"_id":"e4EvCYfP8JM3iA5d"}
+{"type":"log","level":"info","category":"WebServer","message":"WebServer initialized","timestamp":1445827169872,"_id":"e7E5n8OOTnu6bzcD"}
+{"type":"log","level":"info","category":"WebServer","message":"WebServer initialized","timestamp":1445820385518,"_id":"eD2X0afuzS13wNHT"}
+{"type":"log","level":"info","category":"GameNight","message":"GameNight initialized","timestamp":1445826040876,"_id":"eO8Ug7yEBc4dgn0T"}
+{"type":"log","level":"info","category":"Log","message":"Log initialized and log items loaded","timestamp":1445823349166,"_id":"eVebrDB8I9qCtfQU"}
+{"type":"log","level":"info","category":"GameNight","message":"GameNight initialized","timestamp":1445810527772,"_id":"eW0ACQwhPl6f8PvW"}
+{"type":"log","level":"info","category":"WebServer","message":"WebServer initialized","timestamp":1445813423989,"_id":"elGZJeG2GbCDot0I"}
+{"type":"log","level":"info","category":"WebServer","message":"WebServer initialized","timestamp":1445826279845,"_id":"erp9yYq9V5bZOyse"}
+{"type":"log","level":"info","category":"WebServer","message":"WebServer initialized","timestamp":1445820427961,"_id":"fCIiqApRjLewi8w5"}
+{"type":"log","level":"info","category":"users","message":"users.save - glittergamer saved.","timestamp":1445826442035,"_id":"fRqJnVtklcvPFZTS"}
+{"type":"log","level":"info","category":"WebServer","message":"WebServer initialized","timestamp":1445825667469,"_id":"fSb9yWWmguVcu86R"}
+{"type":"log","level":"info","category":"Log","message":"Log initialized and log items loaded","timestamp":1445816183608,"_id":"fkEMzNurbBttx8Up"}
+{"type":"log","level":"info","category":"users","message":"users.save - glittergamer saved.","timestamp":1445820320045,"_id":"fnSSTiF5xNRyL8L0"}
+{"type":"log","level":"info","category":"Log","message":"Log.reset - number of log items removed: 21","timestamp":1445809836562,"_id":"fpTSXO0RvreWvSo7"}
+{"type":"log","level":"info","category":"WebServer","message":"WebServer initialized","timestamp":1445826821049,"_id":"g0AxeZAKKklQfLp2"}
+{"type":"log","level":"info","category":"GameNight","message":"GameNight initialized","timestamp":1445826349555,"_id":"g7p0rEHfXczOhUs0"}
+{"type":"log","level":"info","category":"users","message":"users.save - glittergamer saved.","timestamp":1445827549552,"_id":"ghxSYJek1kUGCyTp"}
+{"type":"log","level":"info","category":"users","message":"users.save - drcord saved.","timestamp":1445822981230,"_id":"gqZMUPiNMBmdM1jY"}
+{"type":"log","level":"info","category":"Log","message":"Log initialized and log items loaded","timestamp":1445827768338,"_id":"gwQHNvb9GWiT6A4Z"}
+{"type":"log","level":"info","category":"users","message":"users.save - glittergamer saved.","timestamp":1445827769292,"_id":"gz5lKSqxK3FsVoP1"}
+{"type":"log","level":"info","category":"WebServer","message":"WebServer initialized","timestamp":1445819013895,"_id":"h5IQ7CBNlBbzBzUg"}
+{"type":"log","level":"info","category":"GameNight","message":"GameNight initialized","timestamp":1445821099668,"_id":"h5rBzVfi2txE65Sl"}
+{"type":"log","level":"info","category":"GameNight","message":"GameNight initialized","timestamp":1445815939521,"_id":"h8HVvD6yjxz5tFLi"}
+{"type":"log","level":"info","category":"Log","message":"Log initialized and log items loaded","timestamp":1445810753454,"_id":"h9NIMCTNFNBO4R4w"}
+{"type":"log","level":"info","category":"GameNight","message":"GameNight initialized","timestamp":1445826590103,"_id":"hApPQ0a6ljFkr9fr"}
+{"type":"log","level":"info","category":"Log","message":"Log initialized and log items loaded","timestamp":1445820784428,"_id":"hJR0DmFEARVj2Zap"}
+{"type":"log","level":"info","category":"WebServer","message":"WebServer initialized","timestamp":1445816127799,"_id":"hUNIEX3VUmDzkWoI"}
+{"type":"log","level":"info","category":"WebServer","message":"WebServer initialized","timestamp":1445825826588,"_id":"he3jxISulhiAlxSf"}
+{"type":"log","level":"info","category":"WebServer","message":"WebServer initialized","timestamp":1445823922140,"_id":"hj3mI4LDgaqWgli4"}
+{"type":"log","level":"info","category":"GameNight","message":"GameNight initialized","timestamp":1445814265408,"_id":"hrtDp1S8bN3GQZdS"}
+{"type":"log","level":"info","category":"users","message":"users.save - glittergamer saved.","timestamp":1445820215737,"_id":"huIdwgjbmZOIWsRG"}
+{"type":"log","level":"info","category":"GameNight","message":"GameNight initialized","timestamp":1445828309956,"_id":"hwfc44m4lw4WUZgY"}
+{"type":"log","level":"info","category":"users","message":"users.save - drcord saved.","timestamp":1445818140040,"_id":"hy9Owjf1qk9G3HPU"}
+{"type":"log","level":"info","category":"WebServer","message":"WebServer initialized","timestamp":1445827933914,"_id":"i1jHH0X9zemH1296"}
+{"type":"log","level":"info","category":"Log","message":"Log initialized and log items loaded","timestamp":1445827359081,"_id":"i4iuLjTIIBcSIehI"}
+{"type":"log","level":"info","category":"users","message":"users.save - glittergamer saved.","timestamp":1445817479224,"_id":"iKsqtvR5XWo8kMLR"}
+{"type":"log","level":"info","category":"Log","message":"Log initialized and log items loaded","timestamp":1445816127451,"_id":"iPHqeh61At4muBci"}
+{"type":"log","level":"info","category":"WebServer","message":"WebServer initialized","timestamp":1445812897975,"_id":"iUbAY1SdpEdtOxFH"}
+{"type":"log","level":"info","category":"Log","message":"Log initialized and log items loaded","timestamp":1445826040541,"_id":"iVjECFRWY2HGG8jx"}
+{"type":"log","level":"info","category":"users","message":"users.save - drcord saved.","timestamp":1445827360026,"_id":"igUkz7fyjG9M6rUW"}
+{"type":"log","level":"info","category":"GameNight","message":"GameNight initialized","timestamp":1445819863315,"_id":"j48bIsoWnzJ38dxi"}
+{"type":"log","level":"info","category":"users","message":"users.save - drcord saved.","timestamp":1445818037364,"_id":"jEFXsQbd7DYOm1Sj"}
+{"type":"log","level":"info","category":"users","message":"users.save - glittergamer saved.","timestamp":1445827360043,"_id":"jLewTTETd30zxQIo"}
+{"type":"log","level":"info","category":"users","message":"users.save - drcord saved.","timestamp":1445814565739,"_id":"jPz9O40BnKeMJVvT"}
+{"type":"log","level":"info","category":"WebServer","message":"WebServer initialized","timestamp":1445827669500,"_id":"jQ6IQllMTC2KvkY6"}
+{"type":"log","level":"info","category":"users","message":"users.save - glittergamer saved.","timestamp":1445828054012,"_id":"jSVfeAMctceYaLxc"}
+{"type":"log","level":"info","category":"GameNight","message":"GameNight initialized","timestamp":1445818360909,"_id":"jdMH2c17nzWqE3n4"}
+{"type":"log","level":"info","category":"users","message":"users.save - glittergamer saved.","timestamp":1445826041485,"_id":"jnBFy3vQo9NtiaT3"}
+{"type":"log","level":"info","category":"Log","message":"Log initialized and log items loaded","timestamp":1445819862978,"_id":"jrqwRwOS47jxDsYI"}
+{"type":"log","level":"info","category":"users","message":"users.save - drcord saved.","timestamp":1445823028273,"_id":"jvzMv6r5HGhutcIp"}
+{"type":"log","level":"info","category":"WebServer","message":"WebServer initialized","timestamp":1445828053068,"_id":"jzg4Yl3JuuH6f3QE"}
+{"type":"log","level":"info","category":"users","message":"users.save - drcord saved.","timestamp":1445827170465,"_id":"jzrtckJXLV1gI5dz"}
+{"type":"log","level":"info","category":"GameNight","message":"GameNight initialized","timestamp":1445825158286,"_id":"k18Brbl4Qv8DXCp4"}
+{"type":"log","level":"info","category":"WebServer","message":"WebServer initialized","timestamp":1445815923980,"_id":"kGuDarF0zYXSYPuK"}
+{"type":"log","level":"info","category":"users","message":"users.save - drcord saved.","timestamp":1445810754232,"_id":"kGuLF8OFYn9IQIfH"}
+{"type":"log","level":"info","category":"Log","message":"Log initialized and log items loaded","timestamp":1445810904904,"_id":"kRSoLrOlIGzn4sbx"}
+{"type":"log","level":"info","category":"GameNight","message":"GameNight initialized","timestamp":1445827359419,"_id":"kTna2yG9ZHT72RJH"}
+{"type":"log","level":"info","category":"Log","message":"Log initialized and log items loaded","timestamp":1445817761264,"_id":"kXzVXKgstwgnnwtD"}
+{"type":"log","level":"info","category":"Log","message":"Log initialized and log items loaded","timestamp":1445822980112,"_id":"kaHOvxwC2CaP9psv"}
+{"type":"log","level":"info","category":"users","message":"users.save - drcord saved.","timestamp":1445825710046,"_id":"kqxSbkXqGCdoBgHx"}
+{"type":"log","level":"info","category":"users","message":"users.save - drcord saved.","timestamp":1445825668041,"_id":"krLfyWLk4VHHSLdL"}
+{"type":"log","level":"info","category":"GameNight","message":"GameNight initialized","timestamp":1445821021823,"_id":"kxweB8p4yhW6mG9L"}
+{"type":"log","level":"info","category":"WebServer","message":"WebServer initialized","timestamp":1445817809869,"_id":"l4OYiraxvolsduF7"}
+{"type":"log","level":"info","category":"Log","message":"Log initialized and log items loaded","timestamp":1445826441098,"_id":"lCba6efRVoiKoa80"}
+{"type":"log","level":"info","category":"WebServer","message":"WebServer initialized","timestamp":1445815566362,"_id":"ln70nQ1DMkzTUky4"}
+{"type":"log","level":"info","category":"Log","message":"Log initialized and log items loaded","timestamp":1445818466105,"_id":"mBjqEhIXC3btGD3n"}
+{"type":"log","level":"info","category":"users","message":"users.save - glittergamer saved.","timestamp":1445819014671,"_id":"mM0kfntBTniknEuq"}
+{"type":"log","level":"info","category":"users","message":"users.save - glittergamer saved.","timestamp":1445813818138,"_id":"mMSy2UO2veAgqjpa"}
+{"type":"log","level":"info","category":"Log","message":"Log initialized and log items loaded","timestamp":1445821021492,"_id":"mRqyY9Dr9dgbM5hD"}
+{"type":"log","level":"info","category":"GameNight","message":"GameNight initialized","timestamp":1445818139600,"_id":"mSKl2dA4yNijlYWN"}
+{"type":"log","level":"info","category":"users","message":"users.save - glittergamer saved.","timestamp":1445828269930,"_id":"mSswtnP8M6XsA6Ib"}
+{"type":"log","level":"info","category":"WebServer","message":"WebServer initialized","timestamp":1445828490398,"_id":"mTEdUcLAWfI1JT5F"}
+{"type":"log","level":"info","category":"WebServer","message":"WebServer initialized","timestamp":1445826040869,"_id":"mixyhiqJc8C62PYX"}
+{"type":"log","level":"info","category":"users","message":"users.save - glittergamer saved.","timestamp":1445815939932,"_id":"mnyWzNTA0dYykd3c"}
+{"type":"log","level":"info","category":"users","message":"users.save - glittergamer saved.","timestamp":1445820825204,"_id":"mtm1CMqiL2aoGN3l"}
+{"type":"log","level":"info","category":"Log","message":"Log initialized and log items loaded","timestamp":1445828052737,"_id":"mtmIpYErDEzipIyX"}
+{"type":"log","level":"info","category":"WebServer","message":"WebServer initialized","timestamp":1445811193686,"_id":"mu8zJBtgfvacMcSn"}
+{"type":"log","level":"info","category":"users","message":"users.save - drcord saved.","timestamp":1445819014655,"_id":"nR0u6cp7Q5lKci2d"}
+{"type":"log","level":"info","category":"WebServer","message":"WebServer initialized","timestamp":1445810753940,"_id":"nbS3Rr00ZYqL0tMO"}
+{"type":"log","level":"info","category":"GameNight","message":"GameNight initialized","timestamp":1445813817795,"_id":"njeRKhKPP6rgoPlx"}
+{"type":"log","level":"info","category":"WebServer","message":"WebServer initialized","timestamp":1445821070382,"_id":"nqqO4Uh3SH6Hkz6j"}
+{"type":"log","level":"info","category":"users","message":"users.save - glittergamer saved.","timestamp":1445817905869,"_id":"nvgaGsii9b4MnXWm"}
+{"type":"log","level":"info","category":"users","message":"users.save - glittergamer saved.","timestamp":1445818696552,"_id":"o8xPuG22xD3RJb9X"}
+{"type":"log","level":"info","category":"GameNight","message":"GameNight initialized","timestamp":1445824399586,"_id":"o9EWnbZxfUco89lN"}
+{"type":"log","level":"info","category":"users","message":"users.save - glittergamer saved.","timestamp":1445810394378,"_id":"oH6rpmrk9PvjDU72"}
+{"type":"log","level":"info","category":"users","message":"users.save - glittergamer saved.","timestamp":1445816184520,"_id":"ohGU76moKTcHKuh6"}
+{"type":"log","level":"info","category":"Log","message":"Log initialized and log items loaded","timestamp":1445827548304,"_id":"om7G13kgH2nxoVMy"}
+{"type":"log","level":"info","category":"GameNight","message":"GameNight initialized","timestamp":1445814565380,"_id":"p0juYsiT2R2xugGE"}
+{"type":"log","level":"info","category":"GameNight","message":"GameNight initialized","timestamp":1445828490405,"_id":"p4c9IyINWSLjzU6V"}
+{"type":"log","level":"info","category":"GameNight","message":"GameNight initialized","timestamp":1445825909068,"_id":"pJiTj7tJv5OvZkXy"}
+{"type":"log","level":"info","category":"users","message":"users.save - drcord saved.","timestamp":1445826286169,"_id":"pRKtVsnNOqUynrxn"}
+{"type":"log","level":"info","category":"Log","message":"Log initialized and log items loaded","timestamp":1445820485786,"_id":"pRYvY8l9mstWtk61"}
+{"type":"log","level":"info","category":"users","message":"users.save - glittergamer saved.","timestamp":1445827240511,"_id":"pct3Gn07Ko7pbH15"}
+{"type":"log","level":"info","category":"GameNight","message":"GameNight initialized","timestamp":1445823983750,"_id":"pyBt5uOIxMv9XRWK"}
+{"type":"log","level":"info","category":"WebServer","message":"WebServer initialized","timestamp":1445810394064,"_id":"pzeKdUuveYPTHXr3"}
+{"type":"log","level":"info","category":"users","message":"users.save - drcord saved.","timestamp":1445818367149,"_id":"q0zfFKCWy7aLWSHs"}
+{"type":"log","level":"info","category":"users","message":"users.save - glittergamer saved.","timestamp":1445821237980,"_id":"q1OKA6QK6ij3q1lK"}
+{"type":"log","level":"info","category":"users","message":"users.save - glittergamer saved.","timestamp":1445826590703,"_id":"q3Qb27zHDaWKRERD"}
+{"type":"log","level":"info","category":"users","message":"users.save - glittergamer saved.","timestamp":1445821100216,"_id":"qDmqJuy9exrofro4"}
+{"type":"log","level":"info","category":"users","message":"users.save - glittergamer saved.","timestamp":1445810754244,"_id":"qNWBGpibHG0sxNCv"}
+{"type":"log","level":"info","category":"WebServer","message":"WebServer initialized","timestamp":1445820784765,"_id":"qqyqXVNpwtJE5eVs"}
+{"type":"log","level":"info","category":"users","message":"users.save - drcord saved.","timestamp":1445827614135,"_id":"qwEBW3pE3gau9lkn"}
+{"type":"log","level":"info","category":"WebServer","message":"WebServer initialized","timestamp":1445820319515,"_id":"r4LDhXJEt54qWIwL"}
+{"type":"log","level":"info","category":"users","message":"users.save - glittergamer saved.","timestamp":1445810905707,"_id":"r6mkpKlgsTDvNfsC"}
+{"type":"log","level":"info","category":"Log","message":"Log initialized and log items loaded","timestamp":1445810393579,"_id":"r7mmAcV79XB0ZfMV"}
+{"type":"log","level":"info","category":"GameNight","message":"GameNight initialized","timestamp":1445820884141,"_id":"r8Ybg98Iv5o7w9xZ"}
+{"type":"log","level":"info","category":"users","message":"users.save - drcord saved.","timestamp":1445828401361,"_id":"rBqD1PuXWbH3YwN1"}
+{"type":"log","level":"info","category":"Log","message":"Log initialized and log items loaded","timestamp":1445815565871,"_id":"rcwaWJw2vpuj78zA"}
+{"type":"log","level":"info","category":"Log","message":"Log initialized and log items loaded","timestamp":1445817478424,"_id":"rdi2dpNc6AKcVheg"}
+{"type":"log","level":"info","category":"users","message":"users.save - glittergamer saved.","timestamp":1445813269596,"_id":"remaYCxXzv9b2ENA"}
+{"type":"log","level":"info","category":"WebServer","message":"WebServer initialized","timestamp":1445822980444,"_id":"rnPXAj6XFG1Uu5HL"}
+{"type":"log","level":"info","category":"users","message":"users.save - glittergamer saved.","timestamp":1445825668056,"_id":"rzNNDgpByB5OmAXE"}
+{"type":"log","level":"info","category":"users","message":"users.save - glittergamer saved.","timestamp":1445818298883,"_id":"sHVzAfprmchqtGwV"}
+{"type":"log","level":"info","category":"users","message":"users.save - drcord saved.","timestamp":1445812898280,"_id":"sLL4Mf1RS2CAnHeA"}
+{"type":"log","level":"info","category":"users","message":"users.save - drcord saved.","timestamp":1445824787747,"_id":"sNtMg4RyeFqOuUyX"}
+{"type":"log","level":"info","category":"GameNight","message":"GameNight initialized","timestamp":1445817761611,"_id":"sSuVVItfPSkVH82P"}
+{"type":"log","level":"info","category":"GameNight","message":"GameNight initialized","timestamp":1445814335621,"_id":"scCcU9lfnAAazKtJ"}
+{"type":"log","level":"info","category":"users","message":"users.save - glittergamer saved.","timestamp":1445818073735,"_id":"seZoc5YCO96VDYKK"}
+{"type":"log","level":"info","category":"users","message":"users.save - glittergamer saved.","timestamp":1445817762039,"_id":"slsXB6uzaETsHyCi"}
+{"type":"log","level":"info","category":"GameNight","message":"GameNight initialized","timestamp":1445817809876,"_id":"t6pEPJLbMcBh6sMm"}
+{"type":"log","level":"info","category":"WebServer","message":"WebServer initialized","timestamp":1445818139594,"_id":"t8psmjikYvuyitQ0"}
+{"type":"log","level":"info","category":"users","message":"users.save - glittergamer saved.","timestamp":1445815104289,"_id":"tBEutJJTXF10pz5C"}
+{"type":"log","level":"info","category":"users","message":"users.save - glittergamer saved.","timestamp":1445823350308,"_id":"tJudUYtaQBKlZXrT"}
+{"type":"log","level":"info","category":"GameNight","message":"GameNight initialized","timestamp":1445815404436,"_id":"tKB7m3eiQcumRVK5"}
+{"type":"log","level":"info","category":"users","message":"users.save - glittergamer saved.","timestamp":1445825909959,"_id":"tOMQyKXackbEkEZa"}
+{"type":"log","level":"info","category":"users","message":"users.save - drcord saved.","timestamp":1445810692288,"_id":"tOnKxvhgpDtn5GeM"}
+{"type":"log","level":"info","category":"WebServer","message":"WebServer initialized","timestamp":1445820486164,"_id":"tQHcsRzP8Ok9el1O"}
+{"type":"log","level":"info","category":"GameNight","message":"GameNight initialized","timestamp":1445820784771,"_id":"tTV9FrssetycUa6G"}
+{"type":"log","level":"info","category":"users","message":"users.save - drcord saved.","timestamp":1445814114363,"_id":"tZSMzxLYMcR9dINY"}
+{"type":"log","level":"info","category":"WebServer","message":"WebServer initialized","timestamp":1445818072972,"_id":"tecOQiY0YL7dHUJK"}
+{"type":"log","level":"info","category":"WebServer","message":"WebServer initialized","timestamp":1445818466449,"_id":"tg40ODkhxvujFsDi"}
+{"type":"log","level":"info","category":"users","message":"users.save - drcord saved.","timestamp":1445815262489,"_id":"ty425IrlJxldcbhm"}
+{"type":"log","level":"info","category":"users","message":"users.save - glittergamer saved.","timestamp":1445815404842,"_id":"u0mgsYa6Rfn5uhwO"}
+{"type":"log","level":"info","category":"Log","message":"Log initialized and log items loaded","timestamp":1445815103416,"_id":"u5nb4meaerYQ3RDF"}
+{"type":"log","level":"info","category":"users","message":"users.save - drcord saved.","timestamp":1445818696536,"_id":"u79RK0UgUbIaiWN5"}
+{"type":"log","level":"info","category":"users","message":"users.save - glittergamer saved.","timestamp":1445818410487,"_id":"u8gkZKgPbz9qOl60"}
+{"type":"log","level":"info","category":"Log","message":"Log initialized and log items loaded","timestamp":1445827613193,"_id":"ueCQ0ALLwvccOG0Z"}
+{"type":"log","level":"info","category":"users","message":"users.save - drcord saved.","timestamp":1445824406037,"_id":"ul8ziwEoWJxeDxti"}
+{"type":"log","level":"info","category":"GameNight","message":"GameNight initialized","timestamp":1445824856095,"_id":"umYaAZJ1lyaK9We1"}
+{"type":"log","level":"info","category":"users","message":"users.save - drcord saved.","timestamp":1445816723210,"_id":"uvuFsPGxJYN2PcuW"}
+{"type":"log","level":"info","category":"GameNight","message":"GameNight initialized","timestamp":1445817478783,"_id":"v4kV5JcvRwhjO3UQ"}
+{"type":"log","level":"info","category":"GameNight","message":"GameNight initialized","timestamp":1445818410033,"_id":"v5TTo5peckDF7tOS"}
+{"type":"log","level":"info","category":"users","message":"users.save - drcord saved.","timestamp":1445828121356,"_id":"v8lu5lRSUnBuJLEO"}
+{"type":"log","level":"info","category":"users","message":"users.save - drcord saved.","timestamp":1445818298867,"_id":"v9R7gfpJ9OuYfJyn"}
+{"type":"log","level":"info","category":"WebServer","message":"WebServer initialized","timestamp":1445818031160,"_id":"vA4YKZUifdfwsQmm"}
+{"type":"log","level":"info","category":"users","message":"users.save - glittergamer saved.","timestamp":1445814114382,"_id":"vBn0bv67AN1o6VUz"}
+{"type":"log","level":"info","category":"users","message":"users.save - drcord saved.","timestamp":1445814869431,"_id":"vCPVtM47Iv4vp8Zr"}
+{"type":"log","level":"info","category":"users","message":"users.save - drcord saved.","timestamp":1445821100201,"_id":"vHpTznw4CSDTMHup"}
+{"type":"log","level":"info","category":"Log","message":"Log initialized and log items loaded","timestamp":1445826279514,"_id":"vN3zUoAeOu87PCUG"}
+{"type":"log","level":"info","category":"Log","message":"Log initialized and log items loaded","timestamp":1445818298058,"_id":"vNFxtL1NPS0nE5B0"}
+{"type":"log","level":"info","category":"users","message":"users.save - glittergamer saved.","timestamp":1445816232594,"_id":"vTf5BieLc9d2IZr8"}
+{"type":"log","level":"info","category":"users","message":"users.save - drcord saved.","timestamp":1445820435471,"_id":"vyKdxtNYCV0MWbQz"}
+{"type":"log","level":"info","category":"GameNight","message":"GameNight initialized","timestamp":1445825709492,"_id":"wAm5k1z66DgDeRkJ"}
+{"type":"log","level":"info","category":"users","message":"users.save - drcord saved.","timestamp":1445810528320,"_id":"wOmWRiUjeOA7BNL9"}
+{"type":"log","level":"info","category":"GameNight","message":"GameNight initialized","timestamp":1445819013902,"_id":"wSMoIN2AufAkLR8H"}
+{"type":"log","level":"info","category":"users","message":"users.save - glittergamer saved.","timestamp":1445811194010,"_id":"wTrXshEP5c3u2khu"}
+{"type":"log","level":"info","category":"users","message":"users.save - drcord saved.","timestamp":1445823922715,"_id":"wXVjNkylrXdzpInU"}
+{"type":"log","level":"info","category":"users","message":"users.save - glittergamer saved.","timestamp":1445818037455,"_id":"wiUPZMtf2G6bWOYR"}
+{"type":"log","level":"info","category":"GameNight","message":"GameNight initialized","timestamp":1445815923987,"_id":"wiu3g3PbwW2jwBfH"}
+{"type":"log","level":"info","category":"WebServer","message":"WebServer initialized","timestamp":1445823983743,"_id":"wljEVlWAG54bPlgt"}
+{"type":"log","level":"info","category":"GameNight","message":"GameNight initialized","timestamp":1445820319522,"_id":"wzX8LoYx7IL9WNrt"}
+{"type":"log","level":"info","category":"Log","message":"Log initialized and log items loaded","timestamp":1445818409686,"_id":"xBFwSRp2l5EgZYbg"}
+{"type":"log","level":"info","category":"users","message":"users.save - glittergamer saved.","timestamp":1445824856661,"_id":"xBsjEJsRIDsdiRXS"}
+{"type":"log","level":"info","category":"Log","message":"Log initialized and log items loaded","timestamp":1445821070051,"_id":"xFUwxIDskuq88aiv"}
+{"type":"log","level":"info","category":"GameNight","message":"GameNight initialized","timestamp":1445816722798,"_id":"xOD6DzjKvDMKFTB2"}
+{"type":"log","level":"info","category":"Log","message":"Log initialized and log items loaded","timestamp":1445816231828,"_id":"xUK5qRQnoKOq5MLw"}
+{"type":"log","level":"info","category":"users","message":"users.save - glittergamer saved.","timestamp":1445820435487,"_id":"xn04KbZFIQdjneN0"}
+{"type":"log","level":"info","category":"Log","message":"Log initialized and log items loaded","timestamp":1445825078134,"_id":"xrs9tGjxjIwS17Ea"}
+{"type":"log","level":"info","category":"WebServer","message":"WebServer initialized","timestamp":1445821099661,"_id":"xwPBioqfY35xVw4x"}
+{"type":"log","level":"info","category":"users","message":"users.save - glittergamer saved.","timestamp":1445814265999,"_id":"xzu8klUttLlwt3Df"}
+{"type":"log","level":"info","category":"users","message":"users.save - drcord saved.","timestamp":1445817715685,"_id":"y0jBoOBT0QQgMjZX"}
+{"type":"log","level":"info","category":"WebServer","message":"WebServer initialized","timestamp":1445820214954,"_id":"y5akjcCbnSDL4x5G"}
+{"type":"log","level":"info","category":"WebServer","message":"WebServer initialized","timestamp":1445810905395,"_id":"yPI1BFEXHwcYzAf2"}
+{"type":"log","level":"info","category":"Log","message":"Log initialized and log items loaded","timestamp":1445820019273,"_id":"yTopeERmzhQmUy6R"}
+{"type":"log","level":"info","category":"users","message":"users.save - glittergamer saved.","timestamp":1445824406131,"_id":"yfmhkgHIi7HdI3ca"}
+{"type":"log","level":"info","category":"Log","message":"Log initialized and log items loaded","timestamp":1445826349218,"_id":"ymgeSSBZyUxQepye"}
+{"type":"log","level":"info","category":"WebServer","message":"WebServer initialized","timestamp":1445826441432,"_id":"yxP018GbeCqVHm67"}
+{"type":"log","level":"info","category":"WebServer","message":"WebServer initialized","timestamp":1445827359412,"_id":"zATxJQP96KTuNyT2"}
+{"type":"log","level":"info","category":"users","message":"users.save - drcord saved.","timestamp":1445817810299,"_id":"zFQKFauTwX8BJOCA"}
+{"type":"log","level":"info","category":"Log","message":"Log initialized and log items loaded","timestamp":1445815923636,"_id":"ztlFcnhs7bsQ6K4a"}
+{"type":"log","level":"info","category":"Log","message":"Log initialized and log items loaded","timestamp":1445828600436,"_id":"4xqr6LKjviKcRMq8"}
+{"type":"log","level":"info","category":"WebServer","message":"WebServer initialized","timestamp":1445828600766,"_id":"P6k69EhZUKI3rcCv"}
+{"type":"log","level":"info","category":"GameNight","message":"GameNight initialized","timestamp":1445828600773,"_id":"v2aikblDX5AKTHEb"}
+{"type":"log","level":"info","category":"users","message":"users.save - drcord saved.","timestamp":1445828601406,"_id":"zHmssMUXo5foRNRx"}
+{"type":"log","level":"info","category":"users","message":"users.save - glittergamer saved.","timestamp":1445828601423,"_id":"xd1KPYsrpggyJ13c"}

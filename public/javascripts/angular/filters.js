@@ -36,4 +36,12 @@ angular.module('gameNight.filters', [])
             return [];
         };
     })
+    .filter('reverse', function() {
+        return function(items) {
+            if(typeof items != "undefined" && typeof items == "array"){
+                return items.slice().reverse();
+            }
+            return items;
+        };
+    })
 ;

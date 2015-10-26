@@ -3,49 +3,110 @@
 angular.module('gameNight.controllers', []).
     controller('AppCtrl', function ($scope, $http, $resource, poller) {
         $scope.ready = false;
-        $scope.Gathering = $scope.Gathering || {
+        $scope.adminPermissions = {
+            logs: [
+                'view',
+                'reset'
+            ],
+            users: [
+                'view',
+                'edit',
+                'delete'
+            ],
+            gatherings: [
+                'edit',
+                'delete'
+            ]
+        };
+        $scope.Data = $scope.Data || {
             init: function(){
-                $scope.Gathering.users = $scope.Gathering.users || [];
-                $scope.Gathering.games = $scope.Gathering.games || [];
-                $scope.Gathering.loading = false;
+                $scope.Data.loading = false;
             }
         };
-
-        $scope.getGathering = function(){
-            $scope.Gathering.loading = true;
-            return $http.get('/api/gathering').
-                success(function( data ) {
-                    console.log('AppCtrl.getGathering function - front-end: data:');
+        $scope.getData = function(){
+            $scope.Data.loading = true;
+            return $http.get('/api/data/get').
+                success(function( data ){
+                    console.log('AppCtrl.getData function - front-end: data:');
                     console.log(data);
-                    $scope.Gathering = data.Gathering;
-                    $scope.initGameUrls();
-                    $scope.Gathering.loading = false;
-                    return $scope.Gathering;
+                    $scope.Data = data.Data;
+                    $scope.initGatheringGameUrls();
+                    $scope.Data.loading = false;
+                    return $scope.Data;
                 })
             ;
         };
-        $scope.getUsers = function(){
-            return $http.get('/api/users').
-                success(function( data ) {
-                    console.log('AppCtrl.getUsers function - front-end: data:');
+        $scope.getUser = function(){
+            $scope.Data.loading = true;
+            return $http.get('/api/user/get').
+                success(function( data ){
+                    console.log('AppCtrl.getUser function - front-end: data:');
                     console.log(data);
-                    $scope.Gathering = data.Gathering;
-                    $scope.initGameUrls();
+                    $scope.user = data.user;
+                    $scope.Data.loading = false;
+                    return $scope.user;
                 })
             ;
         };
         $scope.addUser = function(username){
-            // TODO(maybe): change to promise to allow then(), see getUsers()
+            // TODO(maybe): change to promise to allow .then(), see getData()
             if(typeof username != "undefined" && username != ''){
-                $scope.Gathering.loading = true;
+                $scope.Data.loading = true;
                 var parameters = { username: username };
-                $http.post('/api/add-user', parameters).
+                $http.post('/api/user/add', parameters).
                     success(function( data ) {
                         console.log('AppCtrl.addUser function - front-end: data:');
                         console.log(data);
-                        $scope.Gathering = data.Gathering;
-                        $scope.initGameUrls();
-                        $scope.Gathering.loading = false;
+                        $scope.Data = data.Data;
+                        $scope.Data.loading = false;
+                        $scope.addUserInputUsername = '';
+                    })
+                ;
+            }
+            else{
+                // TODO: return validation message to user to enter a username
+                console.log('AppCtrl.addUser function - else');
+            }
+        };
+        $scope.addGathering = function(gName){
+            console.log('AppCtrl.addGathering function called');
+            // TODO(maybe): change to promise to allow .then(), see getData()
+            // TODO: add check if new Gathering name is unique or already exists
+            if(typeof gName != "undefined" && gName != ''){
+                $scope.Data.loading = true;
+                var parameters = {
+                    gName: gName,
+                    creator: $scope.user.username
+                };
+                console.log(parameters);
+                $http.post('/api/gathering/add', parameters).
+                    success(function( data ){
+                        console.log('AppCtrl.addGathering function - front-end: data:');
+                        console.log(data);
+                        $scope.Data.gatherings = data.gatherings;
+                        $scope.Data.loading = false;
+                        $scope.addGatheringDisplayName = '';
+                    })
+                ;
+            }
+            else{
+                // TODO: return validation message to user to enter a gathering display name
+                console.log('AppCtrl.addGathering function - else');
+            }
+        };
+        $scope.addGatheringUser = function(username){
+            // FINISH
+            // TODO(maybe): change to promise to allow .then(), see getData()
+            if(typeof username != "undefined" && username != ''){
+                $scope.Data.loading = true;
+                var parameters = { username: username };
+                $http.post('/api/gathering/:gName/user/add', parameters).
+                    success(function( data ) {
+                        console.log('AppCtrl.addUser function - front-end: data:');
+                        console.log(data);
+                        $scope.Data = data.Data;
+                        $scope.initGatheringGameUrls();
+                        $scope.Data.loading = false;
                         $scope.addUserInputUsername = '';
                     })
                 ;
@@ -56,17 +117,17 @@ angular.module('gameNight.controllers', []).
             }
         };
         $scope.deleteUser = function(username){
-            // TODO(maybe): change to promise to allow then(), see getUsers()
+            // TODO(maybe): change to promise to allow then(), see getData()
             if(typeof username != "undefined" && username != ''){
-                $scope.Gathering.loading = true;
+                $scope.Data.loading = true;
                 var parameters = { username: username };
-                $http.post('/api/delete-user', parameters).
+                $http.post('/api/user/delete', parameters).
                     success(function( data ) {
                         console.log('AppCtrl.deleteUser function - front-end: data:');
                         console.log(data);
-                        $scope.Gathering = data.Gathering;
-                        $scope.initGameUrls();
-                        $scope.Gathering.loading = false;
+                        $scope.Data = data.Data;
+                        $scope.initGatheringGameUrls();
+                        $scope.Data.loading = false;
                     })
                 ;
             }
@@ -96,16 +157,19 @@ angular.module('gameNight.controllers', []).
                 }
             };
         };
-        $scope.initGameUrls = function(){
-            if(typeof $scope.Gathering != "undefined" && typeof $scope.Gathering.games != "undefined"){
-                for(var i=0; i< $scope.Gathering.games.length; i++){
-                    // create full link to game as property for rendering in DOM
-                    $scope.Gathering.games[i]['url'] = 'http://boardgamegeek.com/';
-                    $scope.Gathering.games[i]['url'] += $scope.Gathering.games[i]['type'];
-                    $scope.Gathering.games[i]['url'] += '/';
-                    $scope.Gathering.games[i]['url'] += $scope.Gathering.games[i]['id'];
+        $scope.initGatheringGameUrls = function(){
+            for(var i = 0; i < $scope.Data.gatherings.length; i++){
+                if(typeof $scope.Data.gatherings[i].games != "undefined"){
+                    for(var j=0; j < $scope.Data.gatherings[i].games.length; j++){
+                        // create full link to game as property for rendering in DOM
+                        $scope.Data.gatherings[i].games[j]['url'] = 'http://boardgamegeek.com/';
+                        $scope.Data.gatherings[i].games[j]['url'] += $scope.Data.gatherings[i].games[j]['type'];
+                        $scope.Data.gatherings[i].games[j]['url'] += '/';
+                        $scope.Data.gatherings[i].games[j]['url'] += $scope.Data.gatherings[i].games[j]['id'];
+                    }
                 }
             }
+
         };
         $scope.initSortValues = function () {
             $scope.sortReverse = false;
@@ -118,9 +182,9 @@ angular.module('gameNight.controllers', []).
             }
             return text;
         };
-        $scope.dataPoller = function(){
+        $scope.dataPoller = function(resource, callback){
             // Define your resource object.
-            var logResource = $resource('/api/gathering');
+            var logResource = $resource(resource);
             // Get poller. This also starts/restarts poller.
             var logPoller = poller.get(logResource, {
                 catchError: true
@@ -128,18 +192,20 @@ angular.module('gameNight.controllers', []).
             // Update view. Since a promise can only be resolved or rejected once but we want
             // to keep track of all requests, poller service uses the notifyCallback. By default
             // poller only gets notified of success responses.
-            logPoller.promise.then(null, null, function(data){$scope.dataPollerCallback(data)});
+            logPoller.promise.then(null, null, function(data){$scope.dataPollerCallback(data, callback)});
         };
-        $scope.dataPollerCallback = function(result){
+        $scope.dataPollerCallback = function(result, callback){
             // If catchError is set to true, this notifyCallback can contain either
             // a success or an error response.
             if (result.$resolved) {
                 // Success handler ...
-                var updated = $scope.dataUpdatedCheck(result);
+                callback(result);
+                /*var updated = $scope.dataUpdatedCheck(result);
                 // If not identical set data to new data, else do nothing
                 if(updated){
-                    $scope.Gathering = result.Gathering;
+                    $scope.Data = result.Data;
                 }
+                $scope.Data = result.Data;*/
             } else {
                 // Error handler: (data, status, headers, config)
                 if (result.status === 503) {
@@ -148,7 +214,8 @@ angular.module('gameNight.controllers', []).
                 }
             }
         };
-        $scope.dataUserUpdatedCheck = function(result){
+        /*$scope.dataUserUpdatedCheck = function(result){
+            // TODO: needs major overhaul to new data structure of $scope.Data...
             var updated = false;
             // Check if same number of users
             if($scope.Gathering.users.length == result.Gathering.users.length){
@@ -163,31 +230,77 @@ angular.module('gameNight.controllers', []).
                 updated = true;
             }
             return updated;
-        };
+        };*/
         $scope.dataLoadingUpdatedCheck = function(result){
-            if($scope.Gathering.loading !== result.Gathering.loading){
+            if($scope.Data.loading !== result.Data.loading){
                 return true;
             }
             return false;
         };
         $scope.dataUpdatedCheck = function(result){
-            var usersUpdated = $scope.dataUserUpdatedCheck(result);
+            // TODO: fix/update and re-implement this user updated check
+            // TODO: needs gathering check
+            //var usersUpdated = $scope.dataUserUpdatedCheck(result);
             var loadingUpdated = $scope.dataLoadingUpdatedCheck(result);
-            if(usersUpdated || loadingUpdated){
+            if(/*usersUpdated || */loadingUpdated){
                 return true;
             }
             return false;
         };
+        $scope.resetLog = function(){
+            $http.get('/api/log/reset').success(function( data ) {
+                $scope.Data.logs = data || [];
+            });
+        };
+        $scope.isAdmin = function(){
+            // Checks if user has any administrative permissions
+            for(var permissionType in $scope.adminPermissions){
+                for(var i=0; i< $scope.adminPermissions[permissionType].length; i++){
+                    if(typeof $scope.user != "undefined" && $scope.user.permissions[permissionType][$scope.adminPermissions[permissionType][i]]){
+                        return true;
+                    }
+                }
+            }
+            return false;
+        };
+        $scope.setupPollers = function(){
+            $scope.gatheringsPoller();
+            $scope.loadingPoller();
+            //$scope.messagesPoller();
+        };
+        $scope.logsPoller = function(){
+            return $scope.dataPoller('/api/log/load', function(result){
+                $scope.Data.logs = result.log;
+            });
+        };
+        $scope.gatheringsPoller = function(){
+            return $scope.dataPoller('/api/gatherings/get', function(result){
+                $scope.Data.gatherings = result.gatherings;
+            });
+        };
+        $scope.loadingPoller = function(){
+            return $scope.dataPoller('/api/loading/get', function(result){
+                $scope.Data.loading = result.loading;
+            });
+        };
+        $scope.messagesPoller = function(){
+            return $scope.dataPoller('/api/messages/get', function(result){
+                $scope.messages = result.messages;
+            });
+        };
         $scope.init = function(){
-            $scope.Gathering.init();
+            $scope.Data.init();
             $scope.initFilterValues();
             $scope.initSortValues();
-            $scope.getGathering()
+            $scope.getData()
+                .then(function(){
+                    $scope.getUser();
+                })
                 .then(function(){
                     $scope.ready = true;
                 })
                 .then(function(){
-                    $scope.dataPoller();
+                    $scope.setupPollers();
                 })
             ;
         };

@@ -1,10 +1,9 @@
 var log = require('npmlog');
 var Database = require('./Database.js');
-var Data = require('./Data.js');
 
 var Log = {
     log: log,
-    init: function(){
+    init: function(Data){
         // setup event listener to save our npmlog events to the db log
         Log.log.on('log', function(stream){
             //if extra args not set or !== false then save log item to db log
@@ -12,7 +11,7 @@ var Log = {
                 Log.saveItem(stream);
             }
         });
-        Log.load();
+        Log.load(Data);
         // Use arg false to prevent this from being saved to db log
         Log.log.info('Log', 'Log initialized and log items loaded', true);
     },
@@ -30,8 +29,8 @@ var Log = {
             Log.log.info('Log', 'Log.saveItem success', false);
         });
     },
-    load: function(){
-        Database.logs.datastore.find({type: 'log'}, function (err, docs) {
+    load: function(Data){
+        Database.logs.datastore.find({}, function (err, docs) {
             if(typeof docs[0] != "undefined"){
                 Data.logs = [];
                 for (var i=0; i < docs.length; i++) {
@@ -46,7 +45,7 @@ var Log = {
             }
         });
     },
-    reset: function(){
+    reset: function(Data){
         Database.logs.datastore.remove({ type: 'log' }, { multi: true }, function (err, numRemoved) {
             // newDoc is the newly inserted document, including its _id
             Log.log.info('Log', 'Log.reset - number of log items removed: ' + numRemoved, true);
